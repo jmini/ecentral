@@ -1,0 +1,196 @@
+:rootdir: ../../../
+:github-readme: {rootdir}README.adoc
+:srcdir: {rootdir}src/
+:listing-caption: Listing
+:revdate: {project-builddate}
+:revnumber: {project-version}
+
+include::{github-readme}[tags=vardef]
+
+:projectpage: https://github.com/{gh-repo-owner}/{gh-repo-name}
+:pom-file: *.pom
+
+include::{github-readme}[tags=header]
+
+== URLs
+
+* link:{homepage}[Project home] (this page)
+* link:{projectpage}[GitHub project]
+* link:{issues}[Issue tracker]
+
+TIP: Do you want to improve this page? Please git-link:self[edit it on GitHub, edit].
+
+== Background
+
+Eclipse components (sometime called plugin or bundle) are available on a P2 Update site.
+With each release a new update site identified by its URL is created to publish the jars.
+
+The P2 Update sites are less common than Maven Repositories used by Maven and Gradle. The most famous repository is probably link:https://search.maven.org/[maven central].
+
+In 2017 with Eclipse Release `Neon.2`, Stephan Herrmann link:https://objectteams.wordpress.com/2017/01/09/eclipse-neon-2-is-on-maven-central/[presented] his work to republish some of jars of the release Update Site to maven central.
+
+An important part of this work is to transform the layout (where the Jars are located) and the metadata (what are the dependencies of each jar).
+In a Maven Repository the metadata are stored in a `{pom-file}` file associated with each jar.
+Especially the `Require-Bundle` and `Import-Package` entries of the `MANIFEST.MF` are transformed to dependency indication in the `{pom-file}` file.
+The tool used to perform this task is called link:https://wiki.eclipse.org/CBI/aggregator[CBI Aggregator] and the setup to publish to maven central is defined in the link:https://git.eclipse.org/c/platform/eclipse.platform.releng.git/[eclipse.platform.releng] project.
+
+== BOM files
+
+On maven central you do not have the notion of Eclipse Releases.
+All artifacts are stored next to each other, under unique coordinates (`GroupId`, `ArtiactId` and `Version`).
+
+Because of the open version ranges in the `{pom-file}` file, it is hard to select a specific version of a jar with its transitive dependency corresponding to the same Eclipse Release.
+
+This is where the BOM (link:https://maven.apache.org/guides/introduction/introduction-to-dependency-mechanism.html#Importing_Dependencies[bill of materials]) files produced by this repository can be useful.
+
+They are published in the git-link:repo[repo/, edit] folder following a maven repository layout.
+This way, the raw file viewer of GitHub is a valid maven repository.
+
+[source, txt, subs="verbatim,attributes"]
+----
+https://raw.githubusercontent.com/{gh-repo-owner}/{gh-repo-name}/HEAD/repo
+----
+
+If you prefer a more stable version you can use any commit identified by its commit-id or by a tag.
+For the latest released version of this repository (`{last-stable-version}`) use:
+
+[source, txt, subs="verbatim,attributes"]
+----
+https://raw.githubusercontent.com/{gh-repo-owner}/{gh-repo-name}/{last-stable-version}/repo
+----
+
+The coordinates of the different bom file use the format:
+
+[source, xml]
+----
+<dependency>
+  <groupId>fr.jmini.ecentral</groupId>
+  <artifactId>eclipse-platform-dependencies</artifactId>
+  <version>${eclipseReleaseVersion}</version>
+</dependency>
+----
+
+Where `$\{eclipseReleaseVersion}` correspond to the platform version of the Eclipse release.
+
+[cols="1,1",options="header"]
+|===
+| Eclipse Release Name
+| Eclipse Release Version
+
+| 2021-06
+| `4.20`
+
+| 2021-03
+| `4.19`
+
+| 2020-12
+| `4.18`
+
+| 2020-09
+| `4.17`
+
+| 2020-06
+| `4.16`
+
+| 2020-03
+| `4.15`
+
+| 2019-12
+| `4.14`
+
+| 2019-09
+| `4.13`
+
+| 2019-06
+| `4.12`
+
+| 2019-03
+| `4.11`
+
+| 2018-12
+| `4.10`
+
+| 2018-09
+| `4.9`
+
+| Photon
+| `4.8`
+
+| Oxygen
+| `4.7`
+
+| Neon
+| `4.6`
+|=== 
+
+== Source Code
+
+The code used to generate the data can be found the git-link:src/[src/] folder.
+
+A unit-test class (called `fr.jmini.utils.ecentral.RunTest`) is used to generate all the BOM files.
+
+Example test:
+
+[source, java]
+----
+include::{rootdir}src/test/java/fr/jmini/utils/ecentral/RunTest.java[tags="4_14_test",indent=0]
+----
+
+It produces following pom file: `<git repo root>/repo/fr/jmini/ecentral/eclipse-platform-dependencies/4.14/eclipse-platform-dependencies-4.14.pom`
+
+Intermediate steps results are stored as file under: `<git repo root>/data/4.14`.
+The files are reused to compute the next step.
+They have to be deleted to rerun the complete process from scratch.
+
+=== Build
+
+This project is using gradle.
+
+Command to build the sources locally:
+
+----
+./gradlew build
+----
+
+Command to build the documentation page:
+
+----
+./gradlew asciidoctor
+----
+
+The output of this command is an HTML page located at `<git repo root>/build/docs/html5/index.html`.
+
+==== For project maintainers
+
+Command to upload the documentation page on GitHub pages:
+
+----
+./gradlew gitPublishPush
+----
+
+Command to perform a release:
+
+----
+./gradlew release -Prelease.useAutomaticVersion=true
+----
+
+==== Using ssh-agent
+
+Some tasks requires to push into the distant git repository (release task or updating the `gh-pages` branch).
+If they are failing with errors like this:
+----
+org.eclipse.jgit.api.errors.TransportException: ... Permission denied (publickey).
+---- 
+
+Then `ssh-agent` can be used.
+----
+eval `ssh-agent -s`
+ssh-add ~/.ssh/id_rsa
+----
+(link:https://superuser.com/a/990447/[source] for this approach)
+
+
+include::{github-readme}[tags=contact-section]
+
+include::{github-readme}[tags=license-section]
+

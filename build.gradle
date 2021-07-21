@@ -1,0 +1,143 @@
+buildscript {
+  configurations.classpath {
+    resolutionStrategy {
+      //This is required by 'git-publish' version '3.0.0':
+      force 'org.eclipse.jgit:org.eclipse.jgit:5.10.0.202012080955-r'
+    }
+  }
+}
+
+plugins {
+    id 'java'
+    id 'org.asciidoctor.jvm.convert' version '3.3.0'
+    id 'org.ajoberstar.git-publish' version '3.0.0'
+    id 'com.diffplug.spotless' version '5.1.1'
+    id 'net.researchgate.release' version '2.6.0'
+}
+
+wrapper {
+    gradleVersion = '6.7.1'
+}
+
+group = 'fr.jmini.utils'
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(11)
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+task sourcesJar(type: Jar, dependsOn: classes) {
+    classifier = 'sources'
+    from sourceSets.main.allSource
+}
+
+task javadocJar(type: Jar) {
+    from javadoc
+    classifier = 'javadoc'
+}
+
+dependencies {
+    implementation "biz.aQute.bnd:biz.aQute.bnd:$bndVersion"
+    implementation "com.google.code.gson:gson:$gsonVersion"
+
+    testImplementation "org.junit.jupiter:junit-jupiter-api:$junitVersion"
+    testImplementation "org.assertj:assertj-core:$assertjVersion"
+
+    testRuntimeOnly "org.junit.jupiter:junit-jupiter-engine:$junitVersion"
+}
+
+test {
+    useJUnitPlatform()
+}
+
+def buildDate() {
+    return new Date().format('yyyy-MM-dd')
+}
+
+configurations {
+    asciidoctorExtensions
+}
+
+asciidoctorj {
+    version = "$asciidoctorjVersion"
+}
+
+asciidoctor {
+    configurations 'asciidoctorExtensions'
+    sourceDir = file('src/docs/asciidoc')
+    baseDirFollowsSourceFile()
+    outputDir = file('build/docs/html5')
+    attributes = ['revdate'             : "${buildDate()}",
+                  'project-version'     : "$version",
+                  'last-stable-version' : "$lastVersion",
+                  'attribute-missing'   : 'warn',
+                  'source-highlighter'  : 'coderay',
+                  'imagesdir'           : '',
+                  'toc'                 : 'left',
+                  'icons'               : 'font',
+                  'toclevels'           : '3',
+                  'sectanchors'         : 'true',
+                  'idprefix'            : '',
+                  'idseparator'         : '-',
+                  'docinfo1'            : 'true']
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        asciidoctorExtensions 'fr.jmini.asciidoctorj:git-link:3.2.1'
+    }
+}
+
+gitPublish {
+    repoUri = 'git@github.com:' + "$githubRepositoryOwner" + '/' + "$githubRepositoryName" + '.git'
+    branch = 'gh-pages'
+
+    contents {
+        from "${file('build/docs/html5')}"
+    }
+
+    preserve {
+        include '.nojekyll'
+        exclude '.DS_Store'
+    }
+
+    commitMessage = "Update the 'gh-pages' branch."
+}
+
+spotless {
+  java {
+    importOrder 'java', 'javax', 'org', 'com', ''
+    removeUnusedImports()
+
+    // available versions are: https://github.com/diffplug/spotless/tree/master/lib-extra/src/main/resources/com/diffplug/spotless/extra/eclipse_jdt_formatter
+    eclipse('4.13.0').configFile('.settings/org.eclipse.jdt.core.prefs')
+  }
+}
+
+release {
+    buildTasks = ['doRelease']
+}
+
+task doRelease {
+    dependsOn(
+        'checkLastVersionValue',
+        'asciidoctor',
+        'gitPublishPush'
+    )
+}
+
+task checkLastVersionValue {
+    doLast {
+        if(version.endsWith('SNAPSHOT')) {
+            throw new GradleException("version '$version' ends with SNAPSHOT, this is not a release build!")
+        }
+        if(lastVersion != version) {
+            throw new GradleException("lastVersion '$lastVersion' does not match version '$version', fix it in the 'gradle.properties' file.")
+        }
+    }
+}

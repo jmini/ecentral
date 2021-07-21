@@ -1,0 +1,40 @@
+//tag::vardef[]
+:gh-repo-owner: jmini
+:gh-repo-name: ecentral
+:project-name: ECentral
+:branch: master
+:twitter-handle: j2r2b
+:license: https://www.eclipse.org/org/documents/epl-2.0/EPL-2.0.html
+:license-name: Eclipse Public License - v 2.0
+
+:git-repository: {gh-repo-owner}/{gh-repo-name}
+:homepage: https://{gh-repo-owner}.github.io/{gh-repo-name}
+:issues: https://github.com/{git-repository}/issues
+//end::vardef[]
+
+//tag::header[]
+= {project-name}
+Jeremie Bresson
+
+Script and data around the Eclipse Platform artifacts published on maven central.
+//end::header[]
+
+image:https://circleci.com/gh/{gh-repo-owner}/{gh-repo-name}.svg?style=svg["CircleCI", link="https://circleci.com/gh/{gh-repo-owner}/{gh-repo-name}"]
+
+== Project Homepage
+
+Visit the link:{homepage}[project home page] to know more this project.
+
+//tag::contact-section[]
+== Get in touch
+
+Use the link:{issues}[{project-name} issue tracker] on GitHub.
+
+You can also contact me on Twitter: link:https://twitter.com/{twitter-handle}[@{twitter-handle}]
+//end::contact-section[]
+
+//tag::license-section[]
+== License
+
+link:{license}[{license-name}]
+//end::license-section[]

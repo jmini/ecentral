@@ -1,0 +1,1637 @@
+[
+  {
+    "groupId": "org.eclipse.platform",
+    "artifactId": "org.eclipse.ant.core",
+    "version": "3.5.200"
+  },
+  {
+    "groupId": "org.eclipse.platform",
+    "artifactId": "org.eclipse.ant.launching",
+    "version": "1.2.300"
+  },
+  {
+    "groupId": "org.eclipse.platform",
+    "artifactId": "org.eclipse.ant.optional.junit",
+    "version": "3.3.300"
+  },
+  {
+    "groupId": "org.eclipse.platform",
+    "artifactId": "org.eclipse.ant.tests.core",
+    "version": "3.5.200"
+  },
+  {
+    "groupId": "org.eclipse.platform",
+    "artifactId": "org.eclipse.ant.tests.ui",
+    "version": "3.9.400"
+  },
+  {
+    "groupId": "org.eclipse.platform",
+    "artifactId": "org.eclipse.ant.ui",
+    "version": "3.7.300"
+  },
+  {
+    "groupId": "org.eclipse.platform",
+    "artifactId": "org.eclipse.compare",
+    "version": "3.7.400"
+  },
+  {
+    "groupId": "org.eclipse.platform",
+    "artifactId": "org.eclipse.compare.core",
+    "version": "3.6.300"
+  },
+  {
+    "groupId": "org.eclipse.platform",
+    "artifactId": "org.eclipse.compare.examples",
+    "version": "3.2.300"
+  },
+  {
+    "groupId": "org.eclipse.platform",
+    "artifactId": "org.eclipse.compare.examples.xml",
+    "version": "3.4.400"
+  },
+  {
+    "groupId": "org.eclipse.platform",
+    "artifactId": "org.eclipse.compare.win32",
+    "version": "1.2.300"
+  },
+  {
+    "groupId": "org.eclipse.platform",
+    "artifactId": "org.eclipse.core.commands",
+    "version": "3.9.200"
+  },
+  {
+    "groupId": "org.eclipse.platform",
+    "artifactId": "org.eclipse.core.contenttype",
+    "version": "3.7.200"
+  },
+  {
+    "groupId": "org.eclipse.platform",
+    "artifactId": "org.eclipse.core.databinding",
+    "version": "1.7.100"
+  },
+  {
+    "groupId": "org.eclipse.platform",
+    "artifactId": "org.eclipse.core.databinding.beans",
+    "version": "1.4.300"
+  },
+  {
+    "groupId": "org.eclipse.platform",
+    "artifactId": "org.eclipse.core.databinding.observable",
+    "version": "1.6.300"
+  },
+  {
+    "groupId": "org.eclipse.platform",
+    "artifactId": "org.eclipse.core.databinding.property",
+    "version": "1.6.300"
+  },
+  {
+    "groupId": "org.eclipse.platform",
+    "artifactId": "org.eclipse.core.expressions",
+    "version": "3.6.200"
+  },
+  {
+    "groupId": "org.eclipse.platform",
+    "artifactId": "org.eclipse.core.externaltools",
+    "version": "1.1.200"
+  },
+  {
+    "groupId": "org.eclipse.platform",
+    "artifactId": "org.eclipse.core.filebuffers",
+    "version": "3.6.400"
+  },
+  {
+    "groupId": "org.eclipse.platform",
+    "artifactId": "org.eclipse.core.filesystem",
+    "version": "1.7.200"
+  },
+  {
+    "groupId": "org.eclipse.platform",
+    "artifactId": "org.eclipse.core.filesystem.linux.ppc64le",
+    "version": "1.4.100"
+  },
+  {
+    "groupId": "org.eclipse.platform",
+    "artifactId": "org.eclipse.core.filesystem.linux.x86_64",
+    "version": "1.2.300"
+  },
+  {
+    "groupId": "org.eclipse.platform",
+    "artifactId": "org.eclipse.core.filesystem.macosx",
+    "version": "1.3.100"
+  },
+  {
+    "groupId": "org.eclipse.platform",
+    "artifactId": "org.eclipse.core.filesystem.win32.x86_64",
+    "version": "1.4.100"
+  },
+  {
+    "groupId": "org.eclipse.platform",
+    "artifactId": "org.eclipse.core.jobs",
+    "version": "3.10.200"
+  },
+  {
+    "groupId": "org.eclipse.platform",
+    "artifactId": "org.eclipse.core.net",
+    "version": "1.3.400"
+  },
+  {
+    "groupId": "org.eclipse.platform",
+    "artifactId": "org.eclipse.core.net.linux.x86_64",
+    "version": "1.2.300"
+  },
+  {
+    "groupId": "org.eclipse.platform",
+    "artifactId": "org.eclipse.core.net.win32.x86_64",
+    "version": "1.1.300"
+  },
+  {
+    "groupId": "org.eclipse.platform",
+    "artifactId": "org.eclipse.core.resources",
+    "version": "3.13.200"
+  },
+  {
+    "groupId": "org.eclipse.platform",
+    "artifactId": "org.eclipse.core.resources.win32.x86_64",
+    "version": "3.5.300"
+  },
+  {
+    "groupId": "org.eclipse.platform",
+    "artifactId": "org.eclipse.core.runtime",
+    "version": "3.15.100"
+  },
+  {
+    "groupId": "org.eclipse.platform",
+    "artifactId": "org.eclipse.core.tests.harness",
+    "version": "3.11.400"
+  },
+  {
+    "groupId": "org.eclipse.platform",
+    "artifactId": "org.eclipse.core.tests.net",
+    "version": "1.4.300"
+  },
+  {
+    "groupId": "org.eclipse.platform",
+    "artifactId": "org.eclipse.core.tests.resources",
+    "version": "3.10.400"
+  },
+  {
+    "groupId": "org.eclipse.platform",
+    "artifactId": "org.eclipse.core.tests.runtime",
+    "version": "3.11.500"
+  },
+  {
+    "groupId": "org.eclipse.platform",
+    "artifactId": "org.eclipse.core.variables",
+    "version": "3.4.300"
+  },
+  {
+    "groupId": "org.eclipse.platform",
+    "artifactId": "org.eclipse.cvs",
+    "version": "1.4.800"
+  },
+  {
+    "groupId": "org.eclipse.platform",
+    "artifactId": "org.eclipse.debug.core",
+    "version": "3.13.100"
+  },
+  {
+    "groupId": "org.eclipse.platform",
+    "artifactId": "org.eclipse.debug.examples.core",
+    "version": "1.4.300"
+  },
+  {
+    "groupId": "org.eclipse.platform",
+    "artifactId": "org.eclipse.debug.examples.ui",
+    "version": "1.6.0"
+  },
+  {
+    "groupId": "org.eclipse.platform",
+    "artifactId": "org.eclipse.debug.ui",
+    "version": "3.13.200"
+  },
+  {
+    "groupId": "org.eclipse.platform",
+    "artifactId": "org.eclipse.e4.core.commands",
+    "version": "0.12.400"
+  },
+  {
+    "groupId": "org.eclipse.platform",
+    "artifactId": "org.eclipse.e4.core.contexts",
+    "version": "1.7.100"
+  },
+  {
+    "groupId": "org.eclipse.platform",
+    "artifactId": "org.eclipse.e4.core.di",
+    "version": "1.7.100"
+  },
+  {
+    "groupId": "org.eclipse.platform",
+    "artifactId": "org.eclipse.e4.core.di.annotations",
+    "version": "1.6.200"
+  },
+  {
+    "groupId": "org.eclipse.platform",
+    "artifactId": "org.eclipse.e4.core.di.extensions",
+    "version": "0.15.200"
+  },
+  {
+    "groupId": "org.eclipse.platform",
+    "artifactId": "org.eclipse.e4.core.di.extensions.supplier",
+    "version": "0.15.200"
+  },
+  {
+    "groupId": "org.eclipse.platform",
+    "artifactId": "org.eclipse.e4.core.services",
+    "version": "2.1.300"
+  },
+  {
+    "groupId": "org.eclipse.platform",
+    "artifactId": "org.eclipse.e4.emf.xpath",
+    "version": "0.2.200"
+  },
+  {
+    "groupId": "org.eclipse.platform",
+    "artifactId": "org.eclipse.e4.tools",
+    "version": "4.8.100"
+  },
+  {
+    "groupId": "org.eclipse.platform",
+    "artifactId": "org.eclipse.e4.tools.compat",
+    "version": "4.7.300"
+  },
+  {
+    "groupId": "org.eclipse.platform",
+    "artifactId": "org.eclipse.e4.tools.emf.editor3x",
+    "version": "4.7.200"
+  },
+  {
+    "groupId": "org.eclipse.platform",
+    "artifactId": "org.eclipse.e4.tools.emf.ui",
+    "version": "4.6.200"
+  },
+  {
+    "groupId": "org.eclipse.platform",
+    "artifactId": "org.eclipse.e4.tools.jdt.templates",
+    "version": "4.8.200"
+  },
+  {
+    "groupId": "org.eclipse.platform",
+    "artifactId": "org.eclipse.e4.tools.services",
+    "version": "4.8.200"
+  },
+  {
+    "groupId": "org.eclipse.platform",
+    "artifactId": "org.eclipse.e4.ui.bindings",
+    "version": "0.12.300"
+  },
+  {
+    "groupId": "org.eclipse.platform",
+    "artifactId": "org.eclipse.e4.ui.css.core",
+    "version": "0.12.400"
+  },
+  {
+    "groupId": "org.eclipse.platform",
+    "artifactId": "org.eclipse.e4.ui.css.swt",
+    "version": "0.13.300"
+  },
+  {
+    "groupId": "org.eclipse.platform",
+    "artifactId": "org.eclipse.e4.ui.css.swt.theme",
+    "version": "0.12.100"
+  },
+  {
+    "groupId": "org.eclipse.platform",
+    "artifactId": "org.eclipse.e4.ui.di",
+    "version": "1.2.400"
+  },
+  {
+    "groupId": "org.eclipse.platform",
+    "artifactId": "org.eclipse.e4.ui.dialogs",
+    "version": "1.1.300"
+  },
+  {
+    "groupId": "org.eclipse.platform",
+    "artifactId": "org.eclipse.e4.ui.model.workbench",
+    "version": "2.1.200"
+  },
+  {
+    "groupId": "org.eclipse.platform",
+    "artifactId": "org.eclipse.e4.ui.services",
+    "version": "1.3.300"
+  },
+  {
+    "groupId": "org.eclipse.platform",
+    "artifactId": "org.eclipse.e4.ui.swt.gtk",
+    "version": "1.0.500"
+  },
+  {
+    "groupId": "org.eclipse.platform",
+    "artifactId": "org.eclipse.e4.ui.tests.css.core",
+    "version": "1.300.300"
+  },
+  {
+    "groupId": "org.eclipse.platform",
+    "artifactId": "org.eclipse.e4.ui.tests.css.swt",
+    "version": "0.10.400"
+  },
+  {
+    "groupId": "org.eclipse.platform",
+    "artifactId": "org.eclipse.e4.ui.widgets",
+    "version": "1.2.300"
+  },
+  {
+    "groupId": "org.eclipse.platform",
+    "artifactId": "org.eclipse.e4.ui.workbench",
+    "version": "1.8.0"
+  },
+  {
+    "groupId": "org.eclipse.platform",
+    "artifactId": "org.eclipse.e4.ui.workbench.addons.swt",
+    "version": "1.3.300"
+  },
+  {
+    "groupId": "org.eclipse.platform",
+    "artifactId": "org.eclipse.e4.ui.workbench.renderers.swt",
+    "version": "0.14.400"
+  },
+  {
+    "groupId": "org.eclipse.platform",
+    "artifactId": "org.eclipse.e4.ui.workbench.renderers.swt.cocoa",
+    "version": "0.12.100"
+  },
+  {
+    "groupId": "org.eclipse.platform",
+    "artifactId": "org.eclipse.e4.ui.workbench.swt",
+    "version": "0.14.400"
+  },
+  {
+    "groupId": "org.eclipse.platform",
+    "artifactId": "org.eclipse.e4.ui.workbench3",
+    "version": "0.14.200"
+  },
+  {
+    "groupId": "org.eclipse.platform",
+    "artifactId": "org.eclipse.equinox.app",
+    "version": "1.4.0"
+  },
+  {
+    "groupId": "org.eclipse.platform",
+    "artifactId": "org.eclipse.equinox.bidi",
+    "version": "1.1.200"
+  },
+  {
+    "groupId": "org.eclipse.platform",
+    "artifactId": "org.eclipse.equinox.cm",
+    "version": "1.3.100"
+  },
+  {
+    "groupId": "org.eclipse.platform",
+    "artifactId": "org.eclipse.equinox.common",
+    "version": "3.10.200"
+  },
+  {
+    "groupId": "org.eclipse.platform",
+    "artifactId": "org.eclipse.equinox.concurrent",
+    "version": "1.1.200"
+  },
+  {
+    "groupId": "org.eclipse.platform",
+    "artifactId": "org.eclipse.equinox.console",
+    "version": "1.3.200"
+  },
+  {
+    "groupId": "org.eclipse.platform",
+    "artifactId": "org.eclipse.equinox.console.jaas.fragment",
+    "version": "1.0.200"
+  },
+  {
+    "groupId": "org.eclipse.platform",
+    "artifactId": "org.eclipse.equinox.console.ssh",
+    "version": "1.2.0"
+  },
+  {
+    "groupId": "org.eclipse.platform",
+    "artifactId": "org.eclipse.equinox.coordinator",
+    "version": "1.3.600"
+  },
+  {
+    "groupId": "org.eclipse.platform",
+    "artifactId": "org.eclipse.equinox.device",
+    "version": "1.0.800"
+  },
+  {
+    "groupId": "org.eclipse.platform",
+    "artifactId": "org.eclipse.equinox.ds",
+    "version": "1.5.200"
+  },
+  {
+    "groupId": "org.eclipse.platform",
+    "artifactId": "org.eclipse.equinox.event",
+    "version": "1.5.0"
+  },
+  {
+    "groupId": "org.eclipse.platform",
+    "artifactId": "org.eclipse.equinox.frameworkadmin",
+    "version": "2.1.100"
+  },
+  {
+    "groupId": "org.eclipse.platform",
+    "artifactId": "org.eclipse.equinox.frameworkadmin.equinox",
+    "version": "1.1.100"
+  },
+  {
+    "groupId": "org.eclipse.platform",
+    "artifactId": "org.eclipse.equinox.frameworkadmin.test",
+    "version": "1.2.100"
+  },
+  {
+    "groupId": "org.eclipse.platform",
+    "artifactId": "org.eclipse.equinox.http.jetty",
+    "version": "3.6.200"
+  },
+  {
+    "groupId": "org.eclipse.platform",
+    "artifactId": "org.eclipse.equinox.http.registry",
+    "version": "1.1.600"
+  },
+  {
+    "groupId": "org.eclipse.platform",
+    "artifactId": "org.eclipse.equinox.http.servlet",
+    "version": "1.5.200"
+  },
+  {
+    "groupId": "org.eclipse.platform",
+    "artifactId": "org.eclipse.equinox.http.servletbridge",
+    "version": "1.1.100"
+  },
+  {
+    "groupId": "org.eclipse.platform",
+    "artifactId": "org.eclipse.equinox.io",
+    "version": "1.1.300"
+  },
+  {
+    "groupId": "org.eclipse.platform",
+    "artifactId": "org.eclipse.equinox.ip",
+    "version": "1.1.600"
+  },
+  {
+    "groupId": "org.eclipse.platform",
+    "artifactId": "org.eclipse.equinox.jsp.jasper",
+    "version": "1.1.100"
+  },
+  {
+    "groupId": "org.eclipse.platform",
+    "artifactId": "org.eclipse.equinox.jsp.jasper.registry",
+    "version": "1.1.100"
+  },
+  {
+    "groupId": "org.eclipse.platform",
+    "artifactId": "org.eclipse.equinox.launcher",
+    "version": "1.5.200"
+  },
+  {
+    "groupId": "org.eclipse.platform",
+    "artifactId": "org.eclipse.equinox.launcher.cocoa.macosx.x86_64",
+    "version": "1.1.900"
+  },
+  {
+    "groupId": "org.eclipse.platform",
+    "artifactId": "org.eclipse.equinox.launcher.gtk.linux.ppc64le",
+    "version": "1.1.900"
+  },
+  {
+    "groupId": "org.eclipse.platform",
+    "artifactId": "org.eclipse.equinox.launcher.gtk.linux.x86_64",
+    "version": "1.1.900"
+  },
+  {
+    "groupId": "org.eclipse.platform",
+    "artifactId": "org.eclipse.equinox.launcher.win32.win32.x86_64",
+    "version": "1.1.900"
+  },
+  {
+    "groupId": "org.eclipse.platform",
+    "artifactId": "org.eclipse.equinox.log.stream",
+    "version": "1.0.100"
+  },
+  {
+    "groupId": "org.eclipse.platform",
+    "artifactId": "org.eclipse.equinox.metatype",
+    "version": "1.4.600"
+  },
+  {
+    "groupId": "org.eclipse.platform",
+    "artifactId": "org.eclipse.equinox.p2.artifact.repository",
+    "version": "1.2.200"
+  },
+  {
+    "groupId": "org.eclipse.platform",
+    "artifactId": "org.eclipse.equinox.p2.console",
+    "version": "1.1.100"
+  },
+  {
+    "groupId": "org.eclipse.platform",
+    "artifactId": "org.eclipse.equinox.p2.core",
+    "version": "2.5.100"
+  },
+  {
+    "groupId": "org.eclipse.platform",
+    "artifactId": "org.eclipse.equinox.p2.director",
+    "version": "2.4.200"
+  },
+  {
+    "groupId": "org.eclipse.platform",
+    "artifactId": "org.eclipse.equinox.p2.director.app",
+    "version": "1.1.200"
+  },
+  {
+    "groupId": "org.eclipse.platform",
+    "artifactId": "org.eclipse.equinox.p2.directorywatcher",
+    "version": "1.2.100"
+  },
+  {
+    "groupId": "org.eclipse.platform",
+    "artifactId": "org.eclipse.equinox.p2.discovery",
+    "version": "1.1.100"
+  },
+  {
+    "groupId": "org.eclipse.platform",
+    "artifactId": "org.eclipse.equinox.p2.discovery.compatibility",
+    "version": "1.1.100"
+  },
+  {
+    "groupId": "org.eclipse.platform",
+    "artifactId": "org.eclipse.equinox.p2.engine",
+    "version": "2.6.100"
+  },
+  {
+    "groupId": "org.eclipse.platform",
+    "artifactId": "org.eclipse.equinox.p2.extensionlocation",
+    "version": "1.3.100"
+  },
+  {
+    "groupId": "org.eclipse.platform",
+    "artifactId": "org.eclipse.equinox.p2.garbagecollector",
+    "version": "1.1.100"
+  },
+  {
+    "groupId": "org.eclipse.platform",
+    "artifactId": "org.eclipse.equinox.p2.installer",
+    "version": "1.2.0"
+  },
+  {
+    "groupId": "org.eclipse.platform",
+    "artifactId": "org.eclipse.equinox.p2.jarprocessor",
+    "version": "1.1.200"
+  },
+  {
+    "groupId": "org.eclipse.platform",
+    "artifactId": "org.eclipse.equinox.p2.metadata",
+    "version": "2.4.200"
+  },
+  {
+    "groupId": "org.eclipse.platform",
+    "artifactId": "org.eclipse.equinox.p2.metadata.repository",
+    "version": "1.3.100"
+  },
+  {
+    "groupId": "org.eclipse.platform",
+    "artifactId": "org.eclipse.equinox.p2.operations",
+    "version": "2.5.200"
+  },
+  {
+    "groupId": "org.eclipse.platform",
+    "artifactId": "org.eclipse.equinox.p2.publisher",
+    "version": "1.5.100"
+  },
+  {
+    "groupId": "org.eclipse.platform",
+    "artifactId": "org.eclipse.equinox.p2.publisher.eclipse",
+    "version": "1.3.100"
+  },
+  {
+    "groupId": "org.eclipse.platform",
+    "artifactId": "org.eclipse.equinox.p2.reconciler.dropins",
+    "version": "1.3.0"
+  },
+  {
+    "groupId": "org.eclipse.platform",
+    "artifactId": "org.eclipse.equinox.p2.repository",
+    "version": "2.4.200"
+  },
+  {
+    "groupId": "org.eclipse.platform",
+    "artifactId": "org.eclipse.equinox.p2.repository.tools",
+    "version": "2.2.200"
+  },
+  {
+    "groupId": "org.eclipse.platform",
+    "artifactId": "org.eclipse.equinox.p2.tests.discovery",
+    "version": "1.2.0"
+  },
+  {
+    "groupId": "org.eclipse.platform",
+    "artifactId": "org.eclipse.equinox.p2.tests.ui",
+    "version": "1.2.200"
+  },
+  {
+    "groupId": "org.eclipse.platform",
+    "artifactId": "org.eclipse.equinox.p2.tests.verifier",
+    "version": "1.2.100"
+  },
+  {
+    "groupId": "org.eclipse.platform",
+    "artifactId": "org.eclipse.equinox.p2.touchpoint.eclipse",
+    "version": "2.2.200"
+  },
+  {
+    "groupId": "org.eclipse.platform",
+    "artifactId": "org.eclipse.equinox.p2.touchpoint.natives",
+    "version": "1.3.200"
+  },
+  {
+    "groupId": "org.eclipse.platform",
+    "artifactId": "org.eclipse.equinox.p2.transport.ecf",
+    "version": "1.2.100"
+  },
+  {
+    "groupId": "org.eclipse.platform",
+    "artifactId": "org.eclipse.equinox.p2.ui",
+    "version": "2.5.400"
+  },
+  {
+    "groupId": "org.eclipse.platform",
+    "artifactId": "org.eclipse.equinox.p2.ui.admin",
+    "version": "1.1.100"
+  },
+  {
+    "groupId": "org.eclipse.platform",
+    "artifactId": "org.eclipse.equinox.p2.ui.admin.rcp",
+    "version": "1.2.0"
+  },
+  {
+    "groupId": "org.eclipse.platform",
+    "artifactId": "org.eclipse.equinox.p2.ui.discovery",
+    "version": "1.1.100"
+  },
+  {
+    "groupId": "org.eclipse.platform",
+    "artifactId": "org.eclipse.equinox.p2.ui.importexport",
+    "version": "1.2.100"
+  },
+  {
+    "groupId": "org.eclipse.platform",
+    "artifactId": "org.eclipse.equinox.p2.ui.sdk",
+    "version": "1.1.100"
+  },
+  {
+    "groupId": "org.eclipse.platform",
+    "artifactId": "org.eclipse.equinox.p2.ui.sdk.scheduler",
+    "version": "1.4.200"
+  },
+  {
+    "groupId": "org.eclipse.platform",
+    "artifactId": "org.eclipse.equinox.p2.updatechecker",
+    "version": "1.2.100"
+  },
+  {
+    "groupId": "org.eclipse.platform",
+    "artifactId": "org.eclipse.equinox.p2.updatesite",
+    "version": "1.1.100"
+  },
+  {
+    "groupId": "org.eclipse.platform",
+    "artifactId": "org.eclipse.equinox.preferences",
+    "version": "3.7.200"
+  },
+  {
+    "groupId": "org.eclipse.platform",
+    "artifactId": "org.eclipse.equinox.region",
+    "version": "1.4.300"
+  },
+  {
+    "groupId": "org.eclipse.platform",
+    "artifactId": "org.eclipse.equinox.registry",
+    "version": "3.8.200"
+  },
+  {
+    "groupId": "org.eclipse.platform",
+    "artifactId": "org.eclipse.equinox.security",
+    "version": "1.3.0"
+  },
+  {
+    "groupId": "org.eclipse.platform",
+    "artifactId": "org.eclipse.equinox.security.linux.x86_64",
+    "version": "1.1.200"
+  },
+  {
+    "groupId": "org.eclipse.platform",
+    "artifactId": "org.eclipse.equinox.security.macosx",
+    "version": "1.101.100"
+  },
+  {
+    "groupId": "org.eclipse.platform",
+    "artifactId": "org.eclipse.equinox.security.ui",
+    "version": "1.2.200"
+  },
+  {
+    "groupId": "org.eclipse.platform",
+    "artifactId": "org.eclipse.equinox.security.win32.x86_64",
+    "version": "1.1.100"
+  },
+  {
+    "groupId": "org.eclipse.platform",
+    "artifactId": "org.eclipse.equinox.servletbridge",
+    "version": "1.4.200"
+  },
+  {
+    "groupId": "org.eclipse.platform",
+    "artifactId": "org.eclipse.equinox.simpleconfigurator",
+    "version": "1.3.200"
+  },
+  {
+    "groupId": "org.eclipse.platform",
+    "artifactId": "org.eclipse.equinox.simpleconfigurator.manipulator",
+    "version": "2.1.200"
+  },
+  {
+    "groupId": "org.eclipse.platform",
+    "artifactId": "org.eclipse.equinox.supplement",
+    "version": "1.8.100"
+  },
+  {
+    "groupId": "org.eclipse.platform",
+    "artifactId": "org.eclipse.equinox.transforms.hook",
+    "version": "1.2.300"
+  },
+  {
+    "groupId": "org.eclipse.platform",
+    "artifactId": "org.eclipse.equinox.transforms.xslt",
+    "version": "1.0.500"
+  },
+  {
+    "groupId": "org.eclipse.platform",
+    "artifactId": "org.eclipse.equinox.useradmin",
+    "version": "1.1.700"
+  },
+  {
+    "groupId": "org.eclipse.platform",
+    "artifactId": "org.eclipse.equinox.util",
+    "version": "1.1.200"
+  },
+  {
+    "groupId": "org.eclipse.platform",
+    "artifactId": "org.eclipse.equinox.weaving.caching",
+    "version": "1.1.200"
+  },
+  {
+    "groupId": "org.eclipse.platform",
+    "artifactId": "org.eclipse.equinox.weaving.caching.j9",
+    "version": "1.1.200"
+  },
+  {
+    "groupId": "org.eclipse.platform",
+    "artifactId": "org.eclipse.equinox.weaving.hook",
+    "version": "1.2.200"
+  },
+  {
+    "groupId": "org.eclipse.platform",
+    "artifactId": "org.eclipse.equinox.wireadmin",
+    "version": "1.0.800"
+  },
+  {
+    "groupId": "org.eclipse.platform",
+    "artifactId": "org.eclipse.help",
+    "version": "3.8.200"
+  },
+  {
+    "groupId": "org.eclipse.platform",
+    "artifactId": "org.eclipse.help.base",
+    "version": "4.2.400"
+  },
+  {
+    "groupId": "org.eclipse.platform",
+    "artifactId": "org.eclipse.help.ui",
+    "version": "4.1.300"
+  },
+  {
+    "groupId": "org.eclipse.platform",
+    "artifactId": "org.eclipse.help.webapp",
+    "version": "3.9.300"
+  },
+  {
+    "groupId": "org.eclipse.jdt",
+    "artifactId": "org.eclipse.jdt",
+    "version": "3.16.0"
+  },
+  {
+    "groupId": "org.eclipse.jdt",
+    "artifactId": "org.eclipse.jdt.annotation",
+    "version": "2.2.200"
+  },
+  {
+    "groupId": "org.eclipse.jdt",
+    "artifactId": "org.eclipse.jdt.apt.core",
+    "version": "3.6.200"
+  },
+  {
+    "groupId": "org.eclipse.jdt",
+    "artifactId": "org.eclipse.jdt.apt.pluggable.core",
+    "version": "1.2.300"
+  },
+  {
+    "groupId": "org.eclipse.jdt",
+    "artifactId": "org.eclipse.jdt.apt.ui",
+    "version": "3.6.200"
+  },
+  {
+    "groupId": "org.eclipse.jdt",
+    "artifactId": "org.eclipse.jdt.compiler.apt",
+    "version": "1.3.400"
+  },
+  {
+    "groupId": "org.eclipse.jdt",
+    "artifactId": "org.eclipse.jdt.compiler.tool",
+    "version": "1.2.400"
+  },
+  {
+    "groupId": "org.eclipse.jdt",
+    "artifactId": "org.eclipse.jdt.core",
+    "version": "3.16.0"
+  },
+  {
+    "groupId": "org.eclipse.jdt",
+    "artifactId": "ecj",
+    "version": "3.16.0"
+  },
+  {
+    "groupId": "org.eclipse.jdt",
+    "artifactId": "org.eclipse.jdt.core.manipulation",
+    "version": "1.11.0"
+  },
+  {
+    "groupId": "org.eclipse.jdt",
+    "artifactId": "org.eclipse.jdt.core.tests.binaries",
+    "version": "1.0.200"
+  },
+  {
+    "groupId": "org.eclipse.jdt",
+    "artifactId": "org.eclipse.jdt.core.tests.builder",
+    "version": "3.10.400"
+  },
+  {
+    "groupId": "org.eclipse.jdt",
+    "artifactId": "org.eclipse.jdt.core.tests.compiler",
+    "version": "3.12.700"
+  },
+  {
+    "groupId": "org.eclipse.jdt",
+    "artifactId": "org.eclipse.jdt.core.tests.model",
+    "version": "3.10.700"
+  },
+  {
+    "groupId": "org.eclipse.jdt",
+    "artifactId": "org.eclipse.jdt.core.tests.performance",
+    "version": "3.10.500"
+  },
+  {
+    "groupId": "org.eclipse.jdt",
+    "artifactId": "org.eclipse.jdt.debug",
+    "version": "3.12.100"
+  },
+  {
+    "groupId": "org.eclipse.jdt",
+    "artifactId": "org.eclipse.jdt.debug.ui",
+    "version": "3.10.100"
+  },
+  {
+    "groupId": "org.eclipse.jdt",
+    "artifactId": "org.eclipse.jdt.doc.isv",
+    "version": "3.14.200"
+  },
+  {
+    "groupId": "org.eclipse.jdt",
+    "artifactId": "org.eclipse.jdt.doc.user",
+    "version": "3.15.100"
+  },
+  {
+    "groupId": "org.eclipse.jdt",
+    "artifactId": "org.eclipse.jdt.junit",
+    "version": "3.11.200"
+  },
+  {
+    "groupId": "org.eclipse.jdt",
+    "artifactId": "org.eclipse.jdt.junit.core",
+    "version": "3.10.200"
+  },
+  {
+    "groupId": "org.eclipse.jdt",
+    "artifactId": "org.eclipse.jdt.junit.runtime",
+    "version": "3.4.900"
+  },
+  {
+    "groupId": "org.eclipse.jdt",
+    "artifactId": "org.eclipse.jdt.junit4.runtime",
+    "version": "1.1.900"
+  },
+  {
+    "groupId": "org.eclipse.jdt",
+    "artifactId": "org.eclipse.jdt.junit5.runtime",
+    "version": "1.0.300"
+  },
+  {
+    "groupId": "org.eclipse.jdt",
+    "artifactId": "org.eclipse.jdt.launching",
+    "version": "3.12.0"
+  },
+  {
+    "groupId": "org.eclipse.jdt",
+    "artifactId": "org.eclipse.jdt.launching.macosx",
+    "version": "3.4.200"
+  },
+  {
+    "groupId": "org.eclipse.jdt",
+    "artifactId": "org.eclipse.jdt.launching.ui.macosx",
+    "version": "1.2.200"
+  },
+  {
+    "groupId": "org.eclipse.jdt",
+    "artifactId": "org.eclipse.jdt.ui",
+    "version": "3.16.0"
+  },
+  {
+    "groupId": "org.eclipse.jdt",
+    "artifactId": "org.eclipse.jdt.ui.tests.refactoring",
+    "version": "3.13.300"
+  },
+  {
+    "groupId": "org.eclipse.platform",
+    "artifactId": "org.eclipse.jface",
+    "version": "3.15.0"
+  },
+  {
+    "groupId": "org.eclipse.platform",
+    "artifactId": "org.eclipse.jface.databinding",
+    "version": "1.8.400"
+  },
+  {
+    "groupId": "org.eclipse.platform",
+    "artifactId": "org.eclipse.jface.examples.databinding",
+    "version": "1.0.700"
+  },
+  {
+    "groupId": "org.eclipse.platform",
+    "artifactId": "org.eclipse.jface.tests.databinding",
+    "version": "1.8.400"
+  },
+  {
+    "groupId": "org.eclipse.platform",
+    "artifactId": "org.eclipse.jface.tests.databinding.conformance",
+    "version": "1.2.200"
+  },
+  {
+    "groupId": "org.eclipse.platform",
+    "artifactId": "org.eclipse.jface.text",
+    "version": "3.15.0"
+  },
+  {
+    "groupId": "org.eclipse.platform",
+    "artifactId": "org.eclipse.jsch.core",
+    "version": "1.3.300"
+  },
+  {
+    "groupId": "org.eclipse.platform",
+    "artifactId": "org.eclipse.jsch.ui",
+    "version": "1.3.300"
+  },
+  {
+    "groupId": "org.eclipse.platform",
+    "artifactId": "org.eclipse.ltk.core.refactoring",
+    "version": "3.9.200"
+  },
+  {
+    "groupId": "org.eclipse.platform",
+    "artifactId": "org.eclipse.ltk.ui.refactoring",
+    "version": "3.9.200"
+  },
+  {
+    "groupId": "org.eclipse.platform",
+    "artifactId": "org.eclipse.osgi",
+    "version": "3.13.200"
+  },
+  {
+    "groupId": "org.eclipse.platform",
+    "artifactId": "org.eclipse.osgi.compatibility.state",
+    "version": "1.1.300"
+  },
+  {
+    "groupId": "org.eclipse.platform",
+    "artifactId": "org.eclipse.osgi.services",
+    "version": "3.7.100"
+  },
+  {
+    "groupId": "org.eclipse.platform",
+    "artifactId": "org.eclipse.osgi.util",
+    "version": "3.5.100"
+  },
+  {
+    "groupId": "org.eclipse.pde",
+    "artifactId": "org.eclipse.pde",
+    "version": "3.13.400"
+  },
+  {
+    "groupId": "org.eclipse.pde",
+    "artifactId": "org.eclipse.pde.api.tools",
+    "version": "1.1.500"
+  },
+  {
+    "groupId": "org.eclipse.pde",
+    "artifactId": "org.eclipse.pde.api.tools.annotations",
+    "version": "1.1.200"
+  },
+  {
+    "groupId": "org.eclipse.pde",
+    "artifactId": "org.eclipse.pde.api.tools.ee.cdcfoundation10",
+    "version": "1.1.200"
+  },
+  {
+    "groupId": "org.eclipse.pde",
+    "artifactId": "org.eclipse.pde.api.tools.ee.cdcfoundation11",
+    "version": "1.1.200"
+  },
+  {
+    "groupId": "org.eclipse.pde",
+    "artifactId": "org.eclipse.pde.api.tools.ee.j2se12",
+    "version": "1.1.200"
+  },
+  {
+    "groupId": "org.eclipse.pde",
+    "artifactId": "org.eclipse.pde.api.tools.ee.j2se13",
+    "version": "1.1.200"
+  },
+  {
+    "groupId": "org.eclipse.pde",
+    "artifactId": "org.eclipse.pde.api.tools.ee.j2se14",
+    "version": "1.1.200"
+  },
+  {
+    "groupId": "org.eclipse.pde",
+    "artifactId": "org.eclipse.pde.api.tools.ee.j2se15",
+    "version": "1.1.200"
+  },
+  {
+    "groupId": "org.eclipse.pde",
+    "artifactId": "org.eclipse.pde.api.tools.ee.javase16",
+    "version": "1.1.200"
+  },
+  {
+    "groupId": "org.eclipse.pde",
+    "artifactId": "org.eclipse.pde.api.tools.ee.javase17",
+    "version": "1.1.200"
+  },
+  {
+    "groupId": "org.eclipse.pde",
+    "artifactId": "org.eclipse.pde.api.tools.ee.javase18",
+    "version": "1.1.200"
+  },
+  {
+    "groupId": "org.eclipse.pde",
+    "artifactId": "org.eclipse.pde.api.tools.ee.javase9",
+    "version": "1.0.100"
+  },
+  {
+    "groupId": "org.eclipse.pde",
+    "artifactId": "org.eclipse.pde.api.tools.ee.jre11",
+    "version": "1.1.200"
+  },
+  {
+    "groupId": "org.eclipse.pde",
+    "artifactId": "org.eclipse.pde.api.tools.ee.osgiminimum10",
+    "version": "1.1.200"
+  },
+  {
+    "groupId": "org.eclipse.pde",
+    "artifactId": "org.eclipse.pde.api.tools.ee.osgiminimum11",
+    "version": "1.1.200"
+  },
+  {
+    "groupId": "org.eclipse.pde",
+    "artifactId": "org.eclipse.pde.api.tools.ee.osgiminimum12",
+    "version": "1.1.200"
+  },
+  {
+    "groupId": "org.eclipse.pde",
+    "artifactId": "org.eclipse.pde.api.tools.ui",
+    "version": "1.1.500"
+  },
+  {
+    "groupId": "org.eclipse.pde",
+    "artifactId": "org.eclipse.pde.build",
+    "version": "3.10.200"
+  },
+  {
+    "groupId": "org.eclipse.pde",
+    "artifactId": "org.eclipse.pde.core",
+    "version": "3.12.200"
+  },
+  {
+    "groupId": "org.eclipse.pde",
+    "artifactId": "org.eclipse.pde.doc.user",
+    "version": "3.14.200"
+  },
+  {
+    "groupId": "org.eclipse.pde",
+    "artifactId": "org.eclipse.pde.ds.annotations",
+    "version": "1.1.300"
+  },
+  {
+    "groupId": "org.eclipse.pde",
+    "artifactId": "org.eclipse.pde.ds.core",
+    "version": "1.1.400"
+  },
+  {
+    "groupId": "org.eclipse.pde",
+    "artifactId": "org.eclipse.pde.ds.lib",
+    "version": "1.1.200"
+  },
+  {
+    "groupId": "org.eclipse.pde",
+    "artifactId": "org.eclipse.pde.ds.ui",
+    "version": "1.1.400"
+  },
+  {
+    "groupId": "org.eclipse.pde",
+    "artifactId": "org.eclipse.pde.ds1_2.lib",
+    "version": "1.0.200"
+  },
+  {
+    "groupId": "org.eclipse.pde",
+    "artifactId": "org.eclipse.pde.genericeditor.extension",
+    "version": "1.0.300"
+  },
+  {
+    "groupId": "org.eclipse.pde",
+    "artifactId": "org.eclipse.pde.junit.runtime",
+    "version": "3.5.300"
+  },
+  {
+    "groupId": "org.eclipse.pde",
+    "artifactId": "org.eclipse.pde.launching",
+    "version": "3.7.300"
+  },
+  {
+    "groupId": "org.eclipse.pde",
+    "artifactId": "org.eclipse.pde.runtime",
+    "version": "3.6.400"
+  },
+  {
+    "groupId": "org.eclipse.pde",
+    "artifactId": "org.eclipse.pde.ua.core",
+    "version": "1.1.200"
+  },
+  {
+    "groupId": "org.eclipse.pde",
+    "artifactId": "org.eclipse.pde.ua.ui",
+    "version": "1.1.300"
+  },
+  {
+    "groupId": "org.eclipse.pde",
+    "artifactId": "org.eclipse.pde.ui",
+    "version": "3.10.500"
+  },
+  {
+    "groupId": "org.eclipse.pde",
+    "artifactId": "org.eclipse.pde.ui.templates",
+    "version": "3.6.400"
+  },
+  {
+    "groupId": "org.eclipse.platform",
+    "artifactId": "org.eclipse.platform",
+    "version": "4.10.0"
+  },
+  {
+    "groupId": "org.eclipse.platform",
+    "artifactId": "org.eclipse.platform.doc.isv",
+    "version": "4.10.0"
+  },
+  {
+    "groupId": "org.eclipse.platform",
+    "artifactId": "org.eclipse.platform.doc.user",
+    "version": "4.10.0"
+  },
+  {
+    "groupId": "org.eclipse.platform",
+    "artifactId": "org.eclipse.rcp",
+    "version": "4.10.0"
+  },
+  {
+    "groupId": "org.eclipse.platform",
+    "artifactId": "org.eclipse.releng.tools",
+    "version": "4.0.200"
+  },
+  {
+    "groupId": "org.eclipse.platform",
+    "artifactId": "org.eclipse.sdk",
+    "version": "4.10.0"
+  },
+  {
+    "groupId": "org.eclipse.platform",
+    "artifactId": "org.eclipse.sdk.examples",
+    "version": "3.6.0"
+  },
+  {
+    "groupId": "org.eclipse.platform",
+    "artifactId": "org.eclipse.search",
+    "version": "3.11.400"
+  },
+  {
+    "groupId": "org.eclipse.platform",
+    "artifactId": "org.eclipse.swt",
+    "version": "3.109.0"
+  },
+  {
+    "groupId": "org.eclipse.platform",
+    "artifactId": "org.eclipse.swt.cocoa.macosx.x86_64",
+    "version": "3.109.0"
+  },
+  {
+    "groupId": "org.eclipse.platform",
+    "artifactId": "org.eclipse.swt.examples",
+    "version": "3.106.300"
+  },
+  {
+    "groupId": "org.eclipse.platform",
+    "artifactId": "org.eclipse.swt.examples.browser.demos",
+    "version": "3.106.200"
+  },
+  {
+    "groupId": "org.eclipse.platform",
+    "artifactId": "org.eclipse.swt.examples.launcher",
+    "version": "3.106.200"
+  },
+  {
+    "groupId": "org.eclipse.platform",
+    "artifactId": "org.eclipse.swt.examples.ole.win32",
+    "version": "3.107.200"
+  },
+  {
+    "groupId": "org.eclipse.platform",
+    "artifactId": "org.eclipse.swt.examples.views",
+    "version": "3.106.200"
+  },
+  {
+    "groupId": "org.eclipse.platform",
+    "artifactId": "org.eclipse.swt.gtk.linux.ppc64le",
+    "version": "3.109.0"
+  },
+  {
+    "groupId": "org.eclipse.platform",
+    "artifactId": "org.eclipse.swt.gtk.linux.x86_64",
+    "version": "3.109.0"
+  },
+  {
+    "groupId": "org.eclipse.platform",
+    "artifactId": "org.eclipse.swt.tools",
+    "version": "3.107.200"
+  },
+  {
+    "groupId": "org.eclipse.platform",
+    "artifactId": "org.eclipse.swt.tools.base",
+    "version": "3.107.100"
+  },
+  {
+    "groupId": "org.eclipse.platform",
+    "artifactId": "org.eclipse.swt.tools.spies",
+    "version": "3.106.200"
+  },
+  {
+    "groupId": "org.eclipse.platform",
+    "artifactId": "org.eclipse.swt.win32.win32.x86_64",
+    "version": "3.109.0"
+  },
+  {
+    "groupId": "org.eclipse.platform",
+    "artifactId": "org.eclipse.team.core",
+    "version": "3.8.400"
+  },
+  {
+    "groupId": "org.eclipse.platform",
+    "artifactId": "org.eclipse.team.cvs.core",
+    "version": "3.4.400"
+  },
+  {
+    "groupId": "org.eclipse.platform",
+    "artifactId": "org.eclipse.team.cvs.ssh2",
+    "version": "3.3.200"
+  },
+  {
+    "groupId": "org.eclipse.platform",
+    "artifactId": "org.eclipse.team.cvs.ui",
+    "version": "3.4.300"
+  },
+  {
+    "groupId": "org.eclipse.platform",
+    "artifactId": "org.eclipse.team.examples.filesystem",
+    "version": "3.5.300"
+  },
+  {
+    "groupId": "org.eclipse.platform",
+    "artifactId": "org.eclipse.team.genericeditor.diff.extension",
+    "version": "1.0.200"
+  },
+  {
+    "groupId": "org.eclipse.platform",
+    "artifactId": "org.eclipse.team.tests.core",
+    "version": "3.8.300"
+  },
+  {
+    "groupId": "org.eclipse.platform",
+    "artifactId": "org.eclipse.team.tests.cvs.core",
+    "version": "3.4.400"
+  },
+  {
+    "groupId": "org.eclipse.platform",
+    "artifactId": "org.eclipse.team.ui",
+    "version": "3.8.300"
+  },
+  {
+    "groupId": "org.eclipse.platform",
+    "artifactId": "org.eclipse.test",
+    "version": "3.4.300"
+  },
+  {
+    "groupId": "org.eclipse.platform",
+    "artifactId": "org.eclipse.test.performance",
+    "version": "3.13.300"
+  },
+  {
+    "groupId": "org.eclipse.platform",
+    "artifactId": "org.eclipse.test.performance.win32",
+    "version": "3.1.300"
+  },
+  {
+    "groupId": "org.eclipse.platform",
+    "artifactId": "org.eclipse.tests.urischeme",
+    "version": "1.0.100"
+  },
+  {
+    "groupId": "org.eclipse.platform",
+    "artifactId": "org.eclipse.text",
+    "version": "3.8.0"
+  },
+  {
+    "groupId": "org.eclipse.platform",
+    "artifactId": "org.eclipse.tips.core",
+    "version": "0.1.200"
+  },
+  {
+    "groupId": "org.eclipse.platform",
+    "artifactId": "org.eclipse.tips.ide",
+    "version": "0.1.300"
+  },
+  {
+    "groupId": "org.eclipse.platform",
+    "artifactId": "org.eclipse.tips.json",
+    "version": "0.1.200"
+  },
+  {
+    "groupId": "org.eclipse.platform",
+    "artifactId": "org.eclipse.tips.ui",
+    "version": "0.1.300"
+  },
+  {
+    "groupId": "org.eclipse.platform",
+    "artifactId": "org.eclipse.tools.layout.spy",
+    "version": "1.0.200"
+  },
+  {
+    "groupId": "org.eclipse.platform",
+    "artifactId": "org.eclipse.ua.tests.doc",
+    "version": "1.0.500"
+  },
+  {
+    "groupId": "org.eclipse.platform",
+    "artifactId": "org.eclipse.ui",
+    "version": "3.111.0"
+  },
+  {
+    "groupId": "org.eclipse.platform",
+    "artifactId": "org.eclipse.ui.browser",
+    "version": "3.6.300"
+  },
+  {
+    "groupId": "org.eclipse.platform",
+    "artifactId": "org.eclipse.ui.cheatsheets",
+    "version": "3.5.300"
+  },
+  {
+    "groupId": "org.eclipse.platform",
+    "artifactId": "org.eclipse.ui.cocoa",
+    "version": "1.2.100"
+  },
+  {
+    "groupId": "org.eclipse.platform",
+    "artifactId": "org.eclipse.ui.console",
+    "version": "3.8.300"
+  },
+  {
+    "groupId": "org.eclipse.platform",
+    "artifactId": "org.eclipse.ui.editors",
+    "version": "3.11.300"
+  },
+  {
+    "groupId": "org.eclipse.platform",
+    "artifactId": "org.eclipse.ui.examples.contributions",
+    "version": "3.4.300"
+  },
+  {
+    "groupId": "org.eclipse.platform",
+    "artifactId": "org.eclipse.ui.examples.fieldassist",
+    "version": "1.1.300"
+  },
+  {
+    "groupId": "org.eclipse.platform",
+    "artifactId": "org.eclipse.ui.examples.javaeditor",
+    "version": "3.2.300"
+  },
+  {
+    "groupId": "org.eclipse.platform",
+    "artifactId": "org.eclipse.ui.examples.multipageeditor",
+    "version": "3.2.500"
+  },
+  {
+    "groupId": "org.eclipse.platform",
+    "artifactId": "org.eclipse.ui.examples.propertysheet",
+    "version": "3.3.100"
+  },
+  {
+    "groupId": "org.eclipse.platform",
+    "artifactId": "org.eclipse.ui.examples.readmetool",
+    "version": "3.5.100"
+  },
+  {
+    "groupId": "org.eclipse.platform",
+    "artifactId": "org.eclipse.ui.examples.undo",
+    "version": "3.2.600"
+  },
+  {
+    "groupId": "org.eclipse.platform",
+    "artifactId": "org.eclipse.ui.examples.uriSchemeHandler",
+    "version": "1.0.100"
+  },
+  {
+    "groupId": "org.eclipse.platform",
+    "artifactId": "org.eclipse.ui.examples.views.properties.tabbed.article",
+    "version": "3.2.200"
+  },
+  {
+    "groupId": "org.eclipse.platform",
+    "artifactId": "org.eclipse.ui.externaltools",
+    "version": "3.4.200"
+  },
+  {
+    "groupId": "org.eclipse.platform",
+    "artifactId": "org.eclipse.ui.forms",
+    "version": "3.7.400"
+  },
+  {
+    "groupId": "org.eclipse.platform",
+    "artifactId": "org.eclipse.ui.genericeditor",
+    "version": "1.1.200"
+  },
+  {
+    "groupId": "org.eclipse.platform",
+    "artifactId": "org.eclipse.ui.genericeditor.examples",
+    "version": "1.1.200"
+  },
+  {
+    "groupId": "org.eclipse.platform",
+    "artifactId": "org.eclipse.ui.ide",
+    "version": "3.14.200"
+  },
+  {
+    "groupId": "org.eclipse.platform",
+    "artifactId": "org.eclipse.ui.ide.application",
+    "version": "1.3.100"
+  },
+  {
+    "groupId": "org.eclipse.platform",
+    "artifactId": "org.eclipse.ui.intro",
+    "version": "3.5.400"
+  },
+  {
+    "groupId": "org.eclipse.platform",
+    "artifactId": "org.eclipse.ui.intro.quicklinks",
+    "version": "1.0.300"
+  },
+  {
+    "groupId": "org.eclipse.platform",
+    "artifactId": "org.eclipse.ui.intro.universal",
+    "version": "3.3.300"
+  },
+  {
+    "groupId": "org.eclipse.platform",
+    "artifactId": "org.eclipse.ui.monitoring",
+    "version": "1.1.300"
+  },
+  {
+    "groupId": "org.eclipse.platform",
+    "artifactId": "org.eclipse.ui.navigator",
+    "version": "3.7.300"
+  },
+  {
+    "groupId": "org.eclipse.platform",
+    "artifactId": "org.eclipse.ui.navigator.resources",
+    "version": "3.6.300"
+  },
+  {
+    "groupId": "org.eclipse.platform",
+    "artifactId": "org.eclipse.ui.net",
+    "version": "1.3.300"
+  },
+  {
+    "groupId": "org.eclipse.platform",
+    "artifactId": "org.eclipse.ui.tests.forms",
+    "version": "3.7.300"
+  },
+  {
+    "groupId": "org.eclipse.platform",
+    "artifactId": "org.eclipse.ui.tests.harness",
+    "version": "1.4.400"
+  },
+  {
+    "groupId": "org.eclipse.platform",
+    "artifactId": "org.eclipse.ui.tests.navigator",
+    "version": "3.5.400"
+  },
+  {
+    "groupId": "org.eclipse.platform",
+    "artifactId": "org.eclipse.ui.tests.performance",
+    "version": "1.3.300"
+  },
+  {
+    "groupId": "org.eclipse.platform",
+    "artifactId": "org.eclipse.ui.tests.pluginchecks",
+    "version": "1.0.100"
+  },
+  {
+    "groupId": "org.eclipse.platform",
+    "artifactId": "org.eclipse.ui.tests.rcp",
+    "version": "3.4.300"
+  },
+  {
+    "groupId": "org.eclipse.platform",
+    "artifactId": "org.eclipse.ui.tests.views.properties.tabbed",
+    "version": "3.6.300"
+  },
+  {
+    "groupId": "org.eclipse.platform",
+    "artifactId": "org.eclipse.ui.themes",
+    "version": "1.2.300"
+  },
+  {
+    "groupId": "org.eclipse.platform",
+    "artifactId": "org.eclipse.ui.trace",
+    "version": "1.1.300"
+  },
+  {
+    "groupId": "org.eclipse.platform",
+    "artifactId": "org.eclipse.ui.views",
+    "version": "3.9.200"
+  },
+  {
+    "groupId": "org.eclipse.platform",
+    "artifactId": "org.eclipse.ui.views.log",
+    "version": "1.2.400"
+  },
+  {
+    "groupId": "org.eclipse.platform",
+    "artifactId": "org.eclipse.ui.views.properties.tabbed",
+    "version": "3.8.300"
+  },
+  {
+    "groupId": "org.eclipse.platform",
+    "artifactId": "org.eclipse.ui.win32",
+    "version": "3.4.100"
+  },
+  {
+    "groupId": "org.eclipse.platform",
+    "artifactId": "org.eclipse.ui.workbench",
+    "version": "3.112.100"
+  },
+  {
+    "groupId": "org.eclipse.platform",
+    "artifactId": "org.eclipse.ui.workbench.texteditor",
+    "version": "3.11.200"
+  },
+  {
+    "groupId": "org.eclipse.platform",
+    "artifactId": "org.eclipse.update.configurator",
+    "version": "3.4.100"
+  },
+  {
+    "groupId": "org.eclipse.platform",
+    "artifactId": "org.eclipse.urischeme",
+    "version": "1.0.100"
+  }
+]
