@@ -123,9 +123,46 @@ Where `$\{eclipseReleaseVersion}` correspond to the platform version of the Ecli
 | `4.6`
 |=== 
 
+=== Gradle usage example
+
+Add the repository to your `repositories` section:
+
+[source, gradle]
+----
+include::{rootdir}usage-examples/jdt-gradle-example/build.gradle[tags="repositories",indent=0]
+----
+
+Declare the BOM file as `platform` dependency inside the `platform` section:
+
+[source, gradle]
+----
+include::{rootdir}usage-examples/jdt-gradle-example/build.gradle[tags="dependencies",indent=0]
+----
+<1> the JDT dependency is in the platform. The version is not specified here, Gradle will pick the one defined in the BOM file.
+
+Check the complete project in the git-link:usage-examples/jdt-gradle-example/[jdt-gradle-example, view] folder.
+
+=== Maven usage example
+
+Add the repository to your `<repositories>` section:
+
+[source, xml]
+----
+include::{rootdir}usage-examples/jdt-maven-example/pom.xml[tags="repositories",indent=0]
+----
+
+Declare the BOM file inside the `<dependencyManagement>` section:
+
+[source, xml]
+----
+include::{rootdir}usage-examples/jdt-maven-example/pom.xml[tags="dependencyManagement",indent=0]
+----
+
+Check the complete project in the git-link:usage-examples/jdt-maven-example/[jdt-maven-example, view] folder.
+
 == Source Code
 
-The code used to generate the data can be found the git-link:src/[src/] folder.
+The code used to generate the data can be found the git-link:src/[src/, view] folder.
 
 A unit-test class (called `fr.jmini.utils.ecentral.RunTest`) is used to generate all the BOM files.
 

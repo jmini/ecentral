@@ -1,0 +1,62 @@
+plugins {
+    id 'java'
+    id 'com.diffplug.spotless' version '5.1.1'
+}
+
+wrapper {
+    gradleVersion = '7.1'
+}
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(8)
+    }
+}
+
+//tag::repositories[]
+repositories {
+    maven {
+        url 'https://raw.githubusercontent.com/jmini/ecentral/HEAD/repo'
+    }
+    mavenCentral()
+}
+//end::repositories[]
+
+task sourcesJar(type: Jar, dependsOn: classes) {
+    classifier = 'sources'
+    from sourceSets.main.allSource
+}
+
+task javadocJar(type: Jar) {
+    from javadoc
+    classifier = 'javadoc'
+}
+
+//tag::dependencies[]
+dependencies {
+    implementation platform('fr.jmini.ecentral:eclipse-platform-dependencies:4.14')
+    implementation 'org.eclipse.jdt:org.eclipse.jdt.core' // <1>
+//end::dependencies[]
+
+    testImplementation libs.junit.api
+    testImplementation libs.assertj.core
+
+    testRuntimeOnly libs.junit.engine
+//tag::dependencies[]
+    // other dependencies...
+}
+//end::dependencies[]
+
+test {
+    useJUnitPlatform()
+}
+
+spotless {
+  java {
+    importOrder 'java', 'javax', 'org', 'com', ''
+    removeUnusedImports()
+
+    // available versions are: https://github.com/diffplug/spotless/tree/master/lib-extra/src/main/resources/com/diffplug/spotless/extra/eclipse_jdt_formatter
+    eclipse('4.13.0').configFile('.settings/org.eclipse.jdt.core.prefs')
+  }
+}
