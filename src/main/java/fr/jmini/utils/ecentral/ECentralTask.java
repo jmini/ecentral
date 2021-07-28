@@ -9,6 +9,7 @@ import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.security.MessageDigest;
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -236,6 +237,16 @@ public class ECentralTask {
         List<MavenArtifact> entries = parseArtifactsFile(getMavenArtifactsFile());
         String content = createMavenBomContent(entries);
         Files.writeString(getMavenBomFile(), content, StandardCharsets.UTF_8);
+
+        writeHash(content, Algorithm.MD_5);
+        writeHash(content, Algorithm.SHA_1);
+        writeHash(content, Algorithm.SHA_256);
+        writeHash(content, Algorithm.SHA_512);
+    }
+
+    private void writeHash(String content, Algorithm algorithm) throws IOException {
+        String hash = calculateHash(content, algorithm);
+        Files.writeString(getMavenBomFile(".pom" + algorithm.getExtension()), hash, StandardCharsets.UTF_8);
     }
 
     private String createMavenBomContent(List<MavenArtifact> entries) {
@@ -287,6 +298,25 @@ public class ECentralTask {
         return s;
     }
 
+    static String calculateHash(String content, Algorithm algorithm) {
+        MessageDigest digest = algorithm.getMessageDigest();
+        byte[] encodedhash = digest.digest(
+                content.getBytes(StandardCharsets.UTF_8));
+        return bytesToHex(encodedhash);
+    }
+
+    private static String bytesToHex(byte[] hash) {
+        StringBuilder hexString = new StringBuilder(2 * hash.length);
+        for (int i = 0; i < hash.length; i++) {
+            String hex = Integer.toHexString(0xff & hash[i]);
+            if (hex.length() == 1) {
+                hexString.append('0');
+            }
+            hexString.append(hex);
+        }
+        return hexString.toString();
+    }
+
     private void writeArtifactsToFile(Path file, List<MavenArtifact> artifacts) throws IOException {
         Gson gson = new GsonBuilder()
                 .setPrettyPrinting()
@@ -319,8 +349,12 @@ public class ECentralTask {
     }
 
     private Path getMavenBomFile() {
+        return getMavenBomFile(".pom");
+    }
+
+    private Path getMavenBomFile(String extension) {
         MavenArtifact artifact = new MavenArtifact(GROUP_ID, ARTIFACT_ID, input.getReleaseVersion());
         return Paths.get("repo")
-                .resolve(subPathInMavenRepo(artifact, ".pom"));
+                .resolve(subPathInMavenRepo(artifact, extension));
     }
 }
