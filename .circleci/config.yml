@@ -16,14 +16,27 @@ jobs:
             - gradle-{{ checksum "build.gradle" }}
             - gradle-
 
-      - run: ./gradlew dependencies
+      - run: ./gradlew check
 
       - save_cache:
           paths:
             - ~/.gradle
           key: gradle-{{ checksum "build.gradle" }}
 
-      - run: ./gradlew check
+      - run:
+            name: Ensure no uncommitted changes
+            command: |
+              if [ -n "$(git status --porcelain)" ]; then
+                  echo "There are uncommitted changes in working tree after execution of the build"
+                  echo "Perform git diff"
+                  git --no-pager diff
+                  echo "Perform git status"
+                  git status
+                  echo "Please run the build locally and commit changes"
+                  exit 1
+              else
+                  echo "Git working tree is clean"
+              fi
 
       - run:
           name: Save test results
@@ -34,6 +47,89 @@ jobs:
 
       - store_test_results:
           path: ~/test-results
+          when: always
 
       - store_artifacts:
           path: ~/test-results/junit
+          when: always
+
+  maven-example-build:
+    docker:
+      - image: circleci/openjdk:8-jdk
+
+    steps:
+      - checkout
+
+      - restore_cache:
+          keys:
+            - maven-example-{{ checksum "usage-examples/jdt-maven-example/pom.xml" }}
+            - maven-example
+
+      - run:
+          name: Run maven
+          command: |
+            rm -rf ~/.m2/repository/fr/jmini/ecentral/
+            cd usage-examples/jdt-maven-example/
+            mvn verify
+
+      - save_cache:
+          paths:
+            - ~/.m2
+          key: maven-example-{{ checksum "usage-examples/jdt-maven-example/pom.xml" }}
+
+      - run:
+          name: Save test results
+          command: |
+            mkdir -p ~/maven-example-test-results/junit/
+            find . -type f -regex "usage-examples/jdt-maven-example/target/surefire-reports/.*xml" -exec cp {} ~/test-results/junit/ \;
+          when: always
+
+      - store_test_results:
+          path: ~/maven-example-test-results
+
+      - store_artifacts:
+          path: ~/maven-example-test-results/junit
+
+  gradle-example-build:
+    docker:
+      - image: circleci/openjdk:8-jdk
+
+    steps:
+      - checkout
+
+      - restore_cache:
+          keys:
+            - gradle-example-{{ checksum "usage-examples/jdt-gradle-example/build.gradle" }}
+            - gradle-example
+
+      - run:
+          name: Run Gradle
+          command: |
+            cd usage-examples/jdt-gradle-example/
+            ./gradlew check
+
+      - save_cache:
+          paths:
+            - ~/.gradle
+          key: gradle-example-{{ checksum "usage-examples/jdt-gradle-example/build.gradle" }}
+
+      - run:
+          name: Save test results
+          command: |
+            mkdir -p ~/gradle-example-test-results/junit/
+            find . -type f -regex "usage-examples/jdt-gradle-example/build/test-results/.*xml" -exec cp {} ~/test-results/junit/ \;
+          when: always
+
+      - store_test_results:
+          path: ~/gradle-example-test-results
+
+      - store_artifacts:
+          path: ~/gradle-example-test-results/junit
+
+workflows:
+  version: 2
+  build:
+    jobs:
+      - build
+      - maven-example-build
+      - gradle-example-build

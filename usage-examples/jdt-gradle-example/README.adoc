@@ -1,0 +1,3 @@
+== jdt-gradle-example
+
+This demonstrate how you can use the BOM file inside a Gradle project.
