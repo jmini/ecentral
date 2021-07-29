@@ -443,15 +443,20 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <h1>ECentral</h1>
 <div class="details">
 <span id="author" class="author">Jeremie Bresson</span><br>
-<span id="revnumber">version 1.0.0,</span>
-<span id="revdate">2021-07-21</span>
+<span id="revnumber">version 1.0.1,</span>
+<span id="revdate">2021-07-29</span>
 </div>
 <div id="toc" class="toc2">
 <div id="toctitle">Table of Contents</div>
 <ul class="sectlevel1">
 <li><a href="#urls">URLs</a></li>
 <li><a href="#background">Background</a></li>
-<li><a href="#bom-files">BOM files</a></li>
+<li><a href="#bom-files">BOM files</a>
+<ul class="sectlevel2">
+<li><a href="#gradle-usage-example">Gradle usage example</a></li>
+<li><a href="#maven-usage-example">Maven usage example</a></li>
+</ul>
+</li>
 <li><a href="#source-code">Source Code</a>
 <ul class="sectlevel2">
 <li><a href="#build">Build</a>
@@ -550,11 +555,11 @@ This way, the raw file viewer of GitHub is a valid maven repository.</p>
 </div>
 <div class="paragraph">
 <p>If you prefer a more stable version you can use any commit identified by its commit-id or by a tag.
-For the latest released version of this repository (<code>1.0.0</code>) use:</p>
+For the latest released version of this repository (<code>1.0.1</code>) use:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="CodeRay highlight"><code data-lang="txt">https://raw.githubusercontent.com/jmini/ecentral/1.0.0/repo</code></pre>
+<pre class="CodeRay highlight"><code data-lang="txt">https://raw.githubusercontent.com/jmini/ecentral/1.0.1/repo</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -646,6 +651,82 @@ For the latest released version of this repository (<code>1.0.0</code>) use:</p>
 </tr>
 </tbody>
 </table>
+<div class="sect2">
+<h3 id="gradle-usage-example"><a class="anchor" href="#gradle-usage-example"></a>Gradle usage example</h3>
+<div class="paragraph">
+<p>Add the repository to your <code>repositories</code> section:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="gradle">repositories {
+    maven {
+        url 'https://raw.githubusercontent.com/jmini/ecentral/HEAD/repo'
+    }
+    mavenCentral()
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Declare the BOM file as <code>platform</code> dependency inside the <code>platform</code> section:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="gradle">dependencies {
+    implementation platform('fr.jmini.ecentral:eclipse-platform-dependencies:4.14')
+    implementation 'org.eclipse.jdt:org.eclipse.jdt.core' <i class="conum" data-value="1"></i><b>(1)</b>
+    // other dependencies...
+}</code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>the JDT dependency is in the platform. The version is not specified here, Gradle will pick the one defined in the BOM file.</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Check the complete project in the <a href="https://github.com/jmini/ecentral/tree/master/usage-examples/jdt-gradle-example">jdt-gradle-example</a> folder.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="maven-usage-example"><a class="anchor" href="#maven-usage-example"></a>Maven usage example</h3>
+<div class="paragraph">
+<p>Add the repository to your <code>&lt;repositories&gt;</code> section:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="xml"><span class="tag">&lt;repositories&gt;</span>
+  <span class="tag">&lt;repository&gt;</span>
+    <span class="tag">&lt;id&gt;</span>ecentral<span class="tag">&lt;/id&gt;</span>
+    <span class="tag">&lt;url&gt;</span>https://raw.githubusercontent.com/jmini/ecentral/HEAD/repo<span class="tag">&lt;/url&gt;</span>
+  <span class="tag">&lt;/repository&gt;</span>
+<span class="tag">&lt;/repositories&gt;</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Declare the BOM file inside the <code>&lt;dependencyManagement&gt;</code> section:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="xml"><span class="tag">&lt;dependencyManagement&gt;</span>
+  <span class="tag">&lt;dependencies&gt;</span>
+    <span class="tag">&lt;dependency&gt;</span>
+      <span class="tag">&lt;groupId&gt;</span>fr.jmini.ecentral<span class="tag">&lt;/groupId&gt;</span>
+      <span class="tag">&lt;artifactId&gt;</span>eclipse-platform-dependencies<span class="tag">&lt;/artifactId&gt;</span>
+      <span class="tag">&lt;version&gt;</span>4.14<span class="tag">&lt;/version&gt;</span>
+      <span class="tag">&lt;type&gt;</span>pom<span class="tag">&lt;/type&gt;</span>
+      <span class="tag">&lt;scope&gt;</span>import<span class="tag">&lt;/scope&gt;</span>
+    <span class="tag">&lt;/dependency&gt;</span>
+  <span class="tag">&lt;/dependencies&gt;</span>
+<span class="tag">&lt;/dependencyManagement&gt;</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Check the complete project in the <a href="https://github.com/jmini/ecentral/tree/master/usage-examples/jdt-maven-example">jdt-maven-example</a> folder.</p>
+</div>
+</div>
 </div>
 </div>
 <div class="sect1">
@@ -772,8 +853,8 @@ ssh-add ~/.ssh/id_rsa</pre>
 </div>
 <div id="footer">
 <div id="footer-text">
-Version 1.0.0<br>
-Last updated 2021-07-21 22:13:35 +0200
+Version 1.0.1<br>
+Last updated 2021-07-29 09:15:26 +0200
 </div>
 </div>
 <style>
