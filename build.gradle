@@ -52,6 +52,12 @@ dependencies {
 }
 
 test {
+    testLogging {
+        events = ["passed", "failed", "skipped"]
+    }
+    doFirst {
+        convertProjectPropertyToSystemProperty(delegate, 'ignoreExistingData')
+    }
     useJUnitPlatform()
 }
 
@@ -139,5 +145,11 @@ task checkLastVersionValue {
         if(lastVersion != version) {
             throw new GradleException("lastVersion '$lastVersion' does not match version '$version', fix it in the 'gradle.properties' file.")
         }
+    }
+}
+
+def convertProjectPropertyToSystemProperty(Object delegate, String key) {
+    if(project.hasProperty(key)) {
+        delegate.systemProperty(key, project.getProperty(key))
     }
 }

@@ -16,7 +16,7 @@ jobs:
             - gradle-{{ checksum "build.gradle" }}
             - gradle-
 
-      - run: ./gradlew check
+      - run: ./gradlew check -PignoreExistingData=true
 
       - save_cache:
           paths:
