@@ -12,6 +12,7 @@ import java.nio.file.Paths;
 import java.security.MessageDigest;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Objects;
 import java.util.stream.Collectors;
 
 import com.google.gson.Gson;
@@ -46,15 +47,16 @@ public class ECentralTask {
     }
 
     private void runInternal() throws IOException {
-        if (!Files.exists(getBndOutputFile())) {
+        boolean ignoreExistingData = Objects.equals(System.getProperty("ignoreExistingData"), "true");
+        if (ignoreExistingData || !Files.exists(getBndOutputFile())) {
             runBnd();
         }
 
-        if (!Files.exists(getPotentialMavenArtifactsFile())) {
+        if (ignoreExistingData || !Files.exists(getPotentialMavenArtifactsFile())) {
             createPotentialMavenArtifacts();
         }
 
-        if (!Files.exists(getMavenArtifactsFile())) {
+        if (ignoreExistingData || !Files.exists(getMavenArtifactsFile())) {
             createMavenArtifacts();
         }
 
