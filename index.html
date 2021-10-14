@@ -443,8 +443,8 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <h1>ECentral</h1>
 <div class="details">
 <span id="author" class="author">Jeremie Bresson</span><br>
-<span id="revnumber">version 1.0.1,</span>
-<span id="revdate">2021-07-29</span>
+<span id="revnumber">version 1.0.2,</span>
+<span id="revdate">2021-10-14</span>
 </div>
 <div id="toc" class="toc2">
 <div id="toctitle">Table of Contents</div>
@@ -465,6 +465,11 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#using-ssh-agent">Using ssh-agent</a></li>
 </ul>
 </li>
+</ul>
+</li>
+<li><a href="#similar-projects">Similar projects</a>
+<ul class="sectlevel2">
+<li><a href="#the-mavencentral-plugin">The mavencentral plugin</a></li>
 </ul>
 </li>
 <li><a href="#get-in-touch">Get in touch</a></li>
@@ -555,11 +560,11 @@ This way, the raw file viewer of GitHub is a valid maven repository.</p>
 </div>
 <div class="paragraph">
 <p>If you prefer a more stable version you can use any commit identified by its commit-id or by a tag.
-For the latest released version of this repository (<code>1.0.1</code>) use:</p>
+For the latest released version of this repository (<code>1.0.2</code>) use:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="CodeRay highlight"><code data-lang="txt">https://raw.githubusercontent.com/jmini/ecentral/1.0.1/repo</code></pre>
+<pre class="CodeRay highlight"><code data-lang="txt">https://raw.githubusercontent.com/jmini/ecentral/1.0.2/repo</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -589,6 +594,10 @@ For the latest released version of this repository (<code>1.0.1</code>) use:</p>
 </tr>
 </thead>
 <tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2021-09</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>4.21</code></p></td>
+</tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">2021-06</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>4.20</code></p></td>
@@ -832,6 +841,17 @@ ssh-add ~/.ssh/id_rsa</pre>
 </div>
 </div>
 <div class="sect1">
+<h2 id="similar-projects"><a class="anchor" href="#similar-projects"></a>Similar projects</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="the-mavencentral-plugin"><a class="anchor" href="#the-mavencentral-plugin"></a>The mavencentral plugin</h3>
+<div class="paragraph">
+<p>Inside a Gradle build, the <code>com.diffplug.eclipse.mavencentral</code> plugin from the <a href="https://github.com/diffplug/goomph/#readme">goomph project</a> offers with <code>constrainTransitivesToThisRelease()</code> a mechanism to set the version of all transitive dependencies to be the one from a given Eclipse release.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
 <h2 id="get-in-touch"><a class="anchor" href="#get-in-touch"></a>Get in touch</h2>
 <div class="sectionbody">
 <div class="paragraph">
@@ -853,8 +873,8 @@ ssh-add ~/.ssh/id_rsa</pre>
 </div>
 <div id="footer">
 <div id="footer-text">
-Version 1.0.1<br>
-Last updated 2021-07-29 09:15:26 +0200
+Version 1.0.2<br>
+Last updated 2021-10-14 07:02:21 +0200
 </div>
 </div>
 <style>
