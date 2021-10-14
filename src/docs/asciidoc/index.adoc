@@ -229,6 +229,12 @@ ssh-add ~/.ssh/id_rsa
 ----
 (link:https://superuser.com/a/990447/[source] for this approach)
 
+== Similar projects
+
+=== The mavencentral plugin
+
+Inside a Gradle build, the `com.diffplug.eclipse.mavencentral` plugin from the link:https://github.com/diffplug/goomph/#readme[goomph project] offers with `constrainTransitivesToThisRelease()` a mechanism to set the version of all transitive dependencies to be the one from a given Eclipse release.
+
 
 include::{github-readme}[tags=contact-section]
 
