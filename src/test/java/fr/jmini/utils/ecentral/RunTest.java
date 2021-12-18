@@ -5,10 +5,10 @@ import org.junit.jupiter.api.Test;
 /**
  * This test class run the code for different update sites.
  */
-public class RunTest {
+class RunTest {
 
     @Test
-    public void run_4_21() throws Exception {
+    void run_4_21() throws Exception {
         Input input = new Input()
                 .withReleaseName("2021-09")
                 .withReleaseVersion("4.21")
@@ -17,7 +17,7 @@ public class RunTest {
     }
 
     @Test
-    public void run_4_20() throws Exception {
+    void run_4_20() throws Exception {
         Input input = new Input()
                 .withReleaseName("2021-06")
                 .withReleaseVersion("4.20")
@@ -26,7 +26,7 @@ public class RunTest {
     }
 
     @Test
-    public void run_4_19() throws Exception {
+    void run_4_19() throws Exception {
         Input input = new Input()
                 .withReleaseName("2021-03")
                 .withReleaseVersion("4.19")
@@ -35,7 +35,7 @@ public class RunTest {
     }
 
     @Test
-    public void run_4_18() throws Exception {
+    void run_4_18() throws Exception {
         Input input = new Input()
                 .withReleaseName("2020-12")
                 .withReleaseVersion("4.18")
@@ -44,7 +44,7 @@ public class RunTest {
     }
 
     @Test
-    public void run_4_17() throws Exception {
+    void run_4_17() throws Exception {
         Input input = new Input()
                 .withReleaseName("2020-09")
                 .withReleaseVersion("4.17")
@@ -53,7 +53,7 @@ public class RunTest {
     }
 
     @Test
-    public void run_4_16() throws Exception {
+    void run_4_16() throws Exception {
         Input input = new Input()
                 .withReleaseName("2020-06")
                 .withReleaseVersion("4.16")
@@ -62,7 +62,7 @@ public class RunTest {
     }
 
     @Test
-    public void run_4_15() throws Exception {
+    void run_4_15() throws Exception {
         Input input = new Input()
                 .withReleaseName("2020-03")
                 .withReleaseVersion("4.15")
@@ -72,7 +72,7 @@ public class RunTest {
 
     // tag::4_14_test[]
     @Test
-    public void run_4_14() throws Exception {
+    void run_4_14() throws Exception {
         Input input = new Input()
                 .withReleaseName("2019-12")
                 .withReleaseVersion("4.14")
@@ -82,7 +82,7 @@ public class RunTest {
     // end::4_14_test[]
 
     @Test
-    public void run_4_13() throws Exception {
+    void run_4_13() throws Exception {
         Input input = new Input()
                 .withReleaseName("2019-09")
                 .withReleaseVersion("4.13")
@@ -91,7 +91,7 @@ public class RunTest {
     }
 
     @Test
-    public void run_4_12() throws Exception {
+    void run_4_12() throws Exception {
         Input input = new Input()
                 .withReleaseName("2019-06")
                 .withReleaseVersion("4.12")
@@ -100,7 +100,7 @@ public class RunTest {
     }
 
     @Test
-    public void run_4_11() throws Exception {
+    void run_4_11() throws Exception {
         Input input = new Input()
                 .withReleaseName("2019-03")
                 .withReleaseVersion("4.11")
@@ -109,7 +109,7 @@ public class RunTest {
     }
 
     @Test
-    public void run_4_10() throws Exception {
+    void run_4_10() throws Exception {
         Input input = new Input()
                 .withReleaseName("2018-12")
                 .withReleaseVersion("4.10")
@@ -118,7 +118,7 @@ public class RunTest {
     }
 
     @Test
-    public void run_4_9() throws Exception {
+    void run_4_9() throws Exception {
         Input input = new Input()
                 .withReleaseName("2018-09")
                 .withReleaseVersion("4.9")
@@ -127,7 +127,7 @@ public class RunTest {
     }
 
     @Test
-    public void run_4_8() throws Exception {
+    void run_4_8() throws Exception {
         Input input = new Input()
                 .withReleaseName("Photon")
                 .withReleaseVersion("4.8")
@@ -136,7 +136,7 @@ public class RunTest {
     }
 
     @Test
-    public void run_4_7() throws Exception {
+    void run_4_7() throws Exception {
         Input input = new Input()
                 .withReleaseName("Oxygen")
                 .withReleaseVersion("4.7")
@@ -145,7 +145,7 @@ public class RunTest {
     }
 
     @Test
-    public void run_4_6() throws Exception {
+    void run_4_6() throws Exception {
         Input input = new Input()
                 .withReleaseName("Neon")
                 .withReleaseVersion("4.6")

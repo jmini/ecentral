@@ -4,9 +4,9 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 import org.junit.jupiter.api.Test;
 
-public class ECentralTaskTest {
+class ECentralTaskTest {
     @Test
-    public void testParseBndEntry() throws Exception {
+    void testParseBndEntry() throws Exception {
         BndEntry result = ECentralTask.parseBndLine("com.company.test.foo                     [1.12.300]");
 
         assertThat(result.getSymbolicName())
@@ -18,7 +18,7 @@ public class ECentralTaskTest {
     }
 
     @Test
-    public void testParseBndEntryWithMultipleVersions() throws Exception {
+    void testParseBndEntryWithMultipleVersions() throws Exception {
         BndEntry result = ECentralTask.parseBndLine("zzz.yyyyyy.xxxxxxx   [1.1.400.v20180921-1416, 2.2.400.v20191120-1313]");
 
         assertThat(result.getSymbolicName())
@@ -30,7 +30,7 @@ public class ECentralTaskTest {
     }
 
     @Test
-    public void testToMavenArtifact() throws Exception {
+    void testToMavenArtifact() throws Exception {
         MavenArtifact jdtCore = ECentralTask.toMavenArtifact(new BndEntry("org.eclipse.jdt.core", "3.20.0.v20191203-2131"));
         assertThat(jdtCore.getGroupId())
                 .as("groupId")
@@ -66,7 +66,7 @@ public class ECentralTaskTest {
     }
 
     @Test
-    public void testConvertVersion() throws Exception {
+    void testConvertVersion() throws Exception {
         assertThat(ECentralTask.convertVersion("3.12.2.v20161117-1814"))
                 .as("version")
                 .isEqualTo("3.12.2");
@@ -76,7 +76,7 @@ public class ECentralTaskTest {
     }
 
     @Test
-    public void testComputeMavenCentralUrl() throws Exception {
+    void testComputeMavenCentralUrl() throws Exception {
         MavenArtifact a = new MavenArtifact("org.eclipse.platform", "org.eclipse.ant.core", "3.5.600");
         assertThat(ECentralTask.computeMavenCentralUrl(a))
                 .as("url in maven centraal")
@@ -85,7 +85,7 @@ public class ECentralTaskTest {
     }
 
     @Test
-    public void testCalculateHash() throws Exception {
+    void testCalculateHash() throws Exception {
         String md5 = ECentralTask.calculateHash("test", Algorithm.MD_5);
         assertThat(md5).isEqualTo("098f6bcd4621d373cade4e832627b4f6");
 

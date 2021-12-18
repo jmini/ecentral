@@ -104,7 +104,7 @@ public class ECentralTask {
         List<BndEntry> entries = parseBndOutput(bndFileContent);
 
         List<MavenArtifact> result = entries.stream()
-                .filter(e -> keepEntry(e))
+                .filter(this::keepEntry)
                 .map(ECentralTask::toMavenArtifact)
                 .collect(Collectors.toList());
 
@@ -192,7 +192,7 @@ public class ECentralTask {
         List<MavenArtifact> entries = parseArtifactsFile(getPotentialMavenArtifactsFile());
 
         List<MavenArtifact> result = entries.stream()
-                .filter(e -> checkArtifactInMavenCentral(e))
+                .filter(ECentralTask::checkArtifactInMavenCentral)
                 .collect(Collectors.toList());
 
         writeArtifactsToFile(getMavenArtifactsFile(), result);
@@ -296,8 +296,7 @@ public class ECentralTask {
         sb.append("    </dependencies>\n");
         sb.append("  </dependencyManagement>\n");
         sb.append("</project>\n");
-        String s = sb.toString();
-        return s;
+        return sb.toString();
     }
 
     static String calculateHash(String content, Algorithm algorithm) {
@@ -329,8 +328,7 @@ public class ECentralTask {
     private List<MavenArtifact> parseArtifactsFile(Path file) throws IOException {
         Gson gson = new Gson();
         String content = Files.readString(file, StandardCharsets.UTF_8);
-        List<MavenArtifact> artifacts = gson.fromJson(content, TYPE_TOKEN.getType());
-        return artifacts;
+        return gson.fromJson(content, TYPE_TOKEN.getType());
     }
 
     private Path getDataFolder() {
