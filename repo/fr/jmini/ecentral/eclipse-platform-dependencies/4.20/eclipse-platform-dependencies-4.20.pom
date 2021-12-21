@@ -71,6 +71,7 @@
     <org-eclipse-e4-core-di-extensions-supplier.version>0.16.0</org-eclipse-e4-core-di-extensions-supplier.version>
     <org-eclipse-e4-core-services.version>2.2.600</org-eclipse-e4-core-services.version>
     <org-eclipse-e4-emf-xpath.version>0.2.800</org-eclipse-e4-emf-xpath.version>
+    <org-eclipse-e4-tools-services.version>4.9.0</org-eclipse-e4-tools-services.version>
     <org-eclipse-e4-ui-bindings.version>0.13.0</org-eclipse-e4-ui-bindings.version>
     <org-eclipse-e4-ui-css-core.version>0.13.0</org-eclipse-e4-ui-css-core.version>
     <org-eclipse-e4-ui-css-swt.version>0.14.200</org-eclipse-e4-ui-css-swt.version>
@@ -542,6 +543,11 @@
         <groupId>org.eclipse.platform</groupId>
         <artifactId>org.eclipse.e4.emf.xpath</artifactId>
         <version>${org-eclipse-e4-emf-xpath.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.eclipse.platform</groupId>
+        <artifactId>org.eclipse.e4.tools.services</artifactId>
+        <version>${org-eclipse-e4-tools-services.version}</version>
       </dependency>
       <dependency>
         <groupId>org.eclipse.platform</groupId>
