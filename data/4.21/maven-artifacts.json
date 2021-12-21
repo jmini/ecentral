@@ -231,6 +231,11 @@
   },
   {
     "groupId": "org.eclipse.platform",
+    "artifactId": "org.eclipse.e4.tools.services",
+    "version": "4.9.0"
+  },
+  {
+    "groupId": "org.eclipse.platform",
     "artifactId": "org.eclipse.e4.ui.bindings",
     "version": "0.13.100"
   },
