@@ -1,7 +1,10 @@
 package fr.jmini.utils.ecentral;
 
+import java.io.BufferedReader;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.io.PrintStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
@@ -13,6 +16,9 @@ import java.security.MessageDigest;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 
 import com.google.gson.Gson;
@@ -103,12 +109,54 @@ public class ECentralTask {
         List<String> bndFileContent = Files.readAllLines(getBndOutputFile());
         List<BndEntry> entries = parseBndOutput(bndFileContent);
 
+        List<MavenMapping> mavenMappings = readMavenMappings();
         List<MavenArtifact> result = entries.stream()
                 .filter(this::keepEntry)
-                .map(ECentralTask::toMavenArtifact)
+                .map(e -> toMavenArtifact(e, mavenMappings))
+                .filter(Optional::isPresent)
+                .map(Optional::get)
                 .collect(Collectors.toList());
 
         writeArtifactsToFile(getPotentialMavenArtifactsFile(), result);
+    }
+
+    private static List<MavenMapping> readMavenMappings() throws IOException {
+        try (InputStream resource = ECentralTask.class.getResourceAsStream("/mavenMappings.txt")) {
+            return new BufferedReader(new InputStreamReader(resource,
+                    StandardCharsets.UTF_8)).lines()
+                            .map(String::trim)
+                            .filter(s -> s.startsWith("<mavenMappings"))
+                            .map(ECentralTask::parseMavenMapping)
+                            .filter(Optional::isPresent)
+                            .map(Optional::get)
+                            .collect(Collectors.toList());
+        }
+    }
+
+    static Optional<MavenMapping> parseMavenMapping(String line) {
+        String namePattern = findAttribute(line, "namePattern").orElseThrow(() -> new IllegalStateException("'namePattern' has to be present"));
+        String groupId = findAttribute(line, "groupId").orElseThrow(() -> new IllegalStateException("'groupId' has to be present"));
+        String artifactId = findAttribute(line, "artifactId").orElseThrow(() -> new IllegalStateException("'artifactId' has to be present"));
+        Optional<String> findVersionPattern = findAttribute(line, "versionPattern");
+        if (findVersionPattern.isEmpty()) {
+            return Optional.of(new MavenMapping(namePattern, groupId, artifactId));
+        }
+        String versionTemplate = findAttribute(line, "versionTemplate").orElseThrow(() -> new IllegalStateException("'versionTemplate' has to be present"));
+        return Optional.of(new MavenMapping(namePattern, groupId, artifactId, findVersionPattern.get(), versionTemplate));
+    }
+
+    private static Optional<String> findAttribute(String line, String attributeName) {
+        String find = attributeName + "=\"";
+        int start = line.indexOf(find);
+        if (start < 0) {
+            return Optional.empty();
+        }
+        start = start + find.length();
+        int end = line.indexOf("\"", start);
+        if (end < 0) {
+            return Optional.empty();
+        }
+        return Optional.of(line.substring(start, end));
     }
 
     /**
@@ -120,17 +168,8 @@ public class ECentralTask {
      */
     private boolean keepEntry(BndEntry e) {
         String symbolicName = e.getSymbolicName();
-        if (!symbolicName.startsWith("org.eclipse")) {
-            return false;
-        }
-        if (symbolicName.startsWith("org.eclipse.jetty")
-                || symbolicName.startsWith("org.eclipse.ecf")
-                || symbolicName.startsWith("org.eclipse.emf")
-                || symbolicName.endsWith(".source")
-                || symbolicName.endsWith(".tests")) {
-            return false;
-        }
-        return true;
+        return !(symbolicName.endsWith(".source")
+                || symbolicName.endsWith(".tests"));
     }
 
     static List<BndEntry> parseBndOutput(List<String> lines) {
@@ -155,28 +194,50 @@ public class ECentralTask {
         return new BndEntry(symbolicName, versions);
     }
 
-    static MavenArtifact toMavenArtifact(BndEntry entry) {
-        // check the rules in https://git.eclipse.org/c/platform/eclipse.platform.releng.git/tree/publish-to-maven-central/SDK4Mvn.aggr#n34
+    static Optional<MavenArtifact> toMavenArtifact(BndEntry entry, List<MavenMapping> mavenMappings) {
+        String symbolicName = entry.getSymbolicName();
+        Optional<MavenMapping> findMappting = findMapping(mavenMappings, symbolicName);
 
         String osgiVersion = entry.getVersions()
                 .get(entry.getVersions()
                         .size() - 1);
-        String mavenVersion = convertVersion(osgiVersion);
-
-        String symbolicName = entry.getSymbolicName();
-        if ("org.eclipse.jdt.core.compiler.batch".equals(symbolicName)) {
-            return new MavenArtifact("org.eclipse.jdt", "ecj", mavenVersion);
+        if (findMappting.isPresent()) {
+            MavenMapping mapping = findMappting.get();
+            Matcher nameMatcher = createMatcher(symbolicName, mapping.getNamePattern());
+            if (nameMatcher.find()) {
+                String groupId = applyMatcher(nameMatcher, mapping.getGroupId());
+                String artifactId = applyMatcher(nameMatcher, mapping.getArtifactId());
+                String mavenVersion;
+                if (mapping.getVersionPattern() != null) {
+                    Matcher versionMatcher = createMatcher(osgiVersion, mapping.getVersionPattern());
+                    mavenVersion = applyMatcher(versionMatcher, mapping.getVersionTemplate());
+                } else {
+                    mavenVersion = convertVersion(osgiVersion);
+                }
+                return Optional.of(new MavenArtifact(groupId, artifactId, mavenVersion));
+            } else {
+                throw new IllegalStateException("Unexpected state: the matcher is not matching '" + symbolicName + "'");
+            }
         }
-        String groupId;
-        if (symbolicName.startsWith("org.eclipse.jdt")) {
-            groupId = "org.eclipse.jdt";
-        } else if (symbolicName.startsWith("org.eclipse.pde")) {
-            groupId = "org.eclipse.pde";
-        } else {
-            groupId = "org.eclipse.platform";
-        }
+        return Optional.empty();
+    }
 
-        return new MavenArtifact(groupId, symbolicName, mavenVersion);
+    private static Matcher createMatcher(String symbolicName, String pattern) {
+        Pattern namePattern = Pattern.compile(pattern);
+        return namePattern.matcher(symbolicName);
+    }
+
+    private static String applyMatcher(Matcher matcher, String template) {
+        return matcher.replaceFirst(template);
+    }
+
+    private static Optional<MavenMapping> findMapping(List<MavenMapping> mavenMappings, String symbolicName) {
+        for (MavenMapping m : mavenMappings) {
+            if (symbolicName.matches(m.getNamePattern())) {
+                return Optional.of(m);
+            }
+        }
+        return Optional.empty();
     }
 
     static String convertVersion(String osgiVersion) {
@@ -206,7 +267,7 @@ public class ECentralTask {
             connection.connect();
             return connection.getResponseCode() != 404;
         } catch (IOException e) {
-            throw new RuntimeException("Could not check if artifac exists in maven central", e);
+            throw new RuntimeException("Could not check if artifact exists in maven central", e);
         }
     }
 

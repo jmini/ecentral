@@ -1,5 +1,90 @@
 [
   {
+    "groupId": "com.ibm.icu",
+    "artifactId": "icu4j",
+    "version": "58.2"
+  },
+  {
+    "groupId": "com.jcraft",
+    "artifactId": "jsch",
+    "version": "0.1.54"
+  },
+  {
+    "groupId": "javax.inject",
+    "artifactId": "javax.inject",
+    "version": "1"
+  },
+  {
+    "groupId": "javax.servlet",
+    "artifactId": "javax.servlet-api",
+    "version": "3.1.0"
+  },
+  {
+    "groupId": "org.apache.ant",
+    "artifactId": "ant",
+    "version": "1.10.1"
+  },
+  {
+    "groupId": "org.apache.xmlgraphics",
+    "artifactId": "batik-css",
+    "version": "1.8"
+  },
+  {
+    "groupId": "commons-codec",
+    "artifactId": "commons-codec",
+    "version": "1.9"
+  },
+  {
+    "groupId": "commons-io",
+    "artifactId": "commons-io",
+    "version": "2.2"
+  },
+  {
+    "groupId": "commons-jxpath",
+    "artifactId": "commons-jxpath",
+    "version": "1.3"
+  },
+  {
+    "groupId": "org.apache.felix",
+    "artifactId": "org.apache.felix.gogo.command",
+    "version": "0.10.0"
+  },
+  {
+    "groupId": "org.apache.felix",
+    "artifactId": "org.apache.felix.gogo.runtime",
+    "version": "0.10.0"
+  },
+  {
+    "groupId": "org.apache.felix",
+    "artifactId": "org.apache.felix.gogo.shell",
+    "version": "0.10.0"
+  },
+  {
+    "groupId": "org.apache.httpcomponents",
+    "artifactId": "httpclient",
+    "version": "4.5.2"
+  },
+  {
+    "groupId": "org.apache.httpcomponents",
+    "artifactId": "httpcore",
+    "version": "4.4.6"
+  },
+  {
+    "groupId": "org.apache.lucene",
+    "artifactId": "lucene-core",
+    "version": "6.1.0"
+  },
+  {
+    "groupId": "org.apache.sshd",
+    "artifactId": "sshd-core",
+    "version": "0.7.0"
+  },
+  {
+    "groupId": "org.apiguardian",
+    "artifactId": "apiguardian-api",
+    "version": "1.0.0"
+  },
+  {
     "groupId": "org.eclipse.platform",
     "artifactId": "org.eclipse.ant.core",
     "version": "3.5.0"
@@ -328,6 +413,21 @@
     "groupId": "org.eclipse.platform",
     "artifactId": "org.eclipse.e4.ui.workbench3",
     "version": "0.14.0"
+  },
+  {
+    "groupId": "org.eclipse.ecf",
+    "artifactId": "org.eclipse.ecf",
+    "version": "3.8.0"
+  },
+  {
+    "groupId": "org.eclipse.ecf",
+    "artifactId": "org.eclipse.ecf.identity",
+    "version": "3.8.0"
+  },
+  {
+    "groupId": "org.eclipse.emf",
+    "artifactId": "org.eclipse.emf.ecore.change",
+    "version": "2.11.0"
   },
   {
     "groupId": "org.eclipse.platform",
@@ -1473,5 +1573,80 @@
     "groupId": "org.eclipse.platform",
     "artifactId": "org.eclipse.update.core",
     "version": "3.2.800"
+  },
+  {
+    "groupId": "junit",
+    "artifactId": "junit",
+    "version": "4.12"
+  },
+  {
+    "groupId": "org.junit.jupiter",
+    "artifactId": "junit-jupiter-api",
+    "version": "5.0.0"
+  },
+  {
+    "groupId": "org.junit.jupiter",
+    "artifactId": "junit-jupiter-engine",
+    "version": "5.0.0"
+  },
+  {
+    "groupId": "org.junit.jupiter",
+    "artifactId": "junit-jupiter-migrationsupport",
+    "version": "5.0.0"
+  },
+  {
+    "groupId": "org.junit.jupiter",
+    "artifactId": "junit-jupiter-params",
+    "version": "5.0.0"
+  },
+  {
+    "groupId": "org.junit.platform",
+    "artifactId": "junit-platform-commons",
+    "version": "1.0.0"
+  },
+  {
+    "groupId": "org.junit.platform",
+    "artifactId": "junit-platform-engine",
+    "version": "1.0.0"
+  },
+  {
+    "groupId": "org.junit.platform",
+    "artifactId": "junit-platform-launcher",
+    "version": "1.0.0"
+  },
+  {
+    "groupId": "org.junit.platform",
+    "artifactId": "junit-platform-runner",
+    "version": "1.0.0"
+  },
+  {
+    "groupId": "org.junit.platform",
+    "artifactId": "junit-platform-suite-api",
+    "version": "1.0.0"
+  },
+  {
+    "groupId": "org.junit.vintage",
+    "artifactId": "junit-vintage-engine",
+    "version": "4.12.0"
+  },
+  {
+    "groupId": "org.opentest4j",
+    "artifactId": "opentest4j",
+    "version": "1.0.0"
+  },
+  {
+    "groupId": "org.ow2.sat4j",
+    "artifactId": "org.ow2.sat4j.core",
+    "version": "2.3.5"
+  },
+  {
+    "groupId": "org.ow2.sat4j",
+    "artifactId": "org.ow2.sat4j.pb",
+    "version": "2.3.5"
+  },
+  {
+    "groupId": "org.tukaani",
+    "artifactId": "xz",
+    "version": "1.5"
   }
 ]

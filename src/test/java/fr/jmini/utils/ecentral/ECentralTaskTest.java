@@ -2,6 +2,9 @@ package fr.jmini.utils.ecentral;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
+import java.util.List;
+import java.util.Optional;
+
 import org.junit.jupiter.api.Test;
 
 class ECentralTaskTest {
@@ -30,8 +33,57 @@ class ECentralTaskTest {
     }
 
     @Test
+    void testParseMavenMappingWithoutVersion() throws Exception {
+        Optional<MavenMapping> result = ECentralTask.parseMavenMapping("<mavenMappings namePattern=\"(org\\.eclipse\\.jdt)\\.core\\.compiler\\.batch\" groupId=\"$1\" artifactId=\"ecj\"/>");
+
+        assertThat(result).isPresent();
+        MavenMapping mavenMapping = result.get();
+
+        assertThat(mavenMapping.getNamePattern())
+                .as("namePattern")
+                .isEqualTo("(org\\.eclipse\\.jdt)\\.core\\.compiler\\.batch");
+        assertThat(mavenMapping.getGroupId())
+                .as("groupId")
+                .isEqualTo("$1");
+        assertThat(mavenMapping.getArtifactId())
+                .as("artifactId")
+                .isEqualTo("ecj");
+    }
+
+    @Test
+    void testParseMavenMappingWithVersion() throws Exception {
+        Optional<MavenMapping> result = ECentralTask.parseMavenMapping(
+                "  <mavenMappings namePattern=\"org\\.apache\\.(commons)\\.([^.]+)\" groupId=\"$1-$2\" artifactId=\"$1-$2\" versionPattern=\"([^.]+)\\.([^.]+)\\.0(?:\\..*)?\" versionTemplate=\"$1.$2\"/>");
+
+        assertThat(result).isPresent();
+        MavenMapping mavenMapping = result.get();
+
+        assertThat(mavenMapping.getNamePattern())
+                .as("namePattern")
+                .isEqualTo("org\\.apache\\.(commons)\\.([^.]+)");
+        assertThat(mavenMapping.getGroupId())
+                .as("groupId")
+                .isEqualTo("$1-$2");
+        assertThat(mavenMapping.getArtifactId())
+                .as("artifactId")
+                .isEqualTo("$1-$2");
+        assertThat(mavenMapping.getVersionPattern())
+                .as("versionPattern")
+                .isEqualTo("([^.]+)\\.([^.]+)\\.0(?:\\..*)?");
+        assertThat(mavenMapping.getVersionTemplate())
+                .as("versionTemplate")
+                .isEqualTo("$1.$2");
+    }
+
+    @Test
     void testToMavenArtifact() throws Exception {
-        MavenArtifact jdtCore = ECentralTask.toMavenArtifact(new BndEntry("org.eclipse.jdt.core", "3.20.0.v20191203-2131"));
+        List<MavenMapping> mavenMappings = List.of(
+                new MavenMapping("(org\\.eclipse\\.jdt)\\.core\\.compiler\\.batch", "$1", "ecj"),
+                new MavenMapping("(org\\.eclipse\\.jdt)(.*)", "$1", "$1$2"),
+                new MavenMapping("(org\\.eclipse)(.*)$", "$1.platform", "$1$2"));
+
+        MavenArtifact jdtCore = ECentralTask.toMavenArtifact(new BndEntry("org.eclipse.jdt.core", "3.20.0.v20191203-2131"), mavenMappings)
+                .orElseThrow();
         assertThat(jdtCore.getGroupId())
                 .as("groupId")
                 .isEqualTo("org.eclipse.jdt");
@@ -42,7 +94,8 @@ class ECentralTaskTest {
                 .as("version")
                 .isEqualTo("3.20.0");
 
-        MavenArtifact ecj = ECentralTask.toMavenArtifact(new BndEntry("org.eclipse.jdt.core.compiler.batch", "3.20.0.v20191203-2131"));
+        MavenArtifact ecj = ECentralTask.toMavenArtifact(new BndEntry("org.eclipse.jdt.core.compiler.batch", "3.20.0.v20191203-2131"), mavenMappings)
+                .orElseThrow();
         assertThat(ecj.getGroupId())
                 .as("groupId")
                 .isEqualTo("org.eclipse.jdt");
@@ -53,7 +106,8 @@ class ECentralTaskTest {
                 .as("version")
                 .isEqualTo("3.20.0");
 
-        MavenArtifact filebuffers = ECentralTask.toMavenArtifact(new BndEntry("org.eclipse.core.filebuffers", "3.6.800.v20191122-2108"));
+        MavenArtifact filebuffers = ECentralTask.toMavenArtifact(new BndEntry("org.eclipse.core.filebuffers", "3.6.800.v20191122-2108"), mavenMappings)
+                .orElseThrow();
         assertThat(filebuffers.getGroupId())
                 .as("groupId")
                 .isEqualTo("org.eclipse.platform");
@@ -63,6 +117,51 @@ class ECentralTaskTest {
         assertThat(filebuffers.getVersion())
                 .as("version")
                 .isEqualTo("3.6.800");
+    }
+
+    @Test
+    void testToMavenArtifactIcu() throws Exception {
+        List<MavenMapping> icuMavenMappings = List.of(new MavenMapping("com\\.ibm\\.icu", "com.ibm.icu", "icu4j", "([^.]+)\\.([^.]+)\\.0(?:\\..*)?", "$1.$2"));
+        MavenArtifact icu = ECentralTask.toMavenArtifact(new BndEntry("com.ibm.icu", "64.2.0.v20190507-1337"), icuMavenMappings)
+                .orElseThrow();
+        assertThat(icu.getGroupId())
+                .as("groupId")
+                .isEqualTo("com.ibm.icu");
+        assertThat(icu.getArtifactId())
+                .as("artifactId")
+                .isEqualTo("icu4j");
+        assertThat(icu.getVersion())
+                .as("version")
+                .isEqualTo("64.2");
+    }
+
+    @Test
+    void testToMavenArtifactPde() throws Exception {
+        List<MavenMapping> pdeMavenMappings = List.of(new MavenMapping("(org\\.eclipse\\.pde)(.*)", "$1", "$1$2"));
+
+        MavenArtifact pde = ECentralTask.toMavenArtifact(new BndEntry("org.eclipse.pde", "3.13.800.v20191210-0610"), pdeMavenMappings)
+                .orElseThrow();
+        assertThat(pde.getGroupId())
+                .as("groupId")
+                .isEqualTo("org.eclipse.pde");
+        assertThat(pde.getArtifactId())
+                .as("artifactId")
+                .isEqualTo("org.eclipse.pde");
+        assertThat(pde.getVersion())
+                .as("version")
+                .isEqualTo("3.13.800");
+
+        MavenArtifact pdeCore = ECentralTask.toMavenArtifact(new BndEntry("org.eclipse.pde.core", "3.13.200.v20191202-2135"), pdeMavenMappings)
+                .orElseThrow();
+        assertThat(pdeCore.getGroupId())
+                .as("groupId")
+                .isEqualTo("org.eclipse.pde");
+        assertThat(pdeCore.getArtifactId())
+                .as("artifactId")
+                .isEqualTo("org.eclipse.pde.core");
+        assertThat(pdeCore.getVersion())
+                .as("version")
+                .isEqualTo("3.13.200");
     }
 
     @Test
