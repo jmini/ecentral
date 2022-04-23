@@ -6,7 +6,7 @@ version: 2
 jobs:
   build:
     docker:
-      - image: circleci/openjdk:8-jdk
+      - image: cimg/openjdk:8.0
 
     steps:
       - checkout
@@ -55,7 +55,7 @@ jobs:
 
   maven-example-build:
     docker:
-      - image: circleci/openjdk:8-jdk
+      - image: cimg/openjdk:8.0
 
     steps:
       - checkout
@@ -93,7 +93,7 @@ jobs:
 
   gradle-example-build:
     docker:
-      - image: circleci/openjdk:8-jdk
+      - image: cimg/openjdk:8.0
 
     steps:
       - checkout
