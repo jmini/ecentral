@@ -207,19 +207,31 @@ public class ECentralTask {
             if (nameMatcher.find()) {
                 String groupId = applyMatcher(nameMatcher, mapping.getGroupId());
                 String artifactId = applyMatcher(nameMatcher, mapping.getArtifactId());
-                String mavenVersion;
-                if (mapping.getVersionPattern() != null) {
-                    Matcher versionMatcher = createMatcher(osgiVersion, mapping.getVersionPattern());
-                    mavenVersion = applyMatcher(versionMatcher, mapping.getVersionTemplate());
-                } else {
-                    mavenVersion = convertVersion(osgiVersion);
-                }
+                String mavenVersion = computeMavenVersion(osgiVersion, mapping, groupId, artifactId);
                 return Optional.of(new MavenArtifact(groupId, artifactId, mavenVersion));
             } else {
                 throw new IllegalStateException("Unexpected state: the matcher is not matching '" + symbolicName + "'");
             }
         }
         return Optional.empty();
+    }
+
+    private static String computeMavenVersion(String osgiVersion, MavenMapping mapping, String groupId, String artifactId) {
+        if ("org.eclipse.platform".equals(groupId) && "org.eclipse.equinox.preferences".equals(artifactId) && "3.10.0.v20220503-1634".equals(osgiVersion)) {
+            // See https://github.com/eclipse-equinox/equinox.bundles/issues/54
+            return "3.10.1";
+        } else if ("org.eclipse.platform".equals(groupId) && "org.eclipse.osgi.util".equals(artifactId) && "3.7.0.v20220427-2144".equals(osgiVersion)) {
+            // See https://github.com/eclipse-equinox/equinox.framework/issues/70
+            return "3.7.1";
+        }
+        String mavenVersion;
+        if (mapping.getVersionPattern() != null) {
+            Matcher versionMatcher = createMatcher(osgiVersion, mapping.getVersionPattern());
+            mavenVersion = applyMatcher(versionMatcher, mapping.getVersionTemplate());
+        } else {
+            mavenVersion = convertVersion(osgiVersion);
+        }
+        return mavenVersion;
     }
 
     private static Matcher createMatcher(String symbolicName, String pattern) {
