@@ -272,11 +272,15 @@ public class ECentralTask {
     }
 
     static String computeMavenCentralUrl(MavenArtifact artifact) {
+        return computeMavenCentralUrl(artifact, ".jar");
+    }
+
+    static String computeMavenCentralUrl(MavenArtifact artifact, String extension) {
         // See https://github.com/eclipse/aether-core/blob/aether-0.9.1.v20140329/aether-util/src/main/java/org/eclipse/aether/util/repository/layout/MavenDefaultLayout.java#L42
 
         StringBuilder sb = new StringBuilder();
         sb.append("https://repo1.maven.org/maven2/");
-        sb.append(subPathInMavenRepo(artifact, ".jar"));
+        sb.append(subPathInMavenRepo(artifact, extension));
         return sb.toString();
     }
 
