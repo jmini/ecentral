@@ -32,7 +32,7 @@ In 2017 with Eclipse Release `Neon.2`, Stephan Herrmann link:https://objectteams
 An important part of this work is to transform the layout (where the Jars are located) and the metadata (what are the dependencies of each jar).
 In a Maven Repository the metadata are stored in a `{pom-file}` file associated with each jar.
 Especially the `Require-Bundle` and `Import-Package` entries of the `MANIFEST.MF` are transformed to dependency indication in the `{pom-file}` file.
-The tool used to perform this task is called link:https://wiki.eclipse.org/CBI/aggregator[CBI Aggregator] and the setup to publish to maven central is defined in the link:https://git.eclipse.org/c/platform/eclipse.platform.releng.git/[eclipse.platform.releng] project.
+The tool used to perform this task is called link:https://wiki.eclipse.org/CBI/aggregator[CBI Aggregator] and the setup to publish to maven central is defined in the link:https://github.com/eclipse-platform/eclipse.platform.releng/[eclipse.platform.releng] project.
 
 == BOM files
 
