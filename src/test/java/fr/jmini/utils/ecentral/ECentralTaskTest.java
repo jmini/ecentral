@@ -165,6 +165,35 @@ class ECentralTaskTest {
     }
 
     @Test
+    void testToMavenArtifactOSGi() throws Exception {
+        List<MavenMapping> mappings = ECentralTask.readMavenMappings();
+
+        MavenArtifact utilfunction = ECentralTask.toMavenArtifact(new BndEntry("org.osgi.util.function", "1.2.0.202109301733"), mappings)
+                .orElseThrow();
+        assertThat(utilfunction.getGroupId())
+                .as("groupId")
+                .isEqualTo("org.osgi");
+        assertThat(utilfunction.getArtifactId())
+                .as("artifactId")
+                .isEqualTo("org.osgi.util.function");
+        assertThat(utilfunction.getVersion())
+                .as("version")
+                .isEqualTo("1.2.0");
+
+        MavenArtifact servicePrefs = ECentralTask.toMavenArtifact(new BndEntry("org.osgi.service.prefs", "1.1.2.202109301733"), mappings)
+                .orElseThrow();
+        assertThat(servicePrefs.getGroupId())
+                .as("groupId")
+                .isEqualTo("org.osgi");
+        assertThat(servicePrefs.getArtifactId())
+                .as("artifactId")
+                .isEqualTo("org.osgi.service.prefs");
+        assertThat(servicePrefs.getVersion())
+                .as("version")
+                .isEqualTo("1.1.2");
+    }
+
+    @Test
     void testConvertVersion() throws Exception {
         assertThat(ECentralTask.convertVersion("3.12.2.v20161117-1814"))
                 .as("version")
