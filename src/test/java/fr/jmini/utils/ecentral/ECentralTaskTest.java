@@ -178,8 +178,16 @@ class ECentralTaskTest {
     void testComputeMavenCentralUrl() throws Exception {
         MavenArtifact a = new MavenArtifact("org.eclipse.platform", "org.eclipse.ant.core", "3.5.600");
         assertThat(ECentralTask.computeMavenCentralUrl(a))
-                .as("url in maven centraal")
+                .as("url of the jar in maven central")
                 .isEqualTo("https://repo1.maven.org/maven2/org/eclipse/platform/org.eclipse.ant.core/3.5.600/org.eclipse.ant.core-3.5.600.jar");
+
+        assertThat(ECentralTask.computeMavenCentralUrl(a, ".pom"))
+                .as("url of the pom in maven central")
+                .isEqualTo("https://repo1.maven.org/maven2/org/eclipse/platform/org.eclipse.ant.core/3.5.600/org.eclipse.ant.core-3.5.600.pom");
+
+        assertThat(ECentralTask.computeMavenCentralUrl(a, ".jar.asc"))
+                .as("url of the armored ASCII file of the jar in maven central")
+                .isEqualTo("https://repo1.maven.org/maven2/org/eclipse/platform/org.eclipse.ant.core/3.5.600/org.eclipse.ant.core-3.5.600.jar.asc");
 
     }
 
