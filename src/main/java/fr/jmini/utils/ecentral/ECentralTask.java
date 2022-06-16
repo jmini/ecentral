@@ -120,7 +120,7 @@ public class ECentralTask {
         writeArtifactsToFile(getPotentialMavenArtifactsFile(), result);
     }
 
-    private static List<MavenMapping> readMavenMappings() throws IOException {
+    static List<MavenMapping> readMavenMappings() throws IOException {
         try (InputStream resource = ECentralTask.class.getResourceAsStream("/mavenMappings.txt")) {
             return new BufferedReader(new InputStreamReader(resource,
                     StandardCharsets.UTF_8)).lines()
