@@ -194,6 +194,36 @@ class ECentralTaskTest {
     }
 
     @Test
+    void testToMavenArtifact_4_23_fixes() throws Exception {
+        List<MavenMapping> mappings = ECentralTask.readMavenMappings();
+
+        // See https://github.com/eclipse-equinox/equinox.bundles/issues/54
+        MavenArtifact equinoxPreferences = ECentralTask.toMavenArtifact(new BndEntry("org.eclipse.equinox.preferences", "3.10.0.v20220503-1634"), mappings)
+                .orElseThrow();
+        assertThat(equinoxPreferences.getGroupId())
+                .as("groupId")
+                .isEqualTo("org.eclipse.platform");
+        assertThat(equinoxPreferences.getArtifactId())
+                .as("artifactId")
+                .isEqualTo("org.eclipse.equinox.preferences");
+        assertThat(equinoxPreferences.getVersion())
+                .as("version")
+                .isEqualTo("3.10.1"); // 3.10.0 is broken on maven central, a fix was published
+
+        MavenArtifact osgiUtil = ECentralTask.toMavenArtifact(new BndEntry("org.eclipse.osgi.util", "3.7.0.v20220427-2144"), mappings)
+                .orElseThrow();
+        assertThat(osgiUtil.getGroupId())
+                .as("groupId")
+                .isEqualTo("org.eclipse.platform");
+        assertThat(osgiUtil.getArtifactId())
+                .as("artifactId")
+                .isEqualTo("org.eclipse.osgi.util");
+        assertThat(osgiUtil.getVersion())
+                .as("version")
+                .isEqualTo("3.7.1"); // 3.7.0 is broken on maven central, a fix was published
+    }
+
+    @Test
     void testConvertVersion() throws Exception {
         assertThat(ECentralTask.convertVersion("3.12.2.v20161117-1814"))
                 .as("version")
