@@ -52,6 +52,8 @@ public class ECentralTask {
         }
     }
 
+    private static final int BUFFER_SIZE = 4096;
+
     private void runInternal() throws IOException {
         boolean ignoreExistingData = Objects.equals(System.getProperty("ignoreExistingData"), "true");
         if (ignoreExistingData || !Files.exists(getBndOutputFile())) {
@@ -65,8 +67,54 @@ public class ECentralTask {
         if (ignoreExistingData || !Files.exists(getMavenArtifactsFile())) {
             createMavenArtifacts();
         }
+        List<MavenArtifact> entries = parseArtifactsFile(getMavenArtifactsFile());
+        for (MavenArtifact artifact : entries) {
+            String content;
+            // System.out.println("NOT OK: " + file.getFileName());
+            Path file = Paths.get("tmp")
+                    .resolve(subPathInMavenRepo(artifact, ".pom"));
+            if (Files.exists(file)) {
+                content = Files.readString(file, StandardCharsets.UTF_8);
+            } else {
+                String centralUrl = computeMavenCentralUrl(artifact, ".pom");
+                try {
+                    HttpURLConnection connection = (HttpURLConnection) new URL(centralUrl).openConnection();
+                    connection.connect();
+                    int responseCode = connection.getResponseCode();
+
+                    // always check HTTP response code first
+                    if (responseCode == HttpURLConnection.HTTP_OK) {
+
+                        content = readStream(connection.getInputStream());
+                        // opens an output stream to save into file
+                        Files.createDirectories(file.getParent());
+                        Files.write(file, content.getBytes(StandardCharsets.UTF_8));
+                    }
+                } catch (IOException e) {
+                    throw new RuntimeException("Could not download pom from maven central", e);
+                }
+                content = Files.readString(file, StandardCharsets.UTF_8);
+            }
+            if (content.contains("org.osgi")) {
+                System.out.println(file);
+            }
+        }
 
         createMavenBomFile();
+
+    }
+
+    private static String readStream(InputStream in) {
+        StringBuilder sb = new StringBuilder();
+        try (BufferedReader reader = new BufferedReader(new InputStreamReader(in));) {
+            String nextLine = "";
+            while ((nextLine = reader.readLine()) != null) {
+                sb.append(nextLine + "\n");
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return sb.toString();
     }
 
     private String toVersionKey(MavenArtifact a) {
