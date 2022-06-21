@@ -17,6 +17,9 @@ java {
 repositories {
     maven {
         url 'https://raw.githubusercontent.com/jmini/ecentral/HEAD/repo'
+        content {
+            includeGroup 'fr.jmini.ecentral'
+        }
     }
     mavenCentral()
 }
