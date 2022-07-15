@@ -12,7 +12,6 @@ import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.security.MessageDigest;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Objects;
@@ -24,6 +23,10 @@ import java.util.stream.Collectors;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
+
+import fr.jmini.utils.mvnutils.Algorithm;
+import fr.jmini.utils.mvnutils.Maven;
+import fr.jmini.utils.mvnutils.MavenArtifact;
 
 public class ECentralTask {
 
@@ -43,7 +46,6 @@ public class ECentralTask {
 
     public void run() {
         try {
-            Files.createDirectories(getMavenBomFile().getParent());
             Files.createDirectories(getDataFolder());
             runInternal();
         } catch (IOException e) {
@@ -272,7 +274,7 @@ public class ECentralTask {
     }
 
     private static boolean checkArtifactInMavenCentral(MavenArtifact artifact) {
-        String centralUrl = computeMavenCentralUrl(artifact);
+        String centralUrl = Maven.jarMavenCentralUrl(artifact);
         try {
             HttpURLConnection connection = (HttpURLConnection) new URL(centralUrl).openConnection();
             connection.setRequestMethod("HEAD");
@@ -283,49 +285,10 @@ public class ECentralTask {
         }
     }
 
-    static String computeMavenCentralUrl(MavenArtifact artifact) {
-        return computeMavenCentralUrl(artifact, ".jar");
-    }
-
-    static String computeMavenCentralUrl(MavenArtifact artifact, String extension) {
-        // See https://github.com/eclipse/aether-core/blob/aether-0.9.1.v20140329/aether-util/src/main/java/org/eclipse/aether/util/repository/layout/MavenDefaultLayout.java#L42
-
-        StringBuilder sb = new StringBuilder();
-        sb.append("https://repo1.maven.org/maven2/");
-        sb.append(subPathInMavenRepo(artifact, extension));
-        return sb.toString();
-    }
-
-    private static String subPathInMavenRepo(MavenArtifact artifact, String extension) {
-        StringBuilder sb = new StringBuilder();
-        sb.append(artifact.getGroupId()
-                .replace('.', '/'));
-        sb.append('/');
-        sb.append(artifact.getArtifactId());
-        sb.append('/');
-        sb.append(artifact.getVersion());
-        sb.append('/');
-        sb.append(artifact.getArtifactId());
-        sb.append('-');
-        sb.append(artifact.getVersion());
-        sb.append(extension);
-        return sb.toString();
-    }
-
     private void createMavenBomFile() throws IOException {
         List<MavenArtifact> entries = parseArtifactsFile(getMavenArtifactsFile());
         String content = createMavenBomContent(entries);
-        Files.writeString(getMavenBomFile(), content, StandardCharsets.UTF_8);
-
-        writeHash(content, Algorithm.MD_5);
-        writeHash(content, Algorithm.SHA_1);
-        writeHash(content, Algorithm.SHA_256);
-        writeHash(content, Algorithm.SHA_512);
-    }
-
-    private void writeHash(String content, Algorithm algorithm) throws IOException {
-        String hash = calculateHash(content, algorithm);
-        Files.writeString(getMavenBomFile(".pom" + algorithm.getExtension()), hash, StandardCharsets.UTF_8);
+        Maven.writeFileToRepositoryWithArmoredFiles(Paths.get("repo"), getBomArtifact(), ".pom", content, Algorithm.MD_5, Algorithm.SHA_1, Algorithm.SHA_256, Algorithm.SHA_512);
     }
 
     private String createMavenBomContent(List<MavenArtifact> entries) {
@@ -376,25 +339,6 @@ public class ECentralTask {
         return sb.toString();
     }
 
-    static String calculateHash(String content, Algorithm algorithm) {
-        MessageDigest digest = algorithm.getMessageDigest();
-        byte[] encodedhash = digest.digest(
-                content.getBytes(StandardCharsets.UTF_8));
-        return bytesToHex(encodedhash);
-    }
-
-    private static String bytesToHex(byte[] hash) {
-        StringBuilder hexString = new StringBuilder(2 * hash.length);
-        for (int i = 0; i < hash.length; i++) {
-            String hex = Integer.toHexString(0xff & hash[i]);
-            if (hex.length() == 1) {
-                hexString.append('0');
-            }
-            hexString.append(hex);
-        }
-        return hexString.toString();
-    }
-
     private void writeArtifactsToFile(Path file, List<MavenArtifact> artifacts) throws IOException {
         Gson gson = new GsonBuilder()
                 .setPrettyPrinting()
@@ -425,13 +369,7 @@ public class ECentralTask {
         return getDataFolder().resolve("maven-artifacts.json");
     }
 
-    private Path getMavenBomFile() {
-        return getMavenBomFile(".pom");
-    }
-
-    private Path getMavenBomFile(String extension) {
-        MavenArtifact artifact = new MavenArtifact(GROUP_ID, ARTIFACT_ID, input.getReleaseVersion());
-        return Paths.get("repo")
-                .resolve(subPathInMavenRepo(artifact, extension));
+    private MavenArtifact getBomArtifact() {
+        return new MavenArtifact(GROUP_ID, ARTIFACT_ID, input.getReleaseVersion());
     }
 }
