@@ -7,6 +7,8 @@ import java.util.Optional;
 
 import org.junit.jupiter.api.Test;
 
+import fr.jmini.utils.mvnutils.MavenArtifact;
+
 class ECentralTaskTest {
     @Test
     void testParseBndEntry() throws Exception {
@@ -233,35 +235,4 @@ class ECentralTaskTest {
                 .isEqualTo("4.12.0");
     }
 
-    @Test
-    void testComputeMavenCentralUrl() throws Exception {
-        MavenArtifact a = new MavenArtifact("org.eclipse.platform", "org.eclipse.ant.core", "3.5.600");
-        assertThat(ECentralTask.computeMavenCentralUrl(a))
-                .as("url of the jar in maven central")
-                .isEqualTo("https://repo1.maven.org/maven2/org/eclipse/platform/org.eclipse.ant.core/3.5.600/org.eclipse.ant.core-3.5.600.jar");
-
-        assertThat(ECentralTask.computeMavenCentralUrl(a, ".pom"))
-                .as("url of the pom in maven central")
-                .isEqualTo("https://repo1.maven.org/maven2/org/eclipse/platform/org.eclipse.ant.core/3.5.600/org.eclipse.ant.core-3.5.600.pom");
-
-        assertThat(ECentralTask.computeMavenCentralUrl(a, ".jar.asc"))
-                .as("url of the armored ASCII file of the jar in maven central")
-                .isEqualTo("https://repo1.maven.org/maven2/org/eclipse/platform/org.eclipse.ant.core/3.5.600/org.eclipse.ant.core-3.5.600.jar.asc");
-
-    }
-
-    @Test
-    void testCalculateHash() throws Exception {
-        String md5 = ECentralTask.calculateHash("test", Algorithm.MD_5);
-        assertThat(md5).isEqualTo("098f6bcd4621d373cade4e832627b4f6");
-
-        String sha1 = ECentralTask.calculateHash("test", Algorithm.SHA_1);
-        assertThat(sha1).isEqualTo("a94a8fe5ccb19ba61c4c0873d391e987982fbbd3");
-
-        String sha256 = ECentralTask.calculateHash("test", Algorithm.SHA_256);
-        assertThat(sha256).isEqualTo("9f86d081884c7d659a2feaa0c55ad015a3bf4f1b2b0b822cd15d6c15b0f00a08");
-
-        String sha512 = ECentralTask.calculateHash("test", Algorithm.SHA_512);
-        assertThat(sha512).isEqualTo("ee26b0dd4af7e749aa1a8ee3c10ae9923f618980772e473f8819a5d4940e0db27ac185f8a0e1d5f84f88bc887fd67b143732c304cc5fa9ad8e6f57f50028a8ff");
-    }
 }

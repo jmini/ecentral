@@ -43,6 +43,7 @@ task javadocJar(type: Jar) {
 }
 
 dependencies {
+    implementation "fr.jmini.utils:mvn-utils:$mvnUtils"
     implementation "biz.aQute.bnd:biz.aQute.bnd:$bndVersion"
     implementation "com.google.code.gson:gson:$gsonVersion"
 
