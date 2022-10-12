@@ -213,11 +213,14 @@
     <org-eclipse-jdt-apt-ui.version>3.7.0</org-eclipse-jdt-apt-ui.version>
     <org-eclipse-jdt-compiler-apt.version>1.4.200</org-eclipse-jdt-compiler-apt.version>
     <org-eclipse-jdt-compiler-tool.version>1.3.200</org-eclipse-jdt-compiler-tool.version>
+    <org-eclipse-jdt-core.version>3.31.0</org-eclipse-jdt-core.version>
     <ecj.version>3.31.0</ecj.version>
     <org-eclipse-jdt-core-formatterapp.version>1.1.0</org-eclipse-jdt-core-formatterapp.version>
     <org-eclipse-jdt-core-manipulation.version>1.16.200</org-eclipse-jdt-core-manipulation.version>
     <org-eclipse-jdt-debug.version>3.19.300</org-eclipse-jdt-debug.version>
     <org-eclipse-jdt-debug-ui.version>3.12.800</org-eclipse-jdt-debug-ui.version>
+    <org-eclipse-jdt-doc-isv.version>3.14.1700</org-eclipse-jdt-doc-isv.version>
+    <org-eclipse-jdt-doc-user.version>3.15.1500</org-eclipse-jdt-doc-user.version>
     <org-eclipse-jdt-junit.version>3.15.0</org-eclipse-jdt-junit.version>
     <org-eclipse-jdt-junit-core.version>3.11.400</org-eclipse-jdt-junit-core.version>
     <org-eclipse-jdt-junit-runtime.version>3.7.0</org-eclipse-jdt-junit-runtime.version>
@@ -246,6 +249,7 @@
     <org-eclipse-pde-api-tools-ui.version>1.2.700</org-eclipse-pde-api-tools-ui.version>
     <org-eclipse-pde-build.version>3.11.300</org-eclipse-pde-build.version>
     <org-eclipse-pde-core.version>3.15.300</org-eclipse-pde-core.version>
+    <org-eclipse-pde-doc-user.version>3.14.1700</org-eclipse-pde-doc-user.version>
     <org-eclipse-pde-ds-annotations.version>1.2.500</org-eclipse-pde-ds-annotations.version>
     <org-eclipse-pde-ds-core.version>1.2.500</org-eclipse-pde-ds-core.version>
     <org-eclipse-pde-ds-ui.version>1.2.300</org-eclipse-pde-ds-ui.version>
@@ -265,6 +269,7 @@
     <org-eclipse-pde-ui.version>3.13.600</org-eclipse-pde-ui.version>
     <org-eclipse-pde-ui-templates.version>3.7.700</org-eclipse-pde-ui-templates.version>
     <org-eclipse-platform.version>4.25.0</org-eclipse-platform.version>
+    <org-eclipse-platform-doc-isv.version>4.25.0</org-eclipse-platform-doc-isv.version>
     <org-eclipse-platform-doc-user.version>4.25.0</org-eclipse-platform-doc-user.version>
     <org-eclipse-rcp.version>4.25.0</org-eclipse-rcp.version>
     <org-eclipse-sdk.version>4.25.0</org-eclipse-sdk.version>
@@ -1304,6 +1309,11 @@
       </dependency>
       <dependency>
         <groupId>org.eclipse.jdt</groupId>
+        <artifactId>org.eclipse.jdt.core</artifactId>
+        <version>${org-eclipse-jdt-core.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.eclipse.jdt</groupId>
         <artifactId>ecj</artifactId>
         <version>${ecj.version}</version>
       </dependency>
@@ -1326,6 +1336,16 @@
         <groupId>org.eclipse.jdt</groupId>
         <artifactId>org.eclipse.jdt.debug.ui</artifactId>
         <version>${org-eclipse-jdt-debug-ui.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.eclipse.jdt</groupId>
+        <artifactId>org.eclipse.jdt.doc.isv</artifactId>
+        <version>${org-eclipse-jdt-doc-isv.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.eclipse.jdt</groupId>
+        <artifactId>org.eclipse.jdt.doc.user</artifactId>
+        <version>${org-eclipse-jdt-doc-user.version}</version>
       </dependency>
       <dependency>
         <groupId>org.eclipse.jdt</groupId>
@@ -1469,6 +1489,11 @@
       </dependency>
       <dependency>
         <groupId>org.eclipse.pde</groupId>
+        <artifactId>org.eclipse.pde.doc.user</artifactId>
+        <version>${org-eclipse-pde-doc-user.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.eclipse.pde</groupId>
         <artifactId>org.eclipse.pde.ds.annotations</artifactId>
         <version>${org-eclipse-pde-ds-annotations.version}</version>
       </dependency>
@@ -1561,6 +1586,11 @@
         <groupId>org.eclipse.platform</groupId>
         <artifactId>org.eclipse.platform</artifactId>
         <version>${org-eclipse-platform.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.eclipse.platform</groupId>
+        <artifactId>org.eclipse.platform.doc.isv</artifactId>
+        <version>${org-eclipse-platform-doc-isv.version}</version>
       </dependency>
       <dependency>
         <groupId>org.eclipse.platform</groupId>
