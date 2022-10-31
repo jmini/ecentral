@@ -31,7 +31,6 @@ import fr.jmini.utils.mvnutils.MavenArtifact;
 public class ECentralTask {
 
     private static final String GROUP_ID = "fr.jmini.ecentral";
-    private static final String ARTIFACT_ID = "eclipse-platform-dependencies";
 
     private static final TypeToken<List<MavenArtifact>> TYPE_TOKEN = new TypeToken<List<MavenArtifact>>() {
     };
@@ -297,11 +296,11 @@ public class ECentralTask {
         sb.append("<project xmlns=\"http://maven.apache.org/POM/4.0.0\" xsi:schemaLocation=\"http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\">\n");
         sb.append("  <modelVersion>4.0.0</modelVersion>\n");
         sb.append("  <groupId>" + GROUP_ID + "</groupId>\n");
-        sb.append("  <artifactId>" + ARTIFACT_ID + "</artifactId>\n");
+        sb.append("  <artifactId>" + input.getArtifactId() + "</artifactId>\n");
         sb.append("  <version>" + input.getReleaseVersion() + "</version>\n");
         sb.append("  <packaging>pom</packaging>\n");
-        sb.append("  <name>eclipse-platform-dependencies</name>\n");
-        sb.append("  <description>Eclipse Platform Dependencies of release " + input.getReleaseName() + "</description>\n");
+        sb.append("  <name>eclipse-dependencies</name>\n");
+        sb.append("  <description>Eclipse Dependencies of release " + input.getReleaseName() + "</description>\n");
         sb.append("  <url>https://jmini.github.io/ecentral</url>\n");
         sb.append("  <licenses>\n");
         sb.append("    <license>\n");
@@ -361,15 +360,15 @@ public class ECentralTask {
         return getDataFolder().resolve("bnd-output.txt");
     }
 
-    private Path getPotentialMavenArtifactsFile() {
+    Path getPotentialMavenArtifactsFile() {
         return getDataFolder().resolve("potential-maven-artifacts.json");
     }
 
-    private Path getMavenArtifactsFile() {
+    Path getMavenArtifactsFile() {
         return getDataFolder().resolve("maven-artifacts.json");
     }
 
     private MavenArtifact getBomArtifact() {
-        return new MavenArtifact(GROUP_ID, ARTIFACT_ID, input.getReleaseVersion());
+        return new MavenArtifact(GROUP_ID, input.getArtifactId(), input.getReleaseVersion());
     }
 }
