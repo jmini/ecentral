@@ -443,8 +443,8 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <h1>ECentral</h1>
 <div class="details">
 <span id="author" class="author">Jeremie Bresson</span><br>
-<span id="revnumber">version 1.1.1,</span>
-<span id="revdate">2022-04-05</span>
+<span id="revnumber">version 1.1.2,</span>
+<span id="revdate">2022-11-08</span>
 </div>
 <div id="toc" class="toc2">
 <div id="toctitle">Table of Contents</div>
@@ -532,7 +532,7 @@ With each release a new update site identified by its URL is created to publish 
 <p>An important part of this work is to transform the layout (where the Jars are located) and the metadata (what are the dependencies of each jar).
 In a Maven Repository the metadata are stored in a <code>*.pom</code> file associated with each jar.
 Especially the <code>Require-Bundle</code> and <code>Import-Package</code> entries of the <code>MANIFEST.MF</code> are transformed to dependency indication in the <code>*.pom</code> file.
-The tool used to perform this task is called <a href="https://wiki.eclipse.org/CBI/aggregator">CBI Aggregator</a> and the setup to publish to maven central is defined in the <a href="https://git.eclipse.org/c/platform/eclipse.platform.releng.git/">eclipse.platform.releng</a> project.</p>
+The tool used to perform this task is called <a href="https://wiki.eclipse.org/CBI/aggregator">CBI Aggregator</a> and the setup to publish to maven central is defined in the <a href="https://github.com/eclipse-platform/eclipse.platform.releng/">eclipse.platform.releng</a> project.</p>
 </div>
 </div>
 </div>
@@ -560,11 +560,11 @@ This way, the raw file viewer of GitHub is a valid maven repository.</p>
 </div>
 <div class="paragraph">
 <p>If you prefer a more stable version you can use any commit identified by its commit-id or by a tag.
-For the latest released version of this repository (<code>1.1.1</code>) use:</p>
+For the latest released version of this repository (<code>1.1.2</code>) use:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="CodeRay highlight"><code data-lang="txt">https://raw.githubusercontent.com/jmini/ecentral/1.1.1/repo</code></pre>
+<pre class="CodeRay highlight"><code data-lang="txt">https://raw.githubusercontent.com/jmini/ecentral/1.1.2/repo</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -594,6 +594,14 @@ For the latest released version of this repository (<code>1.1.1</code>) use:</p>
 </tr>
 </thead>
 <tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2022-09</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>4.25</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2022-06</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>4.24</code></p></td>
+</tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">2022-03</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>4.23</code></p></td>
@@ -678,6 +686,9 @@ For the latest released version of this repository (<code>1.1.1</code>) use:</p>
 <pre class="CodeRay highlight"><code data-lang="gradle">repositories {
     maven {
         url 'https://raw.githubusercontent.com/jmini/ecentral/HEAD/repo'
+        content {
+            includeGroup 'fr.jmini.ecentral'
+        }
     }
     mavenCentral()
 }</code></pre>
@@ -881,8 +892,8 @@ ssh-add ~/.ssh/id_rsa</pre>
 </div>
 <div id="footer">
 <div id="footer-text">
-Version 1.1.1<br>
-Last updated 2022-04-05 06:41:11 +0200
+Version 1.1.2<br>
+Last updated 2022-11-08 07:05:22 +0100
 </div>
 </div>
 <style>
