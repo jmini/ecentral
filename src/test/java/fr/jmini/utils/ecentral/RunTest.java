@@ -8,6 +8,15 @@ import org.junit.jupiter.api.Test;
 class RunTest {
 
     @Test
+    void run_4_26() throws Exception {
+        Input input = new Input()
+                .withReleaseName("2022-12")
+                .withReleaseVersion("4.26")
+                .withUpdateSite("https://download.eclipse.org/eclipse/updates/4.26/");
+        new ECentralTask(input).run();
+    }
+
+    @Test
     void run_4_25() throws Exception {
         Input input = new Input()
                 .withReleaseName("2022-09")
