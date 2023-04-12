@@ -271,6 +271,38 @@ class ECentralTaskTest {
     }
 
     @Test
+    void testToMavenArtifactJunit5() throws Exception {
+        List<MavenMapping> mavenMappings = ECentralTask.readMavenMappings();
+        MavenArtifact junit = ECentralTask.toMavenArtifact(new BndEntry("junit-jupiter-api", "5.9.2"), mavenMappings)
+                .orElseThrow();
+        assertThat(junit.getGroupId())
+                .as("groupId")
+                .isEqualTo("org.junit.jupiter");
+        assertThat(junit.getArtifactId())
+                .as("artifactId")
+                .isEqualTo("junit-jupiter-api");
+        assertThat(junit.getVersion())
+                .as("version")
+                .isEqualTo("5.9.2");
+    }
+
+    @Test
+    void testToMavenArtifactLpg() throws Exception {
+        List<MavenMapping> mavenMappings = ECentralTask.readMavenMappings();
+        MavenArtifact junit = ECentralTask.toMavenArtifact(new BndEntry("lpg.runtime.java", "2.0.17.v201004271640"), mavenMappings)
+                .orElseThrow();
+        assertThat(junit.getGroupId())
+                .as("groupId")
+                .isEqualTo("lpg.runtime");
+        assertThat(junit.getArtifactId())
+                .as("artifactId")
+                .isEqualTo("java");
+        assertThat(junit.getVersion())
+                .as("version")
+                .isEqualTo("2.0.17-v201004271640");
+    }
+
+    @Test
     void testToMavenArtifactFelix() throws Exception {
         List<MavenMapping> mavenMappings = ECentralTask.readMavenMappings();
         MavenArtifact icu = ECentralTask.toMavenArtifact(new BndEntry("org.apache.felix.gogo.shell", "1.1.4.v20210111-1007"), mavenMappings)
