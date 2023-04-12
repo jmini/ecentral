@@ -15,9 +15,11 @@
   <mavenMappings namePattern="(com\.jcraft)\.(.*)" groupId="$1" artifactId="$2"/>
   <mavenMappings namePattern="com\.sun\.el\.javax\.el" groupId="com.sun.el" artifactId="el-ri" versionPattern="(.*)" versionTemplate="$1" />
   <mavenMappings namePattern="com\.sun\.el" groupId="org.eclipse.jetty.orbit" artifactId="com.sun.el" versionPattern="(.*)" versionTemplate="$1" />
+  <mavenMappings namePattern="javassist" groupId="org.javassist" artifactId="javassist" versionPattern="([^.]+)\.([^.]+)\.([^.]+)\.([^.]+)" versionTemplate="$1.$2.$3-$4"/>
   <mavenMappings namePattern="javax\.annotation" groupId="jakarta.annotation" artifactId="jakarta.annotation-api"/>
   <mavenMappings namePattern="javax\.activation" groupId="com.sun.activation" artifactId="jakarta.activation" versionPattern="([^.]+)\.([^.]+)\.([^.]+)\.([^.]+)" versionTemplate="$1.$2.$3"/>
   <mavenMappings namePattern="javax\.el" groupId="javax.el" artifactId="el-api" versionPattern="([^.]+)\.([^.]+)\.0(?:\..*)?" versionTemplate="$1.$2"/>
+  <mavenMappings namePattern="javax\.ws\.rs" groupId="jakarta.ws.rs" artifactId="jakarta.ws.rs-api" versionPattern="([^.]+)\.([^.]+)\.([^.]+)\.([^.]+)" versionTemplate="$1.$2.$3"/>
   <mavenMappings namePattern="javax\.el-api" groupId="jakarta.el" artifactId="jakarta.el-api" versionPattern="(.*)" versionTemplate="$1"/>
   <mavenMappings namePattern="jakarta\.xml\.bind" groupId="jakarta.xml.bind" artifactId="jakarta.xml.bind-api"/>
   <mavenMappings namePattern="([^.]+)\.servlet$" groupId="$1.servlet" artifactId="$1.servlet-api"/>
@@ -34,6 +36,7 @@
   <mavenMappings namePattern="(org\.apache\.felix)\.(.*)" groupId="$1" artifactId="$1.$2"/>
   <mavenMappings namePattern="org\.apache\.ant$" groupId="org.apache.ant" artifactId="ant"/>
   <mavenMappings namePattern="(org\.apache)\.(sshd)\.(.*)" groupId="$1.$2" artifactId="$2-$3"/>
+  <mavenMappings namePattern="org\.objectweb\.asm\.tree\.analysis" groupId="org.ow2.asm" artifactId="asm-analysis" versionPattern="([^.]+)\.([^.]+)\.0(?:\..*)?" versionTemplate="$1.$2"/>
   <mavenMappings namePattern="(org\.objectweb)\.([^.]+)$" groupId="org.ow2.asm" artifactId="$2" versionPattern="([^.]+)\.([^.]+)\.0(?:\..*)?" versionTemplate="$1.$2"/>
   <mavenMappings namePattern="(org\.objectweb)\.([^.]+)\.([^.]+)" groupId="org.ow2.asm" artifactId="$2-$3" versionPattern="([^.]+)\.([^.]+)\.0(?:\..*)?" versionTemplate="$1.$2"/>
   <mavenMappings namePattern="org.tukaani.xz" groupId="org.tukaani" artifactId="xz" versionPattern="([^.]+)\.([^.]+)\.0(?:\..*)?" versionTemplate="$1.$2"/>
@@ -44,6 +47,8 @@
   <mavenMappings namePattern="(junit)-([^-]+)-([^-]+)-([^-]+)" groupId="org.junit.$2" artifactId="junit-$2-$3-$4"/>
   <mavenMappings namePattern="(org)\.(opentest4j)" groupId="$1.$2" artifactId="$2"/>
   <mavenMappings namePattern="(org)\.(apiguardian)" groupId="$1.$2" artifactId="$2-api"/>
+  <mavenMappings namePattern="slf4j\.api" groupId="org.slf4j" artifactId="slf4j-api"/>
+  <mavenMappings namePattern="org\.jsoup" groupId="org.jsoup" artifactId="jsoup"/>
   <mavenMappings namePattern="org.apiguardian.api" groupId="org.apiguardian" artifactId="apiguardian-api"/>
   <mavenMappings namePattern="org.junit" groupId="junit" artifactId="junit"/>
   <mavenMappings namePattern="org\.(sat4j)\.(.*)" groupId="org.ow2.$1" artifactId="org.ow2.$1.$2"/>
