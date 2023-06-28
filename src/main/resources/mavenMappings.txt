@@ -25,6 +25,7 @@
   <mavenMappings namePattern="([^.]+)\.servlet$" groupId="$1.servlet" artifactId="$1.servlet-api"/>
   <mavenMappings namePattern="([^.]+)\.servlet\.jsp(.*)" groupId="$1.servlet.jsp" artifactId="$1.servlet.jsp-api"/>
   <mavenMappings namePattern="(javax.inject)" groupId="$1" artifactId="$1" versionPattern="([^.]+)\.0(?:\..*)?" versionTemplate="$1"/>
+  <mavenMappings namePattern="org\.apache\.commons\.cli" groupId="commons-cli" artifactId="commons-cli" versionPattern="([^.]+)\.([^.]+)\.([^.]+)" versionTemplate="$1.$2.$3"/>
   <mavenMappings namePattern="org\.apache\.commons\.compress" groupId="org.apache.commons" artifactId="commons-compress" versionPattern="([^.]+)\.([^.]+)\.0(?:\..*)?" versionTemplate="$1.$2"/>
   <mavenMappings namePattern="org\.apache\.commons\.collections" groupId="commons-collections" artifactId="commons-collections" versionPattern="([^.]+)\.([^.]+)\.([^.]+)\.([^.]+)" versionTemplate="$1.$2.$3"/>
   <mavenMappings namePattern="org\.apache\.commons\.commons-fileupload" groupId="commons-fileupload" artifactId="commons-fileupload" versionPattern="([^.]+)\.([^.]+)\.0(?:\..*)?" versionTemplate="$1.$2"/>
@@ -49,6 +50,7 @@
   <mavenMappings namePattern="(org)\.(apiguardian)" groupId="$1.$2" artifactId="$2-api"/>
   <mavenMappings namePattern="slf4j\.api" groupId="org.slf4j" artifactId="slf4j-api"/>
   <mavenMappings namePattern="org\.jsoup" groupId="org.jsoup" artifactId="jsoup"/>
+  <mavenMappings namePattern="org\.glassfish\.hk2\.osgi-resource-locator" groupId="org.glassfish.hk2" artifactId="osgi-resource-locator" versionPattern="([^.]+)\.([^.]+)\.([^.]+)\.([^.]+)" versionTemplate="$1.$2.$3-b42"/>
   <mavenMappings namePattern="org.apiguardian.api" groupId="org.apiguardian" artifactId="apiguardian-api"/>
   <mavenMappings namePattern="org.junit" groupId="junit" artifactId="junit"/>
   <mavenMappings namePattern="org\.(sat4j)\.(.*)" groupId="org.ow2.$1" artifactId="org.ow2.$1.$2"/>
@@ -68,7 +70,10 @@
   <mavenMappings namePattern="javaewah" groupId="com.googlecode.javaewah" artifactId="JavaEWAH"/>
   <mavenMappings namePattern="(org\.bouncycastle)\.(.*)" groupId="$1" artifactId="$2-jdk18on" versionPattern="([^.]+)\.([^.]+)\.0(?:\..*)?" versionTemplate="$1.$2"/>
   <mavenMappings namePattern="bcprov" groupId="org.bouncycastle" artifactId="bcprov-jdk18on" versionPattern="([^.]+)\.([^.]+)\.0" versionTemplate="$1.$2"/>
-  <mavenMappings namePattern="bcpg" groupId="org.bouncycastle" artifactId="bcpg-jdk18on" versionPattern="(.*)" versionTemplate="$1"/>
+  <mavenMappings namePattern="bcpg" groupId="org.bouncycastle" artifactId="bcpg-jdk18on" versionPattern="([^.]+)\.([^.]+)\.0" versionTemplate="$1.$2"/>
+  <mavenMappings namePattern="bcprov" groupId="org.bouncycastle" artifactId="bcprov-jdk18on" versionPattern="([^.]+)\.([^.]+)\.0" versionTemplate="$1.$2"/>
+  <mavenMappings namePattern="bcpkix" groupId="org.bouncycastle" artifactId="bcpkix-jdk18on" versionPattern="([^.]+)\.([^.]+)\.0" versionTemplate="$1.$2"/>
+  <mavenMappings namePattern="bcutil" groupId="org.bouncycastle" artifactId="bcutil-jdk18on" versionPattern="([^.]+)\.([^.]+)\.0" versionTemplate="$1.$2"/>
   <mavenMappings namePattern="(lpg\.runtime)\.(.*)" groupId="$1" artifactId="$2" versionPattern="([^.]+)\.([^.]+)\.([^.]+)\.([^.]+)" versionTemplate="$1.$2.$3-$4"/>  
   <mavenMappings namePattern="org.apache.xerces" groupId="xerces" artifactId="xercesImpl"/>
   <mavenMappings namePattern="org.apache.xml.resolver" groupId="xml-resolver" artifactId="xml-resolver" versionPattern="([^.]+)\.([^.]+)\.0(?:\..*)?" versionTemplate="$1.$2"/>
