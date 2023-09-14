@@ -252,6 +252,50 @@ class ECentralTaskTest {
         assertThat(icu.getVersion())
                 .as("version")
                 .isEqualTo("3.0.0");
+
+        icu = ECentralTask.toMavenArtifact(new BndEntry("jakarta.ws.rs-api", "2.1.6"), mavenMappings)
+                .orElseThrow();
+        assertThat(icu.getGroupId())
+                .as("groupId")
+                .isEqualTo("jakarta.ws.rs");
+        assertThat(icu.getArtifactId())
+                .as("artifactId")
+                .isEqualTo("jakarta.ws.rs-api");
+        assertThat(icu.getVersion())
+                .as("version")
+                .isEqualTo("2.1.6");
+    }
+
+    @Test
+    void testToMavenArtifactJackson() throws Exception {
+        List<MavenMapping> mavenMappings = ECentralTask.readMavenMappings();
+        MavenArtifact icu = ECentralTask.toMavenArtifact(new BndEntry("com.fasterxml.jackson.core.jackson-annotations", "2.15.2"), mavenMappings)
+                .orElseThrow();
+        assertThat(icu.getGroupId())
+                .as("groupId")
+                .isEqualTo("com.fasterxml.jackson.core");
+        assertThat(icu.getArtifactId())
+                .as("artifactId")
+                .isEqualTo("jackson-annotations");
+        assertThat(icu.getVersion())
+                .as("version")
+                .isEqualTo("2.15.2");
+    }
+
+    @Test
+    void testToMavenArtifactJdom() throws Exception {
+        List<MavenMapping> mavenMappings = ECentralTask.readMavenMappings();
+        MavenArtifact icu = ECentralTask.toMavenArtifact(new BndEntry("org.jdom", "1.1.3.v20230812-160"), mavenMappings)
+                .orElseThrow();
+        assertThat(icu.getGroupId())
+                .as("groupId")
+                .isEqualTo("org.jdom");
+        assertThat(icu.getArtifactId())
+                .as("artifactId")
+                .isEqualTo("jdom");
+        assertThat(icu.getVersion())
+                .as("version")
+                .isEqualTo("1.1.3");
     }
 
     @Test
@@ -477,7 +521,7 @@ class ECentralTaskTest {
     @Test
     void testToMavenArtifactGuava() throws Exception {
         List<MavenMapping> mavenMappings = ECentralTask.readMavenMappings();
-        MavenArtifact guava = ECentralTask.toMavenArtifact(new BndEntry("com.google.guava", "31.1.0.jre"), mavenMappings)
+        MavenArtifact guava = ECentralTask.toMavenArtifact(new BndEntry("com.google.guava", "32.1.2.jre"), mavenMappings)
                 .orElseThrow();
         assertThat(guava.getGroupId())
                 .as("groupId")
@@ -487,7 +531,7 @@ class ECentralTaskTest {
                 .isEqualTo("guava");
         assertThat(guava.getVersion())
                 .as("version")
-                .isEqualTo("31.1-jre");
+                .isEqualTo("32.1.2-jre");
 
         guava = ECentralTask.toMavenArtifact(new BndEntry("com.google.guava.failureaccess", "1.0.1"), mavenMappings)
                 .orElseThrow();

@@ -13,12 +13,15 @@
   <mavenMappings namePattern="(org\.eclipse)(.*)$" groupId="$1.platform" artifactId="$1$2"/>
   <mavenMappings namePattern="com\.ibm\.icu" groupId="com.ibm.icu" artifactId="icu4j" versionPattern="([^.]+)\.([^.]+)\.0(?:\..*)?" versionTemplate="$1.$2"/>
   <mavenMappings namePattern="(com\.jcraft)\.(.*)" groupId="$1" artifactId="$2"/>
+  <mavenMappings namePattern="(com\.fasterxml\.jackson\.[^.]+)\.(.*)" groupId="$1" artifactId="$2"/>
   <mavenMappings namePattern="com\.sun\.el\.javax\.el" groupId="com.sun.el" artifactId="el-ri" versionPattern="(.*)" versionTemplate="$1" />
   <mavenMappings namePattern="com\.sun\.el" groupId="org.eclipse.jetty.orbit" artifactId="com.sun.el" versionPattern="(.*)" versionTemplate="$1" />
   <mavenMappings namePattern="javassist" groupId="org.javassist" artifactId="javassist" versionPattern="([^.]+)\.([^.]+)\.([^.]+)\.([^.]+)" versionTemplate="$1.$2.$3-$4"/>
   <mavenMappings namePattern="javax\.annotation" groupId="jakarta.annotation" artifactId="jakarta.annotation-api"/>
   <mavenMappings namePattern="javax\.activation" groupId="com.sun.activation" artifactId="jakarta.activation" versionPattern="([^.]+)\.([^.]+)\.([^.]+)\.([^.]+)" versionTemplate="$1.$2.$3"/>
   <mavenMappings namePattern="javax\.el" groupId="javax.el" artifactId="el-api" versionPattern="([^.]+)\.([^.]+)\.0(?:\..*)?" versionTemplate="$1.$2"/>
+  <mavenMappings namePattern="org\.jdom" groupId="org.jdom" artifactId="jdom" versionPattern="([^.]+)\.([^.]+)\.([^.]+)\.([^.]+)" versionTemplate="$1.$2.$3"/>
+  <mavenMappings namePattern="jakarta\.ws\.rs-api" groupId="jakarta.ws.rs" artifactId="jakarta.ws.rs-api" versionPattern="([^.]+)\.([^.]+)\.([^.]+)" versionTemplate="$1.$2.$3"/>
   <mavenMappings namePattern="javax\.ws\.rs" groupId="jakarta.ws.rs" artifactId="jakarta.ws.rs-api" versionPattern="([^.]+)\.([^.]+)\.([^.]+)\.([^.]+)" versionTemplate="$1.$2.$3"/>
   <mavenMappings namePattern="javax\.el-api" groupId="jakarta.el" artifactId="jakarta.el-api" versionPattern="(.*)" versionTemplate="$1"/>
   <mavenMappings namePattern="jakarta\.xml\.bind" groupId="jakarta.xml.bind" artifactId="jakarta.xml.bind-api"/>
@@ -63,7 +66,7 @@
   <mavenMappings namePattern="org\.apache\.batik\.([^.]+)$" groupId="org.apache.xmlgraphics" artifactId="batik-$1" versionPattern="([^.]+)\.([^.]+)\.0(?:\..*)?" versionTemplate="$1.$2"/>
   <mavenMappings namePattern="org\.apache\.xmlgraphics$" groupId="org.apache.xmlgraphics" artifactId="xmlgraphics-commons" versionPattern="([^.]+)\.([^.]+)\.0(?:\..*)?" versionTemplate="$1.$2"/>
   <mavenMappings namePattern="com.google.gson" groupId="com.google.code.gson" artifactId="gson"/>
-  <mavenMappings namePattern="com\.google\.guava$" groupId="com.google.guava" artifactId="guava" versionPattern="([^.]+)\.([^.]+)\.0(?:\..*)?" versionTemplate="$1.$2-jre"/>
+  <mavenMappings namePattern="com\.google\.guava$" groupId="com.google.guava" artifactId="guava" versionPattern="([^.]+)\.([^.]+)\.([^.]+)\.([^.]+)?" versionTemplate="$1.$2.$3-jre"/>
   <mavenMappings namePattern="(com\.google\.guava)\.(.*)" groupId="$1" artifactId="$2"/>
   <mavenMappings namePattern="com.sun.jna.platform" groupId="net.java.dev.jna" artifactId="jna-platform"/>
   <mavenMappings namePattern="com.sun.jna" groupId="net.java.dev.jna" artifactId="jna"/>
