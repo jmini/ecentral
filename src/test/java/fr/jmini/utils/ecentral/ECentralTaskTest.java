@@ -241,29 +241,53 @@ class ECentralTaskTest {
     @Test
     void testToMavenArtifactJavax() throws Exception {
         List<MavenMapping> mavenMappings = ECentralTask.readMavenMappings();
-        MavenArtifact icu = ECentralTask.toMavenArtifact(new BndEntry("jakarta.servlet.jsp", "3.0.0.v20210105-0527"), mavenMappings)
+        MavenArtifact artifact = ECentralTask.toMavenArtifact(new BndEntry("jakarta.servlet.jsp", "3.0.0.v20210105-0527"), mavenMappings)
                 .orElseThrow();
-        assertThat(icu.getGroupId())
+        assertThat(artifact.getGroupId())
                 .as("groupId")
                 .isEqualTo("jakarta.servlet.jsp");
-        assertThat(icu.getArtifactId())
+        assertThat(artifact.getArtifactId())
                 .as("artifactId")
                 .isEqualTo("jakarta.servlet.jsp-api");
-        assertThat(icu.getVersion())
+        assertThat(artifact.getVersion())
                 .as("version")
                 .isEqualTo("3.0.0");
 
-        icu = ECentralTask.toMavenArtifact(new BndEntry("jakarta.ws.rs-api", "2.1.6"), mavenMappings)
+        artifact = ECentralTask.toMavenArtifact(new BndEntry("jakarta.ws.rs-api", "2.1.6"), mavenMappings)
                 .orElseThrow();
-        assertThat(icu.getGroupId())
+        assertThat(artifact.getGroupId())
                 .as("groupId")
                 .isEqualTo("jakarta.ws.rs");
-        assertThat(icu.getArtifactId())
+        assertThat(artifact.getArtifactId())
                 .as("artifactId")
                 .isEqualTo("jakarta.ws.rs-api");
-        assertThat(icu.getVersion())
+        assertThat(artifact.getVersion())
                 .as("version")
                 .isEqualTo("2.1.6");
+
+        artifact = ECentralTask.toMavenArtifact(new BndEntry("jakarta.annotation-api", "1.3.5"), mavenMappings)
+                .orElseThrow();
+        assertThat(artifact.getGroupId())
+                .as("groupId")
+                .isEqualTo("jakarta.annotation");
+        assertThat(artifact.getArtifactId())
+                .as("artifactId")
+                .isEqualTo("jakarta.annotation-api");
+        assertThat(artifact.getVersion())
+                .as("version")
+                .isEqualTo("1.3.5");
+
+        artifact = ECentralTask.toMavenArtifact(new BndEntry("jakarta.inject.jakarta.inject-api", "1.0.5"), mavenMappings)
+                .orElseThrow();
+        assertThat(artifact.getGroupId())
+                .as("groupId")
+                .isEqualTo("jakarta.inject");
+        assertThat(artifact.getArtifactId())
+                .as("artifactId")
+                .isEqualTo("jakarta.inject-api");
+        assertThat(artifact.getVersion())
+                .as("version")
+                .isEqualTo("1.0.5");
     }
 
     @Test
@@ -515,6 +539,18 @@ class ECentralTaskTest {
         assertThat(fu.getVersion())
                 .as("version")
                 .isEqualTo("1.4");
+
+        MavenArtifact commonsCompress = ECentralTask.toMavenArtifact(new BndEntry("org.apache.commons.commons-compress", "1.25.0"), commonsMavenMappings)
+                .orElseThrow();
+        assertThat(commonsCompress.getGroupId())
+                .as("groupId")
+                .isEqualTo("org.apache.commons");
+        assertThat(commonsCompress.getArtifactId())
+                .as("artifactId")
+                .isEqualTo("commons-compress");
+        assertThat(commonsCompress.getVersion())
+                .as("version")
+                .isEqualTo("1.25.0");
 
     }
 

@@ -13,6 +13,19 @@ import org.junit.jupiter.api.Test;
 class RunTest {
 
     @Test
+    void run_2023_12() throws Exception {
+        Input input = new Input()
+                .withReleaseName("2023-12")
+                .withArtifactId("eclipse-full-dependencies");
+        ECentralTask task = new ECentralTask(input);
+        task.run();
+        String mavenArtifacts = Files.readString(task.getMavenArtifactsFile(), StandardCharsets.UTF_8);
+        String potentialMavenArtifacts = Files.readString(task.getPotentialMavenArtifactsFile(), StandardCharsets.UTF_8);
+
+        assertThatJson(mavenArtifacts).isEqualTo(potentialMavenArtifacts);
+    }
+
+    @Test
     void run_2023_09() throws Exception {
         Input input = new Input()
                 .withReleaseName("2023-09")

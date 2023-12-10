@@ -4,6 +4,7 @@
   <mavenMappings namePattern="(org\.eclipse\.jgit)(.*)" groupId="$1" artifactId="$1$2" versionPattern="(.*)" versionTemplate="$1"/>
   <mavenMappings namePattern="(org\.eclipse\.birt)(.*)" groupId="$1" artifactId="$1$2"/>
   <mavenMappings namePattern="(org\.eclipse\.persistence)(.*)" groupId="$1" artifactId="$1$2"/>
+  <mavenMappings namePattern="org\.eclipse\.jetty\.ee8\.(.*)" groupId="org.eclipse.jetty.ee8" artifactId="jetty-ee8-$1" versionPattern="(.*)" versionTemplate="$1"/>
   <mavenMappings namePattern="org\.eclipse\.jetty\.(.*)" groupId="org.eclipse.jetty" artifactId="jetty-$1" versionPattern="(.*)" versionTemplate="$1"/>
   <mavenMappings namePattern="(org.eclipse.xsd)(.*)" groupId="org.eclipse.emf" artifactId="$1$2"/>
   <mavenMappings namePattern="org.eclipse.osgi.services.remoteserviceadmin" groupId="org.eclipse.ecf" artifactId="org.eclipse.osgi.services.remoteserviceadmin"/>
@@ -18,18 +19,22 @@
   <mavenMappings namePattern="com\.sun\.el" groupId="org.eclipse.jetty.orbit" artifactId="com.sun.el" versionPattern="(.*)" versionTemplate="$1" />
   <mavenMappings namePattern="javassist" groupId="org.javassist" artifactId="javassist" versionPattern="([^.]+)\.([^.]+)\.([^.]+)\.([^.]+)" versionTemplate="$1.$2.$3-$4"/>
   <mavenMappings namePattern="javax\.annotation" groupId="jakarta.annotation" artifactId="jakarta.annotation-api"/>
+  <mavenMappings namePattern="jakarta\.annotation-api" groupId="jakarta.annotation" artifactId="jakarta.annotation-api"/>
   <mavenMappings namePattern="javax\.activation" groupId="com.sun.activation" artifactId="jakarta.activation" versionPattern="([^.]+)\.([^.]+)\.([^.]+)\.([^.]+)" versionTemplate="$1.$2.$3"/>
   <mavenMappings namePattern="javax\.el" groupId="javax.el" artifactId="el-api" versionPattern="([^.]+)\.([^.]+)\.0(?:\..*)?" versionTemplate="$1.$2"/>
+  <mavenMappings namePattern="jakarta\.el" groupId="jakarta.el" artifactId="jakarta.el-api" versionPattern="([^.]+)\.([^.]+)\.([^.]+)\.([^.]+)" versionTemplate="$1.$2.$3"/>
   <mavenMappings namePattern="org\.jdom" groupId="org.jdom" artifactId="jdom" versionPattern="([^.]+)\.([^.]+)\.([^.]+)\.([^.]+)" versionTemplate="$1.$2.$3"/>
   <mavenMappings namePattern="jakarta\.ws\.rs-api" groupId="jakarta.ws.rs" artifactId="jakarta.ws.rs-api" versionPattern="([^.]+)\.([^.]+)\.([^.]+)" versionTemplate="$1.$2.$3"/>
   <mavenMappings namePattern="javax\.ws\.rs" groupId="jakarta.ws.rs" artifactId="jakarta.ws.rs-api" versionPattern="([^.]+)\.([^.]+)\.([^.]+)\.([^.]+)" versionTemplate="$1.$2.$3"/>
   <mavenMappings namePattern="javax\.el-api" groupId="jakarta.el" artifactId="jakarta.el-api" versionPattern="(.*)" versionTemplate="$1"/>
   <mavenMappings namePattern="jakarta\.xml\.bind" groupId="jakarta.xml.bind" artifactId="jakarta.xml.bind-api"/>
-  <mavenMappings namePattern="([^.]+)\.servlet$" groupId="$1.servlet" artifactId="$1.servlet-api"/>
+  <mavenMappings namePattern="([^.]+)\.servlet$" groupId="$1.servlet" artifactId="$1.servlet-api" versionPattern="([^.]+)\.([^.]+)\.([^.]+)\.([^.]+)" versionTemplate="$1.$2.$3"/>
   <mavenMappings namePattern="([^.]+)\.servlet\.jsp(.*)" groupId="$1.servlet.jsp" artifactId="$1.servlet.jsp-api"/>
   <mavenMappings namePattern="(javax.inject)" groupId="$1" artifactId="$1" versionPattern="([^.]+)\.0(?:\..*)?" versionTemplate="$1"/>
+  <mavenMappings namePattern="jakarta\.inject\.jakarta\.inject-api" groupId="jakarta.inject" artifactId="jakarta.inject-api"/>
   <mavenMappings namePattern="org\.apache\.commons\.cli" groupId="commons-cli" artifactId="commons-cli" versionPattern="([^.]+)\.([^.]+)\.([^.]+)" versionTemplate="$1.$2.$3"/>
-  <mavenMappings namePattern="org\.apache\.commons\.compress" groupId="org.apache.commons" artifactId="commons-compress" versionPattern="([^.]+)\.([^.]+)\.0(?:\..*)?" versionTemplate="$1.$2"/>
+  <mavenMappings namePattern="org\.apache\.commons\.commons-compress" groupId="org.apache.commons" artifactId="commons-compress"/>
+  <mavenMappings namePattern="org\.apache\.commons\.compress" groupId="org.apache.commons" artifactId="commons-compress" versionPattern="([^.]+)\.([^.]+)\.([^.]+)" versionTemplate="$1.$2.$3"/>
   <mavenMappings namePattern="org\.apache\.commons\.collections" groupId="commons-collections" artifactId="commons-collections" versionPattern="([^.]+)\.([^.]+)\.([^.]+)\.([^.]+)" versionTemplate="$1.$2.$3"/>
   <mavenMappings namePattern="org\.apache\.commons\.commons-fileupload" groupId="commons-fileupload" artifactId="commons-fileupload" versionPattern="([^.]+)\.([^.]+)\.0(?:\..*)?" versionTemplate="$1.$2"/>
   <mavenMappings namePattern="org\.apache\.commons\.(commons-[^.]+)" groupId="$1" artifactId="$1"/>
