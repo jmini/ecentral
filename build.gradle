@@ -24,7 +24,7 @@ group = 'fr.jmini.utils'
 
 java {
     toolchain {
-        languageVersion = JavaLanguageVersion.of(11)
+        languageVersion = JavaLanguageVersion.of(17)
     }
 }
 
@@ -46,6 +46,7 @@ dependencies {
     implementation "fr.jmini.utils:mvn-utils:$mvnUtils"
     implementation "biz.aQute.bnd:biz.aQute.bnd:$bndVersion"
     implementation "com.google.code.gson:gson:$gsonVersion"
+    implementation "com.konghq:unirest-java:$kongVersion"
 
     testImplementation "org.junit.jupiter:junit-jupiter-api:$junitVersion"
     testImplementation "org.assertj:assertj-core:$assertjVersion"

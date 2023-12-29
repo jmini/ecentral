@@ -29,30 +29,51 @@
     <bcpkix-jdk18on.version>1.77</bcpkix-jdk18on.version>
     <bcprov-jdk18on.version>1.77</bcprov-jdk18on.version>
     <bcutil-jdk18on.version>1.77</bcutil-jdk18on.version>
+    <biz-aQute-bnd-util.version>7.0.0</biz-aQute-bnd-util.version>
+    <biz-aQute-bndlib.version>7.0.0</biz-aQute-bndlib.version>
+    <logback-classic.version>1.4.11</logback-classic.version>
+    <logback-core.version>1.4.11</logback-core.version>
     <jackson-annotations.version>2.16.0</jackson-annotations.version>
     <jackson-core.version>2.16.0</jackson-core.version>
     <jackson-databind.version>2.16.0</jackson-databind.version>
     <jackson-module-jaxb-annotations.version>2.15.3</jackson-module-jaxb-annotations.version>
+    <caffeine.version>3.1.8</caffeine.version>
+    <jnr-a64asm.version>1.0.0</jnr-a64asm.version>
+    <jnr-constants.version>0.10.4</jnr-constants.version>
+    <jnr-enxio.version>0.32.16</jnr-enxio.version>
+    <jnr-ffi.version>2.2.15</jnr-ffi.version>
     <jffi.version>1.3.12</jffi.version>
+    <jnr-posix.version>3.1.18</jnr-posix.version>
+    <jnr-unixsocket.version>0.38.21</jnr-unixsocket.version>
+    <jnr-x86asm.version>1.0.2</jnr-x86asm.version>
     <oshi-core.version>6.4.7</oshi-core.version>
+    <error_prone_annotations.version>2.23.0</error_prone_annotations.version>
     <gson.version>2.10.1</gson.version>
     <guava.version>32.1.3-jre</guava.version>
     <failureaccess.version>1.0.2</failureaccess.version>
+    <guice.version>7.0.0</guice.version>
+    <guice-assistedinject.version>7.0.0</guice-assistedinject.version>
     <JavaEWAH.version>1.2.3</JavaEWAH.version>
     <icu4j.version>74.1</icu4j.version>
     <jsch.version>0.1.55</jsch.version>
-    <el-ri.version>3.0.4</el-ri.version>
+    <jakarta-el.version>3.0.4</jakarta-el.version>
     <jna.version>5.13.0</jna.version>
     <jna-platform.version>5.13.0</jna-platform.version>
+    <classgraph.version>4.8.164</classgraph.version>
     <jakarta-annotation-api.version>2.1.1</jakarta-annotation-api.version>
     <jakarta-el-api.version>4.0.0</jakarta-el-api.version>
+    <jakarta-enterprise-cdi-api.version>2.0.2</jakarta-enterprise-cdi-api.version>
+    <jakarta-enterprise-lang-model.version>4.0.1</jakarta-enterprise-lang-model.version>
     <jakarta-inject-api.version>2.0.1</jakarta-inject-api.version>
-    <jakarta-servlet-api.version>5.0.0</jakarta-servlet-api.version>
+    <jakarta-interceptor-api.version>1.2.5</jakarta-interceptor-api.version>
+    <jakarta-servlet-api.version>6.0.0</jakarta-servlet-api.version>
     <jakarta-servlet-jsp-api.version>3.0.0</jakarta-servlet-jsp-api.version>
+    <jakarta-transaction-api.version>1.3.3</jakarta-transaction-api.version>
     <jakarta-ws-rs-api.version>2.1.6</jakarta-ws-rs-api.version>
     <jakarta-xml-bind-api.version>2.3.3</jakarta-xml-bind-api.version>
     <javassist.version>3.29.2-GA</javassist.version>
     <jakarta-activation.version>1.2.2</jakarta-activation.version>
+    <jaxen.version>2.0.0</jaxen.version>
     <junit-jupiter-api.version>5.10.1</junit-jupiter-api.version>
     <junit-jupiter-engine.version>5.10.1</junit-jupiter-engine.version>
     <junit-jupiter-migrationsupport.version>5.10.1</junit-jupiter-migrationsupport.version>
@@ -69,6 +90,7 @@
     <byte-buddy.version>1.14.9</byte-buddy.version>
     <eddsa.version>0.3.0</eddsa.version>
     <ant.version>1.10.14</ant.version>
+    <org-apache-aries-spifly-dynamic-bundle.version>1.3.7</org-apache-aries-spifly-dynamic-bundle.version>
     <batik-anim.version>1.17</batik-anim.version>
     <batik-awt-util.version>1.17</batik-awt-util.version>
     <batik-bridge.version>1.17</batik-bridge.version>
@@ -88,17 +110,18 @@
     <batik-util.version>1.17</batik-util.version>
     <batik-xml.version>1.17</batik-xml.version>
     <commons-cli.version>1.6.0</commons-cli.version>
-    <commons-codec.version>1.14</commons-codec.version>
+    <commons-codec.version>1.16.0</commons-codec.version>
     <commons-collections.version>3.2.2</commons-collections.version>
     <commons-beanutils.version>1.9.4</commons-beanutils.version>
-    <commons-codec.version>1.16.0</commons-codec.version>
     <commons-compress.version>1.25.0</commons-compress.version>
     <commons-fileupload.version>1.5</commons-fileupload.version>
     <commons-io.version>2.15.0</commons-io.version>
+    <commons-digester3.version>3.1</commons-digester3.version>
     <commons-discovery.version>0.5</commons-discovery.version>
     <commons-httpclient.version>3.1</commons-httpclient.version>
     <commons-jxpath.version>1.3</commons-jxpath.version>
     <commons-lang.version>2.6</commons-lang.version>
+    <commons-lang3.version>3.13.0</commons-lang3.version>
     <commons-logging.version>1.2</commons-logging.version>
     <commons-net.version>3.2</commons-net.version>
     <org-apache-felix-gogo-command.version>1.1.2</org-apache-felix-gogo-command.version>
@@ -119,6 +142,8 @@
     <lucene-sandbox.version>9.8.0</lucene-sandbox.version>
     <sshd-osgi.version>2.11.0</sshd-osgi.version>
     <sshd-sftp.version>2.11.0</sshd-sftp.version>
+    <velocity.version>1.7</velocity.version>
+    <ws-commons-util.version>1.0.2</ws-commons-util.version>
     <xercesImpl.version>2.12.2</xercesImpl.version>
     <xml-resolver.version>1.2</xml-resolver.version>
     <xmlgraphics-commons.version>2.9</xmlgraphics-commons.version>
@@ -241,6 +266,19 @@
     <org-eclipse-emf-mwe2-launch.version>2.16.0</org-eclipse-emf-mwe2-launch.version>
     <org-eclipse-emf-mwe2-lib.version>2.16.0</org-eclipse-emf-mwe2-lib.version>
     <org-eclipse-emf-mwe2-runtime.version>2.16.0</org-eclipse-emf-mwe2-runtime.version>
+    <org-eclipse-emf-parsley.version>1.15.0</org-eclipse-emf-parsley.version>
+    <org-eclipse-emf-parsley-cdo.version>1.15.0</org-eclipse-emf-parsley-cdo.version>
+    <org-eclipse-emf-parsley-cdo-common.version>1.15.0</org-eclipse-emf-parsley-cdo-common.version>
+    <org-eclipse-emf-parsley-common.version>1.15.0</org-eclipse-emf-parsley-common.version>
+    <org-eclipse-emf-parsley-dsl.version>1.15.0</org-eclipse-emf-parsley-dsl.version>
+    <org-eclipse-emf-parsley-editors.version>1.15.0</org-eclipse-emf-parsley-editors.version>
+    <org-eclipse-emf-parsley-editors-common.version>1.15.0</org-eclipse-emf-parsley-editors-common.version>
+    <org-eclipse-emf-parsley-generator-common.version>1.15.0</org-eclipse-emf-parsley-generator-common.version>
+    <org-eclipse-emf-parsley-junit4.version>1.15.0</org-eclipse-emf-parsley-junit4.version>
+    <org-eclipse-emf-parsley-runtime.version>1.15.0</org-eclipse-emf-parsley-runtime.version>
+    <org-eclipse-emf-parsley-runtime-common.version>1.15.0</org-eclipse-emf-parsley-runtime-common.version>
+    <org-eclipse-emf-parsley-views.version>1.15.0</org-eclipse-emf-parsley-views.version>
+    <org-eclipse-emf-parsley-views-common.version>1.15.0</org-eclipse-emf-parsley-views-common.version>
     <org-eclipse-equinox-app.version>1.6.400</org-eclipse-equinox-app.version>
     <org-eclipse-equinox-bidi.version>1.4.400</org-eclipse-equinox-bidi.version>
     <org-eclipse-equinox-cm.version>1.5.300</org-eclipse-equinox-cm.version>
@@ -354,17 +392,21 @@
     <jetty-ee8-jndi.version>12.0.3</jetty-ee8-jndi.version>
     <jetty-ee8-plus.version>12.0.3</jetty-ee8-plus.version>
     <jetty-ee8-security.version>12.0.3</jetty-ee8-security.version>
+    <jetty-ee8-nested.version>12.0.3</jetty-ee8-nested.version>
     <jetty-ee8-servlet.version>12.0.3</jetty-ee8-servlet.version>
     <jetty-ee8-servlets.version>12.0.3</jetty-ee8-servlets.version>
     <jetty-ee8-webapp.version>12.0.3</jetty-ee8-webapp.version>
     <jetty-http.version>12.0.3</jetty-http.version>
     <jetty-io.version>12.0.3</jetty-io.version>
     <jetty-jndi.version>12.0.3</jetty-jndi.version>
+    <jetty-slf4j-impl.version>12.0.3</jetty-slf4j-impl.version>
     <jetty-security.version>12.0.3</jetty-security.version>
     <jetty-server.version>12.0.3</jetty-server.version>
     <jetty-servlet.version>10.0.18</jetty-servlet.version>
+    <jetty-servlet-api.version>4.0.6</jetty-servlet-api.version>
     <jetty-session.version>12.0.3</jetty-session.version>
     <jetty-util.version>12.0.3</jetty-util.version>
+    <jetty-util-ajax.version>12.0.3</jetty-util-ajax.version>
     <jetty-xml.version>12.0.3</jetty-xml.version>
     <org-eclipse-jface.version>3.32.0</org-eclipse-jface.version>
     <org-eclipse-jface-databinding.version>1.15.100</org-eclipse-jface-databinding.version>
@@ -383,8 +425,31 @@
     <org-eclipse-jgit-ui.version>6.8.0.202311291450-r</org-eclipse-jgit-ui.version>
     <org-eclipse-jsch-core.version>1.5.200</org-eclipse-jsch-core.version>
     <org-eclipse-jsch-ui.version>1.5.200</org-eclipse-jsch-ui.version>
+    <org-eclipse-lsp4j.version>0.21.1</org-eclipse-lsp4j.version>
+    <org-eclipse-lsp4j-debug.version>0.21.1</org-eclipse-lsp4j-debug.version>
+    <org-eclipse-lsp4j-generator.version>0.21.1</org-eclipse-lsp4j-generator.version>
+    <org-eclipse-lsp4j-jsonrpc.version>0.21.1</org-eclipse-lsp4j-jsonrpc.version>
+    <org-eclipse-lsp4j-jsonrpc-debug.version>0.21.1</org-eclipse-lsp4j-jsonrpc-debug.version>
+    <org-eclipse-lsp4j-websocket.version>0.21.1</org-eclipse-lsp4j-websocket.version>
+    <org-eclipse-lsp4j-websocket-jakarta.version>0.21.1</org-eclipse-lsp4j-websocket-jakarta.version>
     <org-eclipse-ltk-core-refactoring.version>3.14.200</org-eclipse-ltk-core-refactoring.version>
     <org-eclipse-ltk-ui-refactoring.version>3.13.200</org-eclipse-ltk-ui-refactoring.version>
+    <archetype-catalog.version>3.2.1</archetype-catalog.version>
+    <archetype-descriptor.version>3.2.1</archetype-descriptor.version>
+    <maven-artifact-transfer.version>0.13.1</maven-artifact-transfer.version>
+    <org-eclipse-m2e-core.version>2.4.1.20231119-0901</org-eclipse-m2e-core.version>
+    <org-eclipse-m2e-core-ui.version>2.0.7.20231119-0901</org-eclipse-m2e-core-ui.version>
+    <org-eclipse-m2e-workspace-cli.version>0.3.1</org-eclipse-m2e-workspace-cli.version>
+    <org-eclipse-mylyn-wikitext.version>3.0.48.202308291007</org-eclipse-mylyn-wikitext.version>
+    <org-eclipse-mylyn-wikitext-ant.version>3.0.48.202308291007</org-eclipse-mylyn-wikitext-ant.version>
+    <org-eclipse-mylyn-wikitext-asciidoc.version>3.0.48.202308291007</org-eclipse-mylyn-wikitext-asciidoc.version>
+    <org-eclipse-mylyn-wikitext-confluence.version>3.0.48.202308291007</org-eclipse-mylyn-wikitext-confluence.version>
+    <org-eclipse-mylyn-wikitext-html.version>3.0.48.202308291007</org-eclipse-mylyn-wikitext-html.version>
+    <org-eclipse-mylyn-wikitext-markdown.version>3.0.48.202308291007</org-eclipse-mylyn-wikitext-markdown.version>
+    <org-eclipse-mylyn-wikitext-mediawiki.version>3.0.48.202308291007</org-eclipse-mylyn-wikitext-mediawiki.version>
+    <org-eclipse-mylyn-wikitext-textile.version>3.0.48.202308291007</org-eclipse-mylyn-wikitext-textile.version>
+    <org-eclipse-mylyn-wikitext-tracwiki.version>3.0.48.202308291007</org-eclipse-mylyn-wikitext-tracwiki.version>
+    <org-eclipse-mylyn-wikitext-twiki.version>3.0.48.202308291007</org-eclipse-mylyn-wikitext-twiki.version>
     <org-eclipse-osgi.version>3.18.600</org-eclipse-osgi.version>
     <org-eclipse-osgi-compatibility-state.version>1.2.900</org-eclipse-osgi-compatibility-state.version>
     <org-eclipse-osgi-services.version>3.11.200</org-eclipse-osgi-services.version>
@@ -415,6 +480,8 @@
     <org-eclipse-pde-ua-ui.version>1.3.200</org-eclipse-pde-ua-ui.version>
     <org-eclipse-pde-ui.version>3.15.0</org-eclipse-pde-ui.version>
     <org-eclipse-pde-ui-templates.version>3.8.200</org-eclipse-pde-ui-templates.version>
+    <org-eclipse-persistence-antlr.version>2.7.3</org-eclipse-persistence-antlr.version>
+    <org-eclipse-persistence-asm.version>2.7.3</org-eclipse-persistence-asm.version>
     <org-eclipse-persistence-core.version>2.7.3</org-eclipse-persistence-core.version>
     <org-eclipse-persistence-jpa.version>2.7.3</org-eclipse-persistence-jpa.version>
     <org-eclipse-persistence-jpa-jpql.version>2.7.3</org-eclipse-persistence-jpa-jpql.version>
@@ -438,6 +505,9 @@
     <org-eclipse-rap-ui-views.version>3.27.0</org-eclipse-rap-ui-views.version>
     <org-eclipse-rap-ui-workbench.version>3.27.0</org-eclipse-rap-ui-workbench.version>
     <org-eclipse-rcp.version>4.30.0</org-eclipse-rcp.version>
+    <org-eclipse-scout-sdk-s2e.version>13.0.27</org-eclipse-scout-sdk-s2e.version>
+    <org-eclipse-scout-sdk-s2e-doc.version>13.0.27</org-eclipse-scout-sdk-s2e-doc.version>
+    <org-eclipse-scout-sdk-s2e-ui.version>13.0.27</org-eclipse-scout-sdk-s2e-ui.version>
     <org-eclipse-sdk.version>4.30.0</org-eclipse-sdk.version>
     <org-eclipse-search.version>3.16.0</org-eclipse-search.version>
     <org-eclipse-search-core.version>3.16.0</org-eclipse-search-core.version>
@@ -491,15 +561,57 @@
     <org-eclipse-urischeme.version>1.3.100</org-eclipse-urischeme.version>
     <org-eclipse-xsd.version>2.19.0</org-eclipse-xsd.version>
     <org-eclipse-xsd-edit.version>2.12.0</org-eclipse-xsd-edit.version>
+    <org-eclipse-xtend-core.version>2.33.0</org-eclipse-xtend-core.version>
+    <org-eclipse-xtend-ide-common.version>2.33.0</org-eclipse-xtend-ide-common.version>
+    <org-eclipse-xtend-lib.version>2.33.0</org-eclipse-xtend-lib.version>
+    <org-eclipse-xtend-lib-macro.version>2.33.0</org-eclipse-xtend-lib-macro.version>
+    <org-eclipse-xtext.version>2.33.0</org-eclipse-xtext.version>
+    <org-eclipse-xtext-builder-standalone.version>2.33.0</org-eclipse-xtext-builder-standalone.version>
+    <org-eclipse-xtext-common-types.version>2.33.0</org-eclipse-xtext-common-types.version>
+    <org-eclipse-xtext-ecore.version>2.33.0</org-eclipse-xtext-ecore.version>
+    <org-eclipse-xtext-ide.version>2.33.0</org-eclipse-xtext-ide.version>
+    <org-eclipse-xtext-java.version>2.33.0</org-eclipse-xtext-java.version>
+    <org-eclipse-xtext-purexbase.version>2.33.0</org-eclipse-xtext-purexbase.version>
+    <org-eclipse-xtext-purexbase-ide.version>2.33.0</org-eclipse-xtext-purexbase-ide.version>
+    <org-eclipse-xtext-smap.version>2.33.0</org-eclipse-xtext-smap.version>
+    <org-eclipse-xtext-testing.version>2.33.0</org-eclipse-xtext-testing.version>
+    <org-eclipse-xtext-util.version>2.33.0</org-eclipse-xtext-util.version>
+    <org-eclipse-xtext-xbase.version>2.33.0</org-eclipse-xtext-xbase.version>
+    <org-eclipse-xtext-xbase-ide.version>2.33.0</org-eclipse-xtext-xbase-ide.version>
+    <org-eclipse-xtext-xbase-lib.version>2.33.0</org-eclipse-xtext-xbase-lib.version>
+    <org-eclipse-xtext-xbase-testing.version>2.33.0</org-eclipse-xtext-xbase-testing.version>
+    <org-eclipse-xtext-xtext-generator.version>2.33.0</org-eclipse-xtext-xtext-generator.version>
+    <org-eclipse-xtext-xtext-ide.version>2.33.0</org-eclipse-xtext-xtext-ide.version>
+    <org-eclipse-xtext-xtext-wizard.version>2.33.0</org-eclipse-xtext-xtext-wizard.version>
     <freemarker.version>2.3.32</freemarker.version>
+    <hk2-api.version>2.6.1</hk2-api.version>
+    <hk2-locator.version>2.6.1</hk2-locator.version>
     <osgi-resource-locator.version>2.5.0-b42</osgi-resource-locator.version>
+    <hk2-utils.version>2.6.1</hk2-utils.version>
+    <jersey-apache-connector.version>2.41</jersey-apache-connector.version>
+    <jersey-container-servlet.version>2.41</jersey-container-servlet.version>
+    <jersey-container-servlet-core.version>2.41</jersey-container-servlet-core.version>
+    <jersey-client.version>2.41</jersey-client.version>
+    <jersey-common.version>2.41</jersey-common.version>
+    <jersey-server.version>2.41</jersey-server.version>
+    <jersey-entity-filtering.version>2.41</jersey-entity-filtering.version>
+    <jersey-hk2.version>2.41</jersey-hk2.version>
+    <jersey-media-json-jackson.version>2.41</jersey-media-json-jackson.version>
+    <hamcrest.version>2.2</hamcrest.version>
     <hamcrest-core.version>2.2</hamcrest-core.version>
     <hamcrest-library.version>1.3</hamcrest-library.version>
+    <org-jacoco-agent.version>0.8.11</org-jacoco-agent.version>
+    <org-jacoco-core.version>0.8.11</org-jacoco-core.version>
+    <org-jacoco-report.version>0.8.11</org-jacoco-report.version>
+    <jcodings.version>1.0.58</jcodings.version>
     <jdom.version>1.1.3</jdom.version>
+    <joni.version>2.2.1</joni.version>
     <jsoup.version>1.16.1</jsoup.version>
     <junit.version>4.13.2</junit.version>
+    <args4j.version>2.33</args4j.version>
     <docker-client.version>5.2.2</docker-client.version>
     <apache-jsp.version>9.0.52</apache-jsp.version>
+    <mvel2.version>2.5.0.Final</mvel2.version>
     <asm.version>9.6</asm.version>
     <asm-commons.version>9.6</asm-commons.version>
     <asm-tree.version>9.6</asm-tree.version>
@@ -532,7 +644,9 @@
     <org-ow2-sat4j-core.version>2.3.6</org-ow2-sat4j-core.version>
     <org-ow2-sat4j-pb.version>2.3.6</org-ow2-sat4j-pb.version>
     <xz.version>1.9</xz.version>
+    <snakeyaml.version>2.2</snakeyaml.version>
     <slf4j-api.version>2.0.9</slf4j-api.version>
+    <slf4j-simple.version>2.0.9</slf4j-simple.version>
   </properties>
   <dependencyManagement>
     <dependencies>
@@ -557,6 +671,26 @@
         <version>${bcutil-jdk18on.version}</version>
       </dependency>
       <dependency>
+        <groupId>biz.aQute.bnd</groupId>
+        <artifactId>biz.aQute.bnd.util</artifactId>
+        <version>${biz-aQute-bnd-util.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>biz.aQute.bnd</groupId>
+        <artifactId>biz.aQute.bndlib</artifactId>
+        <version>${biz-aQute-bndlib.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>ch.qos.logback</groupId>
+        <artifactId>logback-classic</artifactId>
+        <version>${logback-classic.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>ch.qos.logback</groupId>
+        <artifactId>logback-core</artifactId>
+        <version>${logback-core.version}</version>
+      </dependency>
+      <dependency>
         <groupId>com.fasterxml.jackson.core</groupId>
         <artifactId>jackson-annotations</artifactId>
         <version>${jackson-annotations.version}</version>
@@ -577,14 +711,59 @@
         <version>${jackson-module-jaxb-annotations.version}</version>
       </dependency>
       <dependency>
+        <groupId>com.github.ben-manes.caffeine</groupId>
+        <artifactId>caffeine</artifactId>
+        <version>${caffeine.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.github.jnr</groupId>
+        <artifactId>jnr-a64asm</artifactId>
+        <version>${jnr-a64asm.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.github.jnr</groupId>
+        <artifactId>jnr-constants</artifactId>
+        <version>${jnr-constants.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.github.jnr</groupId>
+        <artifactId>jnr-enxio</artifactId>
+        <version>${jnr-enxio.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.github.jnr</groupId>
+        <artifactId>jnr-ffi</artifactId>
+        <version>${jnr-ffi.version}</version>
+      </dependency>
+      <dependency>
         <groupId>com.github.jnr</groupId>
         <artifactId>jffi</artifactId>
         <version>${jffi.version}</version>
       </dependency>
       <dependency>
+        <groupId>com.github.jnr</groupId>
+        <artifactId>jnr-posix</artifactId>
+        <version>${jnr-posix.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.github.jnr</groupId>
+        <artifactId>jnr-unixsocket</artifactId>
+        <version>${jnr-unixsocket.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.github.jnr</groupId>
+        <artifactId>jnr-x86asm</artifactId>
+        <version>${jnr-x86asm.version}</version>
+      </dependency>
+      <dependency>
         <groupId>com.github.oshi</groupId>
         <artifactId>oshi-core</artifactId>
         <version>${oshi-core.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.google.errorprone</groupId>
+        <artifactId>error_prone_annotations</artifactId>
+        <version>${error_prone_annotations.version}</version>
       </dependency>
       <dependency>
         <groupId>com.google.code.gson</groupId>
@@ -602,6 +781,16 @@
         <version>${failureaccess.version}</version>
       </dependency>
       <dependency>
+        <groupId>com.google.inject</groupId>
+        <artifactId>guice</artifactId>
+        <version>${guice.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.google.inject.extensions</groupId>
+        <artifactId>guice-assistedinject</artifactId>
+        <version>${guice-assistedinject.version}</version>
+      </dependency>
+      <dependency>
         <groupId>com.googlecode.javaewah</groupId>
         <artifactId>JavaEWAH</artifactId>
         <version>${JavaEWAH.version}</version>
@@ -617,9 +806,9 @@
         <version>${jsch.version}</version>
       </dependency>
       <dependency>
-        <groupId>com.sun.el</groupId>
-        <artifactId>el-ri</artifactId>
-        <version>${el-ri.version}</version>
+        <groupId>org.glassfish</groupId>
+        <artifactId>jakarta.el</artifactId>
+        <version>${jakarta-el.version}</version>
       </dependency>
       <dependency>
         <groupId>net.java.dev.jna</groupId>
@@ -632,6 +821,11 @@
         <version>${jna-platform.version}</version>
       </dependency>
       <dependency>
+        <groupId>io.github.classgraph</groupId>
+        <artifactId>classgraph</artifactId>
+        <version>${classgraph.version}</version>
+      </dependency>
+      <dependency>
         <groupId>jakarta.annotation</groupId>
         <artifactId>jakarta.annotation-api</artifactId>
         <version>${jakarta-annotation-api.version}</version>
@@ -642,9 +836,24 @@
         <version>${jakarta-el-api.version}</version>
       </dependency>
       <dependency>
+        <groupId>jakarta.enterprise</groupId>
+        <artifactId>jakarta.enterprise.cdi-api</artifactId>
+        <version>${jakarta-enterprise-cdi-api.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>jakarta.enterprise</groupId>
+        <artifactId>jakarta.enterprise.lang-model</artifactId>
+        <version>${jakarta-enterprise-lang-model.version}</version>
+      </dependency>
+      <dependency>
         <groupId>jakarta.inject</groupId>
         <artifactId>jakarta.inject-api</artifactId>
         <version>${jakarta-inject-api.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>jakarta.interceptor</groupId>
+        <artifactId>jakarta.interceptor-api</artifactId>
+        <version>${jakarta-interceptor-api.version}</version>
       </dependency>
       <dependency>
         <groupId>jakarta.servlet</groupId>
@@ -655,6 +864,11 @@
         <groupId>jakarta.servlet.jsp</groupId>
         <artifactId>jakarta.servlet.jsp-api</artifactId>
         <version>${jakarta-servlet-jsp-api.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>jakarta.transaction</groupId>
+        <artifactId>jakarta.transaction-api</artifactId>
+        <version>${jakarta-transaction-api.version}</version>
       </dependency>
       <dependency>
         <groupId>jakarta.ws.rs</groupId>
@@ -675,6 +889,11 @@
         <groupId>com.sun.activation</groupId>
         <artifactId>jakarta.activation</artifactId>
         <version>${jakarta-activation.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>jaxen</groupId>
+        <artifactId>jaxen</artifactId>
+        <version>${jaxen.version}</version>
       </dependency>
       <dependency>
         <groupId>org.junit.jupiter</groupId>
@@ -755,6 +974,11 @@
         <groupId>org.apache.ant</groupId>
         <artifactId>ant</artifactId>
         <version>${ant.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.apache.aries.spifly</groupId>
+        <artifactId>org.apache.aries.spifly.dynamic.bundle</artifactId>
+        <version>${org-apache-aries-spifly-dynamic-bundle.version}</version>
       </dependency>
       <dependency>
         <groupId>org.apache.xmlgraphics</groupId>
@@ -867,11 +1091,6 @@
         <version>${commons-beanutils.version}</version>
       </dependency>
       <dependency>
-        <groupId>commons-codec</groupId>
-        <artifactId>commons-codec</artifactId>
-        <version>${commons-codec.version}</version>
-      </dependency>
-      <dependency>
         <groupId>org.apache.commons</groupId>
         <artifactId>commons-compress</artifactId>
         <version>${commons-compress.version}</version>
@@ -885,6 +1104,11 @@
         <groupId>commons-io</groupId>
         <artifactId>commons-io</artifactId>
         <version>${commons-io.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.apache.commons</groupId>
+        <artifactId>commons-digester3</artifactId>
+        <version>${commons-digester3.version}</version>
       </dependency>
       <dependency>
         <groupId>commons-discovery</groupId>
@@ -905,6 +1129,11 @@
         <groupId>commons-lang</groupId>
         <artifactId>commons-lang</artifactId>
         <version>${commons-lang.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.apache.commons</groupId>
+        <artifactId>commons-lang3</artifactId>
+        <version>${commons-lang3.version}</version>
       </dependency>
       <dependency>
         <groupId>commons-logging</groupId>
@@ -1005,6 +1234,16 @@
         <groupId>org.apache.sshd</groupId>
         <artifactId>sshd-sftp</artifactId>
         <version>${sshd-sftp.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.apache.velocity</groupId>
+        <artifactId>velocity</artifactId>
+        <version>${velocity.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.apache.ws.commons.util</groupId>
+        <artifactId>ws-commons-util</artifactId>
+        <version>${ws-commons-util.version}</version>
       </dependency>
       <dependency>
         <groupId>xerces</groupId>
@@ -1617,6 +1856,71 @@
         <version>${org-eclipse-emf-mwe2-runtime.version}</version>
       </dependency>
       <dependency>
+        <groupId>org.eclipse.emf.parsley</groupId>
+        <artifactId>org.eclipse.emf.parsley</artifactId>
+        <version>${org-eclipse-emf-parsley.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.eclipse.emf.parsley</groupId>
+        <artifactId>org.eclipse.emf.parsley.cdo</artifactId>
+        <version>${org-eclipse-emf-parsley-cdo.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.eclipse.emf.parsley</groupId>
+        <artifactId>org.eclipse.emf.parsley.cdo.common</artifactId>
+        <version>${org-eclipse-emf-parsley-cdo-common.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.eclipse.emf.parsley</groupId>
+        <artifactId>org.eclipse.emf.parsley.common</artifactId>
+        <version>${org-eclipse-emf-parsley-common.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.eclipse.emf.parsley</groupId>
+        <artifactId>org.eclipse.emf.parsley.dsl</artifactId>
+        <version>${org-eclipse-emf-parsley-dsl.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.eclipse.emf.parsley</groupId>
+        <artifactId>org.eclipse.emf.parsley.editors</artifactId>
+        <version>${org-eclipse-emf-parsley-editors.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.eclipse.emf.parsley</groupId>
+        <artifactId>org.eclipse.emf.parsley.editors.common</artifactId>
+        <version>${org-eclipse-emf-parsley-editors-common.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.eclipse.emf.parsley</groupId>
+        <artifactId>org.eclipse.emf.parsley.generator.common</artifactId>
+        <version>${org-eclipse-emf-parsley-generator-common.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.eclipse.emf.parsley</groupId>
+        <artifactId>org.eclipse.emf.parsley.junit4</artifactId>
+        <version>${org-eclipse-emf-parsley-junit4.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.eclipse.emf.parsley</groupId>
+        <artifactId>org.eclipse.emf.parsley.runtime</artifactId>
+        <version>${org-eclipse-emf-parsley-runtime.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.eclipse.emf.parsley</groupId>
+        <artifactId>org.eclipse.emf.parsley.runtime.common</artifactId>
+        <version>${org-eclipse-emf-parsley-runtime-common.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.eclipse.emf.parsley</groupId>
+        <artifactId>org.eclipse.emf.parsley.views</artifactId>
+        <version>${org-eclipse-emf-parsley-views.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.eclipse.emf.parsley</groupId>
+        <artifactId>org.eclipse.emf.parsley.views.common</artifactId>
+        <version>${org-eclipse-emf-parsley-views-common.version}</version>
+      </dependency>
+      <dependency>
         <groupId>org.eclipse.platform</groupId>
         <artifactId>org.eclipse.equinox.app</artifactId>
         <version>${org-eclipse-equinox-app.version}</version>
@@ -2183,6 +2487,11 @@
       </dependency>
       <dependency>
         <groupId>org.eclipse.jetty.ee8</groupId>
+        <artifactId>jetty-ee8-nested</artifactId>
+        <version>${jetty-ee8-nested.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.eclipse.jetty.ee8</groupId>
         <artifactId>jetty-ee8-servlet</artifactId>
         <version>${jetty-ee8-servlet.version}</version>
       </dependency>
@@ -2213,6 +2522,11 @@
       </dependency>
       <dependency>
         <groupId>org.eclipse.jetty</groupId>
+        <artifactId>jetty-slf4j-impl</artifactId>
+        <version>${jetty-slf4j-impl.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.eclipse.jetty</groupId>
         <artifactId>jetty-security</artifactId>
         <version>${jetty-security.version}</version>
       </dependency>
@@ -2227,6 +2541,11 @@
         <version>${jetty-servlet.version}</version>
       </dependency>
       <dependency>
+        <groupId>org.eclipse.jetty.toolchain</groupId>
+        <artifactId>jetty-servlet-api</artifactId>
+        <version>${jetty-servlet-api.version}</version>
+      </dependency>
+      <dependency>
         <groupId>org.eclipse.jetty</groupId>
         <artifactId>jetty-session</artifactId>
         <version>${jetty-session.version}</version>
@@ -2235,6 +2554,11 @@
         <groupId>org.eclipse.jetty</groupId>
         <artifactId>jetty-util</artifactId>
         <version>${jetty-util.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.eclipse.jetty</groupId>
+        <artifactId>jetty-util-ajax</artifactId>
+        <version>${jetty-util-ajax.version}</version>
       </dependency>
       <dependency>
         <groupId>org.eclipse.jetty</groupId>
@@ -2327,6 +2651,41 @@
         <version>${org-eclipse-jsch-ui.version}</version>
       </dependency>
       <dependency>
+        <groupId>org.eclipse.lsp4j</groupId>
+        <artifactId>org.eclipse.lsp4j</artifactId>
+        <version>${org-eclipse-lsp4j.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.eclipse.lsp4j</groupId>
+        <artifactId>org.eclipse.lsp4j.debug</artifactId>
+        <version>${org-eclipse-lsp4j-debug.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.eclipse.lsp4j</groupId>
+        <artifactId>org.eclipse.lsp4j.generator</artifactId>
+        <version>${org-eclipse-lsp4j-generator.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.eclipse.lsp4j</groupId>
+        <artifactId>org.eclipse.lsp4j.jsonrpc</artifactId>
+        <version>${org-eclipse-lsp4j-jsonrpc.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.eclipse.lsp4j</groupId>
+        <artifactId>org.eclipse.lsp4j.jsonrpc.debug</artifactId>
+        <version>${org-eclipse-lsp4j-jsonrpc-debug.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.eclipse.lsp4j</groupId>
+        <artifactId>org.eclipse.lsp4j.websocket</artifactId>
+        <version>${org-eclipse-lsp4j-websocket.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.eclipse.lsp4j</groupId>
+        <artifactId>org.eclipse.lsp4j.websocket.jakarta</artifactId>
+        <version>${org-eclipse-lsp4j-websocket-jakarta.version}</version>
+      </dependency>
+      <dependency>
         <groupId>org.eclipse.platform</groupId>
         <artifactId>org.eclipse.ltk.core.refactoring</artifactId>
         <version>${org-eclipse-ltk-core-refactoring.version}</version>
@@ -2335,6 +2694,86 @@
         <groupId>org.eclipse.platform</groupId>
         <artifactId>org.eclipse.ltk.ui.refactoring</artifactId>
         <version>${org-eclipse-ltk-ui-refactoring.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.apache.maven.archetype</groupId>
+        <artifactId>archetype-catalog</artifactId>
+        <version>${archetype-catalog.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.apache.maven.archetype</groupId>
+        <artifactId>archetype-descriptor</artifactId>
+        <version>${archetype-descriptor.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.apache.maven.shared</groupId>
+        <artifactId>maven-artifact-transfer</artifactId>
+        <version>${maven-artifact-transfer.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.eclipse.scout.sdk.deps</groupId>
+        <artifactId>org.eclipse.m2e.core</artifactId>
+        <version>${org-eclipse-m2e-core.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.eclipse.scout.sdk.deps</groupId>
+        <artifactId>org.eclipse.m2e.core.ui</artifactId>
+        <version>${org-eclipse-m2e-core-ui.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>io.takari.m2e.workspace</groupId>
+        <artifactId>org.eclipse.m2e.workspace.cli</artifactId>
+        <version>${org-eclipse-m2e-workspace-cli.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.eclipse.mylyn.docs</groupId>
+        <artifactId>org.eclipse.mylyn.wikitext</artifactId>
+        <version>${org-eclipse-mylyn-wikitext.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.eclipse.mylyn.docs</groupId>
+        <artifactId>org.eclipse.mylyn.wikitext.ant</artifactId>
+        <version>${org-eclipse-mylyn-wikitext-ant.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.eclipse.mylyn.docs</groupId>
+        <artifactId>org.eclipse.mylyn.wikitext.asciidoc</artifactId>
+        <version>${org-eclipse-mylyn-wikitext-asciidoc.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.eclipse.mylyn.docs</groupId>
+        <artifactId>org.eclipse.mylyn.wikitext.confluence</artifactId>
+        <version>${org-eclipse-mylyn-wikitext-confluence.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.eclipse.mylyn.docs</groupId>
+        <artifactId>org.eclipse.mylyn.wikitext.html</artifactId>
+        <version>${org-eclipse-mylyn-wikitext-html.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.eclipse.mylyn.docs</groupId>
+        <artifactId>org.eclipse.mylyn.wikitext.markdown</artifactId>
+        <version>${org-eclipse-mylyn-wikitext-markdown.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.eclipse.mylyn.docs</groupId>
+        <artifactId>org.eclipse.mylyn.wikitext.mediawiki</artifactId>
+        <version>${org-eclipse-mylyn-wikitext-mediawiki.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.eclipse.mylyn.docs</groupId>
+        <artifactId>org.eclipse.mylyn.wikitext.textile</artifactId>
+        <version>${org-eclipse-mylyn-wikitext-textile.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.eclipse.mylyn.docs</groupId>
+        <artifactId>org.eclipse.mylyn.wikitext.tracwiki</artifactId>
+        <version>${org-eclipse-mylyn-wikitext-tracwiki.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.eclipse.mylyn.docs</groupId>
+        <artifactId>org.eclipse.mylyn.wikitext.twiki</artifactId>
+        <version>${org-eclipse-mylyn-wikitext-twiki.version}</version>
       </dependency>
       <dependency>
         <groupId>org.eclipse.platform</groupId>
@@ -2488,6 +2927,16 @@
       </dependency>
       <dependency>
         <groupId>org.eclipse.persistence</groupId>
+        <artifactId>org.eclipse.persistence.antlr</artifactId>
+        <version>${org-eclipse-persistence-antlr.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.eclipse.persistence</groupId>
+        <artifactId>org.eclipse.persistence.asm</artifactId>
+        <version>${org-eclipse-persistence-asm.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.eclipse.persistence</groupId>
         <artifactId>org.eclipse.persistence.core</artifactId>
         <version>${org-eclipse-persistence-core.version}</version>
       </dependency>
@@ -2600,6 +3049,21 @@
         <groupId>org.eclipse.platform</groupId>
         <artifactId>org.eclipse.rcp</artifactId>
         <version>${org-eclipse-rcp.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.eclipse.scout.sdk.s2e</groupId>
+        <artifactId>org.eclipse.scout.sdk.s2e</artifactId>
+        <version>${org-eclipse-scout-sdk-s2e.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.eclipse.scout.sdk.s2e</groupId>
+        <artifactId>org.eclipse.scout.sdk.s2e.doc</artifactId>
+        <version>${org-eclipse-scout-sdk-s2e-doc.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.eclipse.scout.sdk.s2e</groupId>
+        <artifactId>org.eclipse.scout.sdk.s2e.ui</artifactId>
+        <version>${org-eclipse-scout-sdk-s2e-ui.version}</version>
       </dependency>
       <dependency>
         <groupId>org.eclipse.platform</groupId>
@@ -2867,14 +3331,189 @@
         <version>${org-eclipse-xsd-edit.version}</version>
       </dependency>
       <dependency>
+        <groupId>org.eclipse.xtend</groupId>
+        <artifactId>org.eclipse.xtend.core</artifactId>
+        <version>${org-eclipse-xtend-core.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.eclipse.xtend</groupId>
+        <artifactId>org.eclipse.xtend.ide.common</artifactId>
+        <version>${org-eclipse-xtend-ide-common.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.eclipse.xtend</groupId>
+        <artifactId>org.eclipse.xtend.lib</artifactId>
+        <version>${org-eclipse-xtend-lib.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.eclipse.xtend</groupId>
+        <artifactId>org.eclipse.xtend.lib.macro</artifactId>
+        <version>${org-eclipse-xtend-lib-macro.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.eclipse.xtext</groupId>
+        <artifactId>org.eclipse.xtext</artifactId>
+        <version>${org-eclipse-xtext.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.eclipse.xtext</groupId>
+        <artifactId>org.eclipse.xtext.builder.standalone</artifactId>
+        <version>${org-eclipse-xtext-builder-standalone.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.eclipse.xtext</groupId>
+        <artifactId>org.eclipse.xtext.common.types</artifactId>
+        <version>${org-eclipse-xtext-common-types.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.eclipse.xtext</groupId>
+        <artifactId>org.eclipse.xtext.ecore</artifactId>
+        <version>${org-eclipse-xtext-ecore.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.eclipse.xtext</groupId>
+        <artifactId>org.eclipse.xtext.ide</artifactId>
+        <version>${org-eclipse-xtext-ide.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.eclipse.xtext</groupId>
+        <artifactId>org.eclipse.xtext.java</artifactId>
+        <version>${org-eclipse-xtext-java.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.eclipse.xtext</groupId>
+        <artifactId>org.eclipse.xtext.purexbase</artifactId>
+        <version>${org-eclipse-xtext-purexbase.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.eclipse.xtext</groupId>
+        <artifactId>org.eclipse.xtext.purexbase.ide</artifactId>
+        <version>${org-eclipse-xtext-purexbase-ide.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.eclipse.xtext</groupId>
+        <artifactId>org.eclipse.xtext.smap</artifactId>
+        <version>${org-eclipse-xtext-smap.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.eclipse.xtext</groupId>
+        <artifactId>org.eclipse.xtext.testing</artifactId>
+        <version>${org-eclipse-xtext-testing.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.eclipse.xtext</groupId>
+        <artifactId>org.eclipse.xtext.util</artifactId>
+        <version>${org-eclipse-xtext-util.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.eclipse.xtext</groupId>
+        <artifactId>org.eclipse.xtext.xbase</artifactId>
+        <version>${org-eclipse-xtext-xbase.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.eclipse.xtext</groupId>
+        <artifactId>org.eclipse.xtext.xbase.ide</artifactId>
+        <version>${org-eclipse-xtext-xbase-ide.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.eclipse.xtext</groupId>
+        <artifactId>org.eclipse.xtext.xbase.lib</artifactId>
+        <version>${org-eclipse-xtext-xbase-lib.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.eclipse.xtext</groupId>
+        <artifactId>org.eclipse.xtext.xbase.testing</artifactId>
+        <version>${org-eclipse-xtext-xbase-testing.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.eclipse.xtext</groupId>
+        <artifactId>org.eclipse.xtext.xtext.generator</artifactId>
+        <version>${org-eclipse-xtext-xtext-generator.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.eclipse.xtext</groupId>
+        <artifactId>org.eclipse.xtext.xtext.ide</artifactId>
+        <version>${org-eclipse-xtext-xtext-ide.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.eclipse.xtext</groupId>
+        <artifactId>org.eclipse.xtext.xtext.wizard</artifactId>
+        <version>${org-eclipse-xtext-xtext-wizard.version}</version>
+      </dependency>
+      <dependency>
         <groupId>org.freemarker</groupId>
         <artifactId>freemarker</artifactId>
         <version>${freemarker.version}</version>
       </dependency>
       <dependency>
         <groupId>org.glassfish.hk2</groupId>
+        <artifactId>hk2-api</artifactId>
+        <version>${hk2-api.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.glassfish.hk2</groupId>
+        <artifactId>hk2-locator</artifactId>
+        <version>${hk2-locator.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.glassfish.hk2</groupId>
         <artifactId>osgi-resource-locator</artifactId>
         <version>${osgi-resource-locator.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.glassfish.hk2</groupId>
+        <artifactId>hk2-utils</artifactId>
+        <version>${hk2-utils.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.glassfish.jersey.connectors</groupId>
+        <artifactId>jersey-apache-connector</artifactId>
+        <version>${jersey-apache-connector.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.glassfish.jersey.containers</groupId>
+        <artifactId>jersey-container-servlet</artifactId>
+        <version>${jersey-container-servlet.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.glassfish.jersey.containers</groupId>
+        <artifactId>jersey-container-servlet-core</artifactId>
+        <version>${jersey-container-servlet-core.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.glassfish.jersey.core</groupId>
+        <artifactId>jersey-client</artifactId>
+        <version>${jersey-client.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.glassfish.jersey.core</groupId>
+        <artifactId>jersey-common</artifactId>
+        <version>${jersey-common.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.glassfish.jersey.core</groupId>
+        <artifactId>jersey-server</artifactId>
+        <version>${jersey-server.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.glassfish.jersey.ext</groupId>
+        <artifactId>jersey-entity-filtering</artifactId>
+        <version>${jersey-entity-filtering.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.glassfish.jersey.inject</groupId>
+        <artifactId>jersey-hk2</artifactId>
+        <version>${jersey-hk2.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.glassfish.jersey.media</groupId>
+        <artifactId>jersey-media-json-jackson</artifactId>
+        <version>${jersey-media-json-jackson.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.hamcrest</groupId>
+        <artifactId>hamcrest</artifactId>
+        <version>${hamcrest.version}</version>
       </dependency>
       <dependency>
         <groupId>org.hamcrest</groupId>
@@ -2887,9 +3526,34 @@
         <version>${hamcrest-library.version}</version>
       </dependency>
       <dependency>
+        <groupId>org.jacoco</groupId>
+        <artifactId>org.jacoco.agent</artifactId>
+        <version>${org-jacoco-agent.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.jacoco</groupId>
+        <artifactId>org.jacoco.core</artifactId>
+        <version>${org-jacoco-core.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.jacoco</groupId>
+        <artifactId>org.jacoco.report</artifactId>
+        <version>${org-jacoco-report.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.jruby.jcodings</groupId>
+        <artifactId>jcodings</artifactId>
+        <version>${jcodings.version}</version>
+      </dependency>
+      <dependency>
         <groupId>org.jdom</groupId>
         <artifactId>jdom</artifactId>
         <version>${jdom.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.jruby.joni</groupId>
+        <artifactId>joni</artifactId>
+        <version>${joni.version}</version>
       </dependency>
       <dependency>
         <groupId>org.jsoup</groupId>
@@ -2902,6 +3566,11 @@
         <version>${junit.version}</version>
       </dependency>
       <dependency>
+        <groupId>args4j</groupId>
+        <artifactId>args4j</artifactId>
+        <version>${args4j.version}</version>
+      </dependency>
+      <dependency>
         <groupId>org.mandas</groupId>
         <artifactId>docker-client</artifactId>
         <version>${docker-client.version}</version>
@@ -2910,6 +3579,11 @@
         <groupId>org.mortbay.jasper</groupId>
         <artifactId>apache-jsp</artifactId>
         <version>${apache-jsp.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.mvel</groupId>
+        <artifactId>mvel2</artifactId>
+        <version>${mvel2.version}</version>
       </dependency>
       <dependency>
         <groupId>org.ow2.asm</groupId>
@@ -3072,9 +3746,19 @@
         <version>${xz.version}</version>
       </dependency>
       <dependency>
+        <groupId>org.yaml</groupId>
+        <artifactId>snakeyaml</artifactId>
+        <version>${snakeyaml.version}</version>
+      </dependency>
+      <dependency>
         <groupId>org.slf4j</groupId>
         <artifactId>slf4j-api</artifactId>
         <version>${slf4j-api.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.slf4j</groupId>
+        <artifactId>slf4j-simple</artifactId>
+        <version>${slf4j-simple.version}</version>
       </dependency>
     </dependencies>
   </dependencyManagement>

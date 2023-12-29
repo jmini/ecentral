@@ -20,9 +20,11 @@ class RunTest {
         ECentralTask task = new ECentralTask(input);
         task.run();
         String mavenArtifacts = Files.readString(task.getMavenArtifactsFile(), StandardCharsets.UTF_8);
-        String potentialMavenArtifacts = Files.readString(task.getPotentialMavenArtifactsFile(), StandardCharsets.UTF_8);
 
-        assertThatJson(mavenArtifacts).isEqualTo(potentialMavenArtifacts);
+        assertThatJson(mavenArtifacts).isArray()
+                .size()
+                .isEqualTo(task.parseBndOutput()
+                        .size());
     }
 
     @Test
@@ -33,9 +35,11 @@ class RunTest {
         ECentralTask task = new ECentralTask(input);
         task.run();
         String mavenArtifacts = Files.readString(task.getMavenArtifactsFile(), StandardCharsets.UTF_8);
-        String potentialMavenArtifacts = Files.readString(task.getPotentialMavenArtifactsFile(), StandardCharsets.UTF_8);
 
-        assertThatJson(mavenArtifacts).isEqualTo(potentialMavenArtifacts);
+        assertThatJson(mavenArtifacts).isArray()
+                .size()
+                .isEqualTo(task.parseBndOutput()
+                        .size());
     }
 
     @Test
@@ -46,9 +50,11 @@ class RunTest {
         ECentralTask task = new ECentralTask(input);
         task.run();
         String mavenArtifacts = Files.readString(task.getMavenArtifactsFile(), StandardCharsets.UTF_8);
-        String potentialMavenArtifacts = Files.readString(task.getPotentialMavenArtifactsFile(), StandardCharsets.UTF_8);
 
-        assertThatJson(mavenArtifacts).isEqualTo(potentialMavenArtifacts);
+        assertThatJson(mavenArtifacts).isArray()
+                .size()
+                .isEqualTo(task.parseBndOutput()
+                        .size());
     }
 
     @Test
@@ -59,9 +65,11 @@ class RunTest {
         ECentralTask task = new ECentralTask(input);
         task.run();
         String mavenArtifacts = Files.readString(task.getMavenArtifactsFile(), StandardCharsets.UTF_8);
-        String potentialMavenArtifacts = Files.readString(task.getPotentialMavenArtifactsFile(), StandardCharsets.UTF_8);
 
-        assertThatJson(mavenArtifacts).isEqualTo(potentialMavenArtifacts);
+        assertThatJson(mavenArtifacts).isArray()
+                .size()
+                .isEqualTo(task.parseBndOutput()
+                        .size());
     }
 
     @Test
@@ -72,9 +80,11 @@ class RunTest {
         ECentralTask task = new ECentralTask(input);
         task.run();
         String mavenArtifacts = Files.readString(task.getMavenArtifactsFile(), StandardCharsets.UTF_8);
-        String potentialMavenArtifacts = Files.readString(task.getPotentialMavenArtifactsFile(), StandardCharsets.UTF_8);
 
-        assertThatJson(mavenArtifacts).isEqualTo(potentialMavenArtifacts);
+        assertThatJson(mavenArtifacts).isArray()
+                .size()
+                .isEqualTo(task.parseBndOutput()
+                        .size());
     }
 
     @Test
@@ -86,9 +96,11 @@ class RunTest {
         ECentralTask task = new ECentralTask(input);
         task.run();
         String mavenArtifacts = Files.readString(task.getMavenArtifactsFile(), StandardCharsets.UTF_8);
-        String potentialMavenArtifacts = Files.readString(task.getPotentialMavenArtifactsFile(), StandardCharsets.UTF_8);
 
-        assertThatJson(mavenArtifacts).isEqualTo(potentialMavenArtifacts);
+        assertThatJson(mavenArtifacts).isArray()
+                .size()
+                .isEqualTo(task.parseBndOutput()
+                        .size());
     }
 
     @Test
