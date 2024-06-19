@@ -17,7 +17,7 @@ plugins {
 }
 
 wrapper {
-    gradleVersion = '7.3.3'
+    gradleVersion = '8.5'
 }
 
 group = 'fr.jmini.utils'
@@ -33,13 +33,13 @@ repositories {
 }
 
 task sourcesJar(type: Jar, dependsOn: classes) {
-    classifier = 'sources'
+    archiveClassifier = 'sources'
     from sourceSets.main.allSource
 }
 
 task javadocJar(type: Jar) {
     from javadoc
-    classifier = 'javadoc'
+    archiveClassifier = 'javadoc'
 }
 
 dependencies {
@@ -127,7 +127,7 @@ spotless {
     removeUnusedImports()
 
     // available versions are: https://github.com/diffplug/spotless/tree/master/lib-extra/src/main/resources/com/diffplug/spotless/extra/eclipse_jdt_formatter
-    eclipse('4.13.0').configFile('.settings/org.eclipse.jdt.core.prefs')
+    eclipse('4.13').configFile('.settings/org.eclipse.jdt.core.prefs')
   }
 }
 
@@ -176,4 +176,8 @@ model {
     tasks.unSnapshotVersion {
         dependsOn updateLastVersionValueTask
     }
+    
+    tasks.gitPublishCopy {
+    	dependsOn asciidoctor
+   	}
 }
