@@ -77,6 +77,9 @@ Where `$\{eclipseReleaseVersion}` correspond to the platform version of the Ecli
 | Eclipse Release Name
 | Eclipse Release Version
 
+| 2023-03
+| `4.27`
+
 | 2022-12
 | `4.26`
 
