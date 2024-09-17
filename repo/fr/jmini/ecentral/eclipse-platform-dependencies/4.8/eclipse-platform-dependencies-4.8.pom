@@ -5,8 +5,8 @@
   <artifactId>eclipse-platform-dependencies</artifactId>
   <version>4.8</version>
   <packaging>pom</packaging>
-  <name>eclipse-platform-dependencies</name>
-  <description>Eclipse Platform Dependencies of release Photon</description>
+  <name>eclipse-dependencies</name>
+  <description>Eclipse Dependencies of release Photon</description>
   <url>https://jmini.github.io/ecentral</url>
   <licenses>
     <license>

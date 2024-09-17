@@ -1,11 +1,120 @@
 package fr.jmini.utils.ecentral;
 
+import static net.javacrumbs.jsonunit.assertj.JsonAssertions.assertThatJson;
+
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+
 import org.junit.jupiter.api.Test;
 
 /**
  * This test class run the code for different update sites.
  */
 class RunTest {
+    @Test
+    void run_2024_06() throws Exception {
+        Input input = new Input()
+                .withReleaseName("2024-06")
+                .withArtifactId("eclipse-full-dependencies");
+        ECentralTask task = new ECentralTask(input);
+        task.run();
+        String mavenArtifacts = Files.readString(task.getMavenArtifactsFile(), StandardCharsets.UTF_8);
+
+        assertThatJson(mavenArtifacts).isArray()
+                .size()
+                .isEqualTo(task.parseBndOutput()
+                        .size());
+    }
+
+    @Test
+    void run_2024_03() throws Exception {
+        Input input = new Input()
+                .withReleaseName("2024-03")
+                .withArtifactId("eclipse-full-dependencies");
+        ECentralTask task = new ECentralTask(input);
+        task.run();
+        String mavenArtifacts = Files.readString(task.getMavenArtifactsFile(), StandardCharsets.UTF_8);
+
+        assertThatJson(mavenArtifacts).isArray()
+                .size()
+                .isEqualTo(task.parseBndOutput()
+                        .size());
+    }
+
+    @Test
+    void run_2023_12() throws Exception {
+        Input input = new Input()
+                .withReleaseName("2023-12")
+                .withArtifactId("eclipse-full-dependencies");
+        ECentralTask task = new ECentralTask(input);
+        task.run();
+        String mavenArtifacts = Files.readString(task.getMavenArtifactsFile(), StandardCharsets.UTF_8);
+
+        assertThatJson(mavenArtifacts).isArray()
+                .size()
+                .isEqualTo(task.parseBndOutput()
+                        .size());
+    }
+
+    @Test
+    void run_2023_09() throws Exception {
+        Input input = new Input()
+                .withReleaseName("2023-09")
+                .withArtifactId("eclipse-full-dependencies");
+        ECentralTask task = new ECentralTask(input);
+        task.run();
+        String mavenArtifacts = Files.readString(task.getMavenArtifactsFile(), StandardCharsets.UTF_8);
+
+        assertThatJson(mavenArtifacts).isArray()
+                .size()
+                .isEqualTo(task.parseBndOutput()
+                        .size());
+    }
+
+    @Test
+    void run_2023_06() throws Exception {
+        Input input = new Input()
+                .withReleaseName("2023-06")
+                .withArtifactId("eclipse-full-dependencies");
+        ECentralTask task = new ECentralTask(input);
+        task.run();
+        String mavenArtifacts = Files.readString(task.getMavenArtifactsFile(), StandardCharsets.UTF_8);
+
+        assertThatJson(mavenArtifacts).isArray()
+                .size()
+                .isEqualTo(task.parseBndOutput()
+                        .size());
+    }
+
+    @Test
+    void run_2023_03() throws Exception {
+        Input input = new Input()
+                .withReleaseName("2023-03")
+                .withArtifactId("eclipse-full-dependencies");
+        ECentralTask task = new ECentralTask(input);
+        task.run();
+        String mavenArtifacts = Files.readString(task.getMavenArtifactsFile(), StandardCharsets.UTF_8);
+
+        assertThatJson(mavenArtifacts).isArray()
+                .size()
+                .isEqualTo(task.parseBndOutput()
+                        .size());
+    }
+
+    @Test
+    void run_2022_09() throws Exception {
+        Input input = new Input()
+                .withReleaseName("2022-09")
+                .withArtifactId("eclipse-full-dependencies");
+        ECentralTask task = new ECentralTask(input);
+        task.run();
+        String mavenArtifacts = Files.readString(task.getMavenArtifactsFile(), StandardCharsets.UTF_8);
+
+        assertThatJson(mavenArtifacts).isArray()
+                .size()
+                .isEqualTo(task.parseBndOutput()
+                        .size());
+    }
 
     @Test
     void run_4_32() throws Exception {
@@ -76,7 +185,14 @@ class RunTest {
                 .withReleaseName("2022-09")
                 .withReleaseVersion("4.25")
                 .withUpdateSite("https://download.eclipse.org/eclipse/updates/4.25/");
-        new ECentralTask(input).run();
+        ECentralTask task = new ECentralTask(input);
+        task.run();
+        String mavenArtifacts = Files.readString(task.getMavenArtifactsFile(), StandardCharsets.UTF_8);
+
+        assertThatJson(mavenArtifacts).isArray()
+                .size()
+                .isEqualTo(task.parseBndOutput()
+                        .size());
     }
 
     @Test
