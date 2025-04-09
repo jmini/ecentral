@@ -2,18 +2,24 @@ package fr.jmini.utils.ecentral;
 
 import java.io.BufferedReader;
 import java.io.ByteArrayOutputStream;
+import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.PrintStream;
+import java.io.StringWriter;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
+import java.util.LinkedHashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Objects;
 import java.util.Optional;
 import java.util.regex.Matcher;
@@ -24,6 +30,9 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
 
+import aQute.bnd.build.Workspace;
+import aQute.bnd.repository.p2.provider.P2Repository;
+import aQute.bnd.version.Version;
 import fr.jmini.utils.mvnutils.Algorithm;
 import fr.jmini.utils.mvnutils.Maven;
 import fr.jmini.utils.mvnutils.MavenArtifact;
@@ -31,7 +40,6 @@ import fr.jmini.utils.mvnutils.MavenArtifact;
 public class ECentralTask {
 
     private static final String GROUP_ID = "fr.jmini.ecentral";
-    private static final String ARTIFACT_ID = "eclipse-platform-dependencies";
 
     private static final TypeToken<List<MavenArtifact>> TYPE_TOKEN = new TypeToken<List<MavenArtifact>>() {
     };
@@ -48,20 +56,15 @@ public class ECentralTask {
         try {
             Files.createDirectories(getDataFolder());
             runInternal();
-        } catch (IOException e) {
-            e.printStackTrace();
+        } catch (Exception e) {
             throw new RuntimeException("Could not run", e);
         }
     }
 
-    private void runInternal() throws IOException {
+    private void runInternal() throws Exception {
         boolean ignoreExistingData = Objects.equals(System.getProperty("ignoreExistingData"), "true");
         if (ignoreExistingData || !Files.exists(getBndOutputFile())) {
             runBnd();
-        }
-
-        if (ignoreExistingData || !Files.exists(getPotentialMavenArtifactsFile())) {
-            createPotentialMavenArtifacts();
         }
 
         if (ignoreExistingData || !Files.exists(getMavenArtifactsFile())) {
@@ -99,7 +102,6 @@ public class ECentralTask {
                 throw new RuntimeException("Error while running bnd", e);
             }
 
-            System.out.flush();
             String bndOutput = baos.toString();
             Files.writeString(getBndOutputFile(), bndOutput, StandardCharsets.UTF_8);
         } finally {
@@ -107,19 +109,76 @@ public class ECentralTask {
         }
     }
 
-    private void createPotentialMavenArtifacts() throws IOException {
-        List<String> bndFileContent = Files.readAllLines(getBndOutputFile());
-        List<BndEntry> entries = parseBndOutput(bndFileContent);
+    static void addArtifact(MavenArtifact a, Map<MavenArtifact, MavenArtifact> map) {
+        MavenArtifact key = new MavenArtifact(a.getGroupId(), a.getArtifactId(), null);
+
+        map.compute(key, (k, v) -> {
+            if (v == null) {
+                return a;
+            } else {
+                Version vVersion = Version.parseVersion(v.getVersion());
+                Version aVersion = Version.parseVersion(a.getVersion());
+                return aVersion.compareTo(vVersion) > 0 ? a : v;
+            }
+        });
+    }
+
+    private void createMavenArtifacts() throws Exception {
+        Map<MavenArtifact, MavenArtifact> artifacts = new LinkedHashMap<>();
+        List<BndEntry> entries = parseBndOutput();
 
         List<MavenMapping> mavenMappings = readMavenMappings();
-        List<MavenArtifact> result = entries.stream()
-                .filter(this::keepEntry)
-                .map(e -> toMavenArtifact(e, mavenMappings))
-                .filter(Optional::isPresent)
-                .map(Optional::get)
-                .collect(Collectors.toList());
 
-        writeArtifactsToFile(getPotentialMavenArtifactsFile(), result);
+        try (P2Repository p2Repo = new P2Repository();
+                Workspace w = new Workspace(new File("").getAbsoluteFile())) {
+            p2Repo.setProperties(Collections.singletonMap("url", input.getUpdateSite()));
+            p2Repo.setRegistry(w.getPlugins());
+            MavenResolver mavenResolver = new MavenResolver();
+
+            entries.stream()
+                    .forEach(e -> {
+                        try {
+                            File file = p2Repo.get(e.getSymbolicName(), p2Repo.versions(e.getSymbolicName())
+                                    .last(), null);
+                            MavenArtifact artifact = mavenResolver.resolvePotential(e, file);
+                            if (artifact != null && checkArtifactInMavenCentral(artifact)) {
+                                addArtifact(artifact, artifacts);
+                            } else {
+                                artifact = mavenResolver.resolve(file.toPath());
+
+                                if (artifact != null) {
+                                    addArtifact(artifact, artifacts);
+                                } else {
+
+                                    toMavenArtifact(e, mavenMappings).ifPresent(a -> {
+
+                                        if (checkArtifactInMavenCentral(a)) {
+                                            addArtifact(a, artifacts);
+                                        }
+                                    });
+                                }
+                            }
+                        } catch (Exception ex) {
+                            throw new IllegalStateException(ex);
+                        }
+                    });
+
+        }
+        writeArtifactsToFile(getMavenArtifactsFile(), new ArrayList<>(artifacts.values()));
+    }
+
+    private void writBndOutputToFile(Path path, List<BndEntry> entries) {
+        try (StringWriter writer = new StringWriter()) {
+            entries.forEach(e -> writer.append(e.getSymbolicName())
+                    .append("\t[")
+                    .append(e.getVersions()
+                            .get(e.getVersions()
+                                    .size() - 1))
+                    .append("]\n"));
+            Files.writeString(path, writer.toString(), StandardCharsets.UTF_8);
+        } catch (Exception e) {
+            throw new IllegalStateException(e);
+        }
     }
 
     static List<MavenMapping> readMavenMappings() throws IOException {
@@ -174,9 +233,11 @@ public class ECentralTask {
                 || symbolicName.endsWith(".tests"));
     }
 
-    static List<BndEntry> parseBndOutput(List<String> lines) {
-        return lines.stream()
+    List<BndEntry> parseBndOutput() throws IOException {
+        List<String> bndFileContent = Files.readAllLines(getBndOutputFile());
+        return bndFileContent.stream()
                 .map(ECentralTask::parseBndLine)
+                .filter(this::keepEntry)
                 .collect(Collectors.toList());
     }
 
@@ -263,16 +324,6 @@ public class ECentralTask {
         return osgiVersion;
     }
 
-    private void createMavenArtifacts() throws IOException {
-        List<MavenArtifact> entries = parseArtifactsFile(getPotentialMavenArtifactsFile());
-
-        List<MavenArtifact> result = entries.stream()
-                .filter(ECentralTask::checkArtifactInMavenCentral)
-                .collect(Collectors.toList());
-
-        writeArtifactsToFile(getMavenArtifactsFile(), result);
-    }
-
     private static boolean checkArtifactInMavenCentral(MavenArtifact artifact) {
         String centralUrl = Maven.jarMavenCentralUrl(artifact);
         try {
@@ -297,11 +348,11 @@ public class ECentralTask {
         sb.append("<project xmlns=\"http://maven.apache.org/POM/4.0.0\" xsi:schemaLocation=\"http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\">\n");
         sb.append("  <modelVersion>4.0.0</modelVersion>\n");
         sb.append("  <groupId>" + GROUP_ID + "</groupId>\n");
-        sb.append("  <artifactId>" + ARTIFACT_ID + "</artifactId>\n");
+        sb.append("  <artifactId>" + input.getArtifactId() + "</artifactId>\n");
         sb.append("  <version>" + input.getReleaseVersion() + "</version>\n");
         sb.append("  <packaging>pom</packaging>\n");
-        sb.append("  <name>eclipse-platform-dependencies</name>\n");
-        sb.append("  <description>Eclipse Platform Dependencies of release " + input.getReleaseName() + "</description>\n");
+        sb.append("  <name>eclipse-dependencies</name>\n");
+        sb.append("  <description>Eclipse Dependencies of release " + input.getReleaseName() + "</description>\n");
         sb.append("  <url>https://jmini.github.io/ecentral</url>\n");
         sb.append("  <licenses>\n");
         sb.append("    <license>\n");
@@ -361,15 +412,11 @@ public class ECentralTask {
         return getDataFolder().resolve("bnd-output.txt");
     }
 
-    private Path getPotentialMavenArtifactsFile() {
-        return getDataFolder().resolve("potential-maven-artifacts.json");
-    }
-
-    private Path getMavenArtifactsFile() {
+    Path getMavenArtifactsFile() {
         return getDataFolder().resolve("maven-artifacts.json");
     }
 
     private MavenArtifact getBomArtifact() {
-        return new MavenArtifact(GROUP_ID, ARTIFACT_ID, input.getReleaseVersion());
+        return new MavenArtifact(GROUP_ID, input.getArtifactId(), input.getReleaseVersion());
     }
 }

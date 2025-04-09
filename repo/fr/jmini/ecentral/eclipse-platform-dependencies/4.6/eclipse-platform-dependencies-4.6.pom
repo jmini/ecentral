@@ -5,8 +5,8 @@
   <artifactId>eclipse-platform-dependencies</artifactId>
   <version>4.6</version>
   <packaging>pom</packaging>
-  <name>eclipse-platform-dependencies</name>
-  <description>Eclipse Platform Dependencies of release Neon</description>
+  <name>eclipse-dependencies</name>
+  <description>Eclipse Dependencies of release Neon</description>
   <url>https://jmini.github.io/ecentral</url>
   <licenses>
     <license>

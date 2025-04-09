@@ -8,6 +8,6 @@ gradle.user.home=
 java.home=
 jvm.arguments=
 offline.mode=false
-override.workspace.settings=false
+override.workspace.settings=true
 show.console.view=false
 show.executions.view=false

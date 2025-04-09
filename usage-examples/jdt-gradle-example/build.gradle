@@ -4,14 +4,14 @@ plugins {
 }
 
 wrapper {
-    gradleVersion = '7.1'
+    gradleVersion = '8.5'
 }
 
 java {
     withJavadocJar()
     withSourcesJar()
     toolchain {
-        languageVersion = JavaLanguageVersion.of(8)
+        languageVersion = JavaLanguageVersion.of(21)
     }
 }
 
